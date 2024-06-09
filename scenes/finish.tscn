@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkq3rmhosw5j1"]
+
+[ext_resource type="Texture2D" uid="uid://c8eny574wqtec" path="res://asset/sprites/fruit.png" id="1_g7bor"]
+[ext_resource type="Script" path="res://scripts/finish.gd" id="1_y38b8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mqaw"]
+size = Vector2(20, 60)
+
+[node name="finish" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_y38b8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g7bor")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5mqaw")

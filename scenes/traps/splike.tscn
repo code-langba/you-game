@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dh7cb3a37dl7i"]
+
+[ext_resource type="Script" path="res://scripts/splike.gd" id="1_c4jdw"]
+[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_jkj2u"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_s34rh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hmak"]
+size = Vector2(128, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4akf"]
+size = Vector2(128, 128)
+
+[node name="splike" type="Node2D"]
+script = ExtResource("1_c4jdw")
+
+[node name="trigger" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2(0, -95.5)
+shape = SubResource("RectangleShape2D_7hmak")
+
+[node name="killzone" parent="." instance=ExtResource("2_s34rh")]
+
+[node name="Sprite2D" type="Sprite2D" parent="killzone"]
+texture = ExtResource("1_jkj2u")
+region_enabled = true
+region_rect = Rect2(0, 128, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("RectangleShape2D_x4akf")
+debug_color = Color(0.990638, 0.0693023, 0.154554, 0.42)

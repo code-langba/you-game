@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdkcva20j8ym"]
+
+[ext_resource type="Texture2D" uid="uid://bc6rcmcd3r7wg" path="res://asset/sprites/knight_128.png" id="1_gl4gb"]
+[ext_resource type="Script" path="res://scripts/enemies/walker.gd" id="1_n7rpm"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_2reh2"]
+[ext_resource type="PackedScene" uid="uid://cnn2elrbt0elo" path="res://components/scenes/walking.tscn" id="4_uefvm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2fsb"]
+size = Vector2(96, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l67wj"]
+size = Vector2(96, 120)
+
+[node name="walker" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_n7rpm")
+SPEED = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.964901, 0.586008, 0.501503, 1)
+texture = ExtResource("1_gl4gb")
+region_enabled = true
+region_rect = Rect2(1024, 768, 256, 256)
+
+[node name="killzone" parent="." instance=ExtResource("2_2reh2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(-8, 36)
+shape = SubResource("RectangleShape2D_y2fsb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 36)
+shape = SubResource("RectangleShape2D_l67wj")
+
+[node name="walking" parent="." instance=ExtResource("4_uefvm")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnn2elrbt0elo"]
+
+[ext_resource type="Script" path="res://components/scripts/walking.gd" id="1_008kb"]
+
+[node name="walking" type="Node2D"]
+script = ExtResource("1_008kb")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(72, 0)

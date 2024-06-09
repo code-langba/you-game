@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cstrdj2aulvgh"]
+
+[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_py2ts"]
+[ext_resource type="Script" path="res://scripts/bounce_platform.gd" id="1_yjwex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y266n"]
+size = Vector2(256, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjgnt"]
+size = Vector2(256, 128)
+
+[node name="bounce_platform" type="StaticBody2D"]
+collision_mask = 6
+script = ExtResource("1_yjwex")
+
+[node name="trigger" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_y266n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_py2ts")
+region_enabled = true
+region_rect = Rect2(128, 384, 256, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bjgnt")

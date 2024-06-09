@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://c1l65un4wrwlx"]
+
+[ext_resource type="PackedScene" uid="uid://dcsgncsfn3jqn" path="res://scenes/player.tscn" id="1_063s7"]
+[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="2_p4mjq"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="3_kc2rx"]
+[ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
+[ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/splike.tscn" id="5_8yscw"]
+[ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="6_25abd"]
+[ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="7_fuyn1"]
+[ext_resource type="PackedScene" uid="uid://bk0178o0i37cj" path="res://scenes/levels/2.tscn" id="8_tvfii"]
+[ext_resource type="PackedScene" uid="uid://cstrdj2aulvgh" path="res://scenes/traps/bounce_platform.tscn" id="9_085cp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ds3u"]
+texture = ExtResource("2_p4mjq")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_xoyqn"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5ds3u")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4djff"]
+distance = -1584.0
+
+[node name="1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_063s7")]
+position = Vector2(180, 646)
+
+[node name="platforms" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="platforms"]
+tile_set = SubResource("TileSet_xoyqn")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0)
+
+[node name="killzone" parent="." instance=ExtResource("3_kc2rx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_4djff")
+
+[node name="checkpoint" parent="." instance=ExtResource("6_25abd")]
+position = Vector2(472, 800)
+
+[node name="finish" parent="." instance=ExtResource("7_fuyn1")]
+position = Vector2(2360, 832)
+scale = Vector2(2, 2)
+next_level = ExtResource("8_tvfii")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="falling_platforms" type="Node2D" parent="Node2D"]
+position = Vector2(432, -56)
+
+[node name="falling_platform" parent="Node2D/falling_platforms" instance=ExtResource("4_76jwm")]
+position = Vector2(592, 1016)
+
+[node name="splike" parent="Node2D" instance=ExtResource("5_8yscw")]
+position = Vector2(832, 960)
+
+[node name="bounce_platform" parent="Node2D" instance=ExtResource("9_085cp")]
+position = Vector2(1920, 960)
+bounce_height = null
+bounce_force = null

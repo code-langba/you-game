@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b87qi6jruyy1i"]
+
+[ext_resource type="Script" path="res://scripts/falling_platform.gd" id="1_74ifr"]
+[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_qkhp2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsnd0"]
+size = Vector2(256, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oqsw"]
+size = Vector2(256, 128)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+collision_mask = 6
+script = ExtResource("1_74ifr")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_jsnd0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0oqsw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-64, 0)
+texture = ExtResource("1_qkhp2")
+region_enabled = true
+region_rect = Rect2(0, 256, 128, 128)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+texture = ExtResource("1_qkhp2")
+region_enabled = true
+region_rect = Rect2(0, 256, 128, 128)

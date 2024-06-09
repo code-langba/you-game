@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpqvji5moc7y3"]
+
+[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_t1ntg"]
+[ext_resource type="Script" path="res://scripts/traps/invisible_box.gd" id="1_xq02w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdnxe"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klgp4"]
+size = Vector2(144, 144)
+
+[node name="invisible_box" type="StaticBody2D"]
+script = ExtResource("1_xq02w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vdnxe")
+debug_color = Color(0.857653, 0.347124, 0.304221, 0.42)
+
+[node name="hidden_sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_t1ntg")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="trigger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
+shape = SubResource("RectangleShape2D_klgp4")
