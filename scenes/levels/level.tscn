@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://8twc8hxar5ua"]
+
+[ext_resource type="PackedScene" uid="uid://dcsgncsfn3jqn" path="res://scenes/player.tscn" id="1_tqbsa"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_s2iwy"]
+[ext_resource type="Texture2D" uid="uid://dsxqptsvbwlig" path="res://asset/sprites/coin.png" id="3_0bxj2"]
+[ext_resource type="Script" path="res://scripts/lives.gd" id="4_clsq8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4djff"]
+distance = -1584.0
+
+[node name="level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tqbsa")]
+position = Vector2(180, 646)
+
+[node name="killzone" parent="." instance=ExtResource("2_s2iwy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_4djff")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_0bxj2")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"
+script = ExtResource("4_clsq8")
