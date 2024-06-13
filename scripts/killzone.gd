@@ -8,7 +8,9 @@ func _ready() -> void:
 func dispose_node(_body: Node2D) -> void:
 	PlayerManager.lives -= 1
 	if PlayerManager.lives < 1:
-		call_deferred("load_game_over")
+		var anim = _body
+		anim.is_dead = true
+		# call_deferred("load_game_over")
 		PlayerManager.reset()
 		return
 	call_deferred("reload")

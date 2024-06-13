@@ -10,12 +10,14 @@ extends CharacterBody2D
 @export var jump_velocity := 800.0
 
 @onready var player:AnimatedSprite2D = $Knight
+@onready var killzone: Area2D = get_parent().get_node("killzone")
 @onready var gravity = default_gravity
 
-
-
+var is_dead := false
 
 func _ready() -> void:
+	is_dead = false
+	killzone.play_die.connect(play_die_anim)
 	if PlayerManager.current_checkpoint != Vector2.ZERO:
 		position = PlayerManager.current_checkpoint
 
@@ -36,7 +38,10 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * speed
 
 	handle_flip(direction)
-	handle_animation(direction)
+	if is_dead:
+		play_die_anim()
+	else:
+		handle_animation(direction)
 	handle_jump()
 	move_and_slide()
 
@@ -57,4 +62,9 @@ func handle_animation(direction:float):
 	elif not is_on_floor():
 		player.play("jump")
 	
+
+func play_die_anim():
+	player.play("die")
+
+
 
