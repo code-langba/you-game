@@ -1,81 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=10 format=3 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
-[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="2_p4mjq"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_8yscw"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="6_25abd"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="7_fuyn1"]
+[ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="7_gmib8"]
 [ext_resource type="PackedScene" uid="uid://bk0178o0i37cj" path="res://scenes/levels/2.tscn" id="8_tvfii"]
-[ext_resource type="PackedScene" uid="uid://cstrdj2aulvgh" path="res://scenes/traps/bounce_platform.tscn" id="9_085cp"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ds3u"]
-texture = ExtResource("2_p4mjq")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0 = 0
-2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:0/0/physics_layer_0/angular_velocity = 0.0
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-2:1/0 = 0
-2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
-0:3/0 = 0
-0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:3/0/physics_layer_0/angular_velocity = 0.0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
-1:3/0 = 0
-1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:3/0/physics_layer_0/angular_velocity = 0.0
-2:3/0 = 0
-2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:3/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSet" id="TileSet_valj1"]
-tile_size = Vector2i(128, 128)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_5ds3u")
+[ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="9_ftwoo"]
+[ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
 
 [node name="1" instance=ExtResource("1_1e0av")]
 
-[node name="platforms" type="Node2D" parent="." index="2"]
+[node name="Player" parent="." index="0"]
+position = Vector2(104, 840)
 
-[node name="TileMap" type="TileMap" parent="platforms" index="0"]
-tile_set = SubResource("TileSet_valj1")
-format = 2
-layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0)
+[node name="checkpoint" parent="." index="2" instance=ExtResource("6_25abd")]
+position = Vector2(2230, 840)
 
-[node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
-position = Vector2(472, 800)
-
-[node name="finish" parent="." index="4" instance=ExtResource("7_fuyn1")]
-position = Vector2(2361, 832)
+[node name="finish" parent="." index="3" instance=ExtResource("7_fuyn1")]
+position = Vector2(4506, 459)
 scale = Vector2(2, 2)
 next_level = ExtResource("8_tvfii")
 
-[node name="traps" type="Node2D" parent="." index="5"]
+[node name="traps" type="Node2D" parent="." index="4"]
 
 [node name="falling_platforms" type="Node2D" parent="traps" index="0"]
 position = Vector2(432, -56)
@@ -83,10 +31,64 @@ position = Vector2(432, -56)
 [node name="falling_platform" parent="traps/falling_platforms" index="0" instance=ExtResource("4_76jwm")]
 position = Vector2(592, 1016)
 
-[node name="splike" parent="traps" index="1" instance=ExtResource("5_8yscw")]
-position = Vector2(832, 960)
+[node name="Node2D2" type="Sprite2D" parent="traps/falling_platforms/falling_platform" index="4"]
+position = Vector2(3.33786e-06, 128)
+scale = Vector2(2.04687, 1)
+texture = ExtResource("10_2ctgp")
+region_enabled = true
+region_rect = Rect2(0, 1152, 128, 128)
 
-[node name="bounce_platform" parent="traps" index="2" instance=ExtResource("9_085cp")]
-position = Vector2(1920, 960)
-bounce_height = null
-bounce_force = null
+[node name="falling_platform2" parent="traps/falling_platforms" index="1" instance=ExtResource("4_76jwm")]
+position = Vector2(2896, 1016)
+
+[node name="Node2D2" type="Sprite2D" parent="traps/falling_platforms/falling_platform2" index="4"]
+position = Vector2(3.33786e-06, 128)
+scale = Vector2(2.04687, 1)
+texture = ExtResource("10_2ctgp")
+region_enabled = true
+region_rect = Rect2(0, 1152, 128, 128)
+
+[node name="TileMap" parent="." index="6"]
+layer_0/tile_data = PackedInt32Array(458752, 131072, 9, 458753, 131072, 9, 458754, 131072, 9, 458755, 131072, 9, 458756, 131072, 9, 458757, 131072, 9, 458758, 131072, 9, 458761, 131072, 9, 458762, 131072, 9, 458763, 131072, 9, 458764, 131072, 9, 458765, 131072, 9, 458766, 131072, 9, 458767, 131072, 9, 458768, 131072, 9, 458769, 131072, 9, 458770, 131072, 9, 524288, 0, 9, 524289, 0, 9, 524290, 0, 9, 524291, 0, 9, 524292, 0, 9, 524293, 0, 9, 524294, 0, 9, 524297, 0, 9, 524298, 0, 9, 524299, 0, 9, 524300, 0, 9, 524301, 0, 9, 524302, 0, 9, 524303, 0, 9, 524304, 0, 9, 524305, 0, 9, 524306, 0, 9, 524307, 0, 9, 524308, 0, 9, 524309, 0, 9, 524310, 0, 9, 524311, 0, 9, 524312, 0, 9, 458771, 131072, 9, 458772, 131072, 9, 458773, 131072, 9, 458774, 131072, 9, 458775, 131072, 9, 458776, 131072, 9, 524315, 0, 9, 458782, 0, 9, 524317, 0, 9, 524316, 0, 9, 458780, 131072, 9, 458781, 131072, 9, 524318, 0, 9, 458783, 0, 9, 524319, 0, 9, 524320, 0, 9, 524321, 0, 9, 524322, 0, 9, 524323, 0, 9, 458784, 0, 9, 458785, 0, 9, 458786, 0, 9, 458787, 0, 9, 393251, 0, 9, 327715, 0, 9, 327714, 0, 9, 393250, 0, 9, 393249, 0, 9, 327713, 0, 9, 262177, 131072, 9, 262178, 131072, 9, 262179, 131072, 9, 327712, 131072, 9, 327711, 131072, 9, 393247, 0, 9, 393248, 0, 9, 393246, 131072, 9, 458779, 131072, 9)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="7"]
+position = Vector2(883, 839)
+texture = ExtResource("10_2ctgp")
+region_enabled = true
+region_rect = Rect2(128, 1024, 128, 128)
+
+[node name="grass" type="Node2D" parent="." index="8"]
+position = Vector2(0, 5)
+
+[node name="live_grass2" parent="grass" index="0" instance=ExtResource("7_gmib8")]
+position = Vector2(1557, 842)
+
+[node name="live_grass3" parent="grass" index="1" instance=ExtResource("7_gmib8")]
+position = Vector2(1652, 841)
+
+[node name="live_grass4" parent="grass" index="2" instance=ExtResource("7_gmib8")]
+position = Vector2(3601, 841)
+
+[node name="live_grass5" parent="grass" index="3" instance=ExtResource("7_gmib8")]
+position = Vector2(3696, 840)
+
+[node name="live_grass6" parent="grass" index="4" instance=ExtResource("7_gmib8")]
+position = Vector2(3512, 840)
+
+[node name="live_grass7" parent="grass" index="5" instance=ExtResource("7_gmib8")]
+position = Vector2(3792, 840)
+
+[node name="splike" parent="." index="9" instance=ExtResource("5_8yscw")]
+position = Vector2(4160, 688)
+
+[node name="candles" type="Node2D" parent="." index="10"]
+position = Vector2(0, 5)
+
+[node name="candle" parent="candles" index="0" instance=ExtResource("9_ftwoo")]
+position = Vector2(3936, 712)
+
+[node name="candle3" parent="candles" index="1" instance=ExtResource("9_ftwoo")]
+position = Vector2(1224, 840)
+
+[node name="candle2" parent="candles" index="2" instance=ExtResource("9_ftwoo")]
+position = Vector2(4584, 472)

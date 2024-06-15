@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b87qi6jruyy1i"]
 
 [ext_resource type="Script" path="res://scripts/traps/falling_platform.gd" id="1_74ifr"]
-[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_qkhp2"]
+[ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_u4nwu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsnd0"]
 size = Vector2(256, 138)
@@ -12,8 +12,10 @@ size = Vector2(256, 128)
 [node name="StaticBody2D" type="StaticBody2D"]
 collision_mask = 6
 script = ExtResource("1_74ifr")
+speed = 30.0
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -25,12 +27,13 @@ shape = SubResource("RectangleShape2D_0oqsw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-64, 0)
-texture = ExtResource("1_qkhp2")
+scale = Vector2(1.01563, 1)
+texture = ExtResource("2_u4nwu")
 region_enabled = true
-region_rect = Rect2(0, 256, 128, 128)
+region_rect = Rect2(256, 1152, 128, 128)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(64, 0)
-texture = ExtResource("1_qkhp2")
+texture = ExtResource("2_u4nwu")
 region_enabled = true
-region_rect = Rect2(0, 256, 128, 128)
+region_rect = Rect2(256, 1152, 128, 128)

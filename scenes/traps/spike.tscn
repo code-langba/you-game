@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://dh7cb3a37dl7i"]
 
-[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_jkj2u"]
 [ext_resource type="Script" path="res://scripts/traps/spike.gd" id="1_p8sb6"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_s34rh"]
+[ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="3_6wchu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hmak"]
 size = Vector2(128, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4akf"]
-size = Vector2(128, 128)
+size = Vector2(128, 112)
 
 [node name="splike" type="Node2D"]
 script = ExtResource("1_p8sb6")
@@ -23,10 +23,13 @@ shape = SubResource("RectangleShape2D_7hmak")
 [node name="killzone" parent="." instance=ExtResource("2_s34rh")]
 
 [node name="Sprite2D" type="Sprite2D" parent="killzone"]
-texture = ExtResource("1_jkj2u")
+position = Vector2(0, 32)
+rotation = -3.14159
+texture = ExtResource("3_6wchu")
 region_enabled = true
-region_rect = Rect2(0, 128, 128, 128)
+region_rect = Rect2(384, 1024, 128, 128)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_x4akf")
 debug_color = Color(0.990638, 0.0693023, 0.154554, 0.42)

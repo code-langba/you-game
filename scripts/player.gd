@@ -13,11 +13,13 @@ extends CharacterBody2D
 @onready var player:AnimatedSprite2D = $Knight
 @onready var killzone: Area2D = get_parent().get_node("killzone")
 @onready var gravity = default_gravity
+@onready var timer: Timer = $Timer
 
 var is_dead := false
 
 func _ready() -> void:
 	is_dead = false
+	timer.timeout.connect(reload)
 	# killzone.play_die.connect(play_die_anim)
 	if PlayerManager.current_checkpoint != Vector2.ZERO:
 		position = PlayerManager.current_checkpoint
@@ -33,19 +35,19 @@ func _physics_process(delta: float) -> void:
 			velocity.y += fall_gravity * delta
 
 
+	var direction = 0
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
 
-	if is_dead:
-		direction = 0
+	if not is_dead:
+		direction = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * speed
 
 	handle_flip(direction)
 	if not is_dead:
 		handle_animation(direction)
-	handle_jump()
+		handle_jump()
 	move_and_slide()
 
 
@@ -69,21 +71,25 @@ func handle_animation(direction:float):
 func play_die_anim():
 	player.play("die")
 	await player.animation_finished
+	await get_tree().create_timer(1).timeout
 	is_dead = false
 	call_deferred("load_game_over")
 	
 
 func on_dead() -> void:
+	is_dead = true
+	player.play("die")
 	PlayerManager.lives -= 1
 	if PlayerManager.lives < 1:
 		# var anim = body
-		is_dead = true
 		play_die_anim()
 		PlayerManager.reset()
 		return
-	call_deferred("reload")
+	timer.start()
+	# call_deferred("reload")
 
 func reload():
+	# await get_tree().create_timer(0.5).timeout
 	get_tree().reload_current_scene()
 
 func load_game_over() -> void:

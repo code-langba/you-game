@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://dtx63a6evsdh2"]
+
+[ext_resource type="Script" path="res://scripts/world/live_grass.gd" id="1_6l2np"]
+[ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="1_lkxdj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwi0f"]
+size = Vector2(74, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kghwf"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(256, 5, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y80x"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(384, 5, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnhye"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(512, 5, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h515v"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(0, 133, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhnmn"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(128, 133, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nfpt"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(256, 133, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ms60"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(384, 133, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8c4af"]
+atlas = ExtResource("1_lkxdj")
+region = Rect2(512, 133, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohjlb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kghwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y80x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnhye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h515v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhnmn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nfpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ms60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8c4af")
+}],
+"loop": false,
+"name": &"wiggle",
+"speed": 11.0
+}]
+
+[node name="live_grass" type="Area2D"]
+z_index = 2
+collision_mask = 2
+script = ExtResource("1_6l2np")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 22.5)
+shape = SubResource("RectangleShape2D_iwi0f")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ohjlb")
+animation = &"wiggle"
