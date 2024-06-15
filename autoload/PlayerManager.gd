@@ -1,6 +1,7 @@
 extends Node
 
 signal lives_changed(lives: int)
+signal player_died()
 
 
 var current_checkpoint: Vector2
