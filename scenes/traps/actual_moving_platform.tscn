@@ -4,11 +4,9 @@
 
 [node name="actual_moving_platform" type="Node2D"]
 
-[node name="moving_platform" parent="." node_paths=PackedStringArray("start", "end") instance=ExtResource("1_hsm5y")]
+[node name="moving_platform" parent="." instance=ExtResource("1_hsm5y")]
 position = Vector2(1856, 936)
 SPEED = 3000.0
-start = NodePath("")
-end = NodePath("")
 
 [node name="start_pt" type="Node2D" parent="."]
 position = Vector2(1856, 936)

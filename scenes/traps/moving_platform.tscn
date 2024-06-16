@@ -1,21 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dr6ndrmy12h0e"]
 
 [ext_resource type="Script" path="res://scripts/traps/moving_platform.gd" id="1_rdwvg"]
-[ext_resource type="Texture2D" uid="uid://bihp426oyl1um" path="res://asset/sprites/platforms_128.png" id="1_t0lbo"]
+[ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_7xfbc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_di4oq"]
-size = Vector2(128, 72)
+size = Vector2(128, 32)
 
 [node name="moving_platform" type="CharacterBody2D"]
+collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_rdwvg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 24)
-texture = ExtResource("1_t0lbo")
+position = Vector2(0, -32)
+texture = ExtResource("2_7xfbc")
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 128)
+region_rect = Rect2(384, 1154, 128, 126)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_di4oq")

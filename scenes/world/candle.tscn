@@ -2,47 +2,47 @@
 
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="1_vbpdy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sdvb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_poy1a"]
 atlas = ExtResource("1_vbpdy")
-region = Rect2(512, 517, 128, 128)
+region = Rect2(0, 516, 128, 126)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhwjk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyqng"]
 atlas = ExtResource("1_vbpdy")
-region = Rect2(0, 645, 128, 128)
+region = Rect2(128, 516, 128, 126)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77532"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxwx3"]
 atlas = ExtResource("1_vbpdy")
-region = Rect2(128, 645, 128, 128)
+region = Rect2(256, 516, 128, 126)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2i81"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayrq1"]
 atlas = ExtResource("1_vbpdy")
-region = Rect2(256, 645, 128, 128)
+region = Rect2(384, 516, 128, 126)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_khk80"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqp3r"]
 atlas = ExtResource("1_vbpdy")
-region = Rect2(384, 645, 128, 128)
+region = Rect2(512, 516, 128, 126)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s3qpt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3sdvb")
+"texture": SubResource("AtlasTexture_poy1a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jhwjk")
+"texture": SubResource("AtlasTexture_xyqng")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_77532")
+"texture": SubResource("AtlasTexture_uxwx3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c2i81")
+"texture": SubResource("AtlasTexture_ayrq1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_khk80")
+"texture": SubResource("AtlasTexture_yqp3r")
 }],
 "loop": true,
 "name": &"fire",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="candle" type="AnimatedSprite2D"]
@@ -50,4 +50,4 @@ z_index = 2
 sprite_frames = SubResource("SpriteFrames_s3qpt")
 animation = &"fire"
 autoplay = "fire"
-frame_progress = 0.512056
+frame_progress = 0.299674

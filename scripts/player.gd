@@ -71,7 +71,7 @@ func handle_animation(direction:float):
 func play_die_anim():
 	player.play("die")
 	await player.animation_finished
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	is_dead = false
 	call_deferred("load_game_over")
 	
