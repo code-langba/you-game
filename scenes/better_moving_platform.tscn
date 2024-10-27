@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkep8526t3g44"]
+
+[ext_resource type="PackedScene" uid="uid://beojt0gxoinh4" path="res://scenes/traps/better_mv_base.tscn" id="1_dv4wa"]
+
+[node name="BetterMovingPlatform" type="Node2D"]
+
+[node name="BetterMVBase" parent="." instance=ExtResource("1_dv4wa")]

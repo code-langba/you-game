@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://beojt0gxoinh4"]
+
+[ext_resource type="Script" path="res://scripts/traps/moving_platform.gd" id="1_rsos4"]
+
+[node name="BetterMVBase" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_rsos4")

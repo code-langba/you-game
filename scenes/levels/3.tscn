@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=8 format=4 uid="uid://6u81uxadoaio"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
@@ -136,12 +136,10 @@ tile_set = SubResource("TileSet_52plv")
 
 [node name="actual_moving_platform" parent="platforms/left_right" index="0" instance=ExtResource("3_ms63n")]
 
-[node name="moving_platform" parent="platforms/left_right/actual_moving_platform" index="0" node_paths=PackedStringArray("start", "end")]
+[node name="moving_platform" parent="platforms/left_right/actual_moving_platform" index="0"]
 position = Vector2(1531, 831)
 scale = Vector2(1.8, 1.8)
 SPEED = 3.0
-start = NodePath("../start_pt")
-end = NodePath("../end_pt")
 
 [node name="start_pt" parent="platforms/left_right/actual_moving_platform" index="1"]
 position = Vector2(1494, 835)
@@ -152,11 +150,9 @@ position = Vector2(2158, 835)
 [node name="actual_moving_platform2" parent="platforms/left_right" index="1" instance=ExtResource("3_ms63n")]
 position = Vector2(1139, 0)
 
-[node name="moving_platform" parent="platforms/left_right/actual_moving_platform2" index="0" node_paths=PackedStringArray("start", "end")]
+[node name="moving_platform" parent="platforms/left_right/actual_moving_platform2" index="0"]
 position = Vector2(1531, 831)
 scale = Vector2(1.8, 1.8)
-start = NodePath("../start_pt")
-end = NodePath("../end_pt")
 
 [node name="start_pt" parent="platforms/left_right/actual_moving_platform2" index="1"]
 position = Vector2(1530, 839)

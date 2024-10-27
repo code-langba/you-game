@@ -1,0 +1,152 @@
+[gd_scene load_steps=19 format=3 uid="uid://d3vnimwitkvwk"]
+
+[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/better_moving_platform.tscn" id="1_qqwih"]
+[ext_resource type="Script" path="res://scenes/position.gd" id="2_48807"]
+[ext_resource type="Texture2D" uid="uid://deixsarktp5fs" path="res://asset/sprites/slime_green.png" id="2_nap0l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqnfg"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51o55"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyx2p"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88xvo"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sae7w"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwfa1"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wk04"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xt3k"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d28p3"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_081ut"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufjfy"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yd2r"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4npf"]
+atlas = ExtResource("2_nap0l")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2dpyj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqnfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51o55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyx2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88xvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sae7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwfa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wk04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xt3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d28p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_081ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufjfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yd2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4npf")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mec0n"]
+size = Vector2(64, 32)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BetterMovingPlatform" parent="." instance=ExtResource("1_qqwih")]
+position = Vector2(720, 408)
+
+[node name="BetterMVBase" parent="BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions", "animator")]
+destroy_on_end = true
+delay_on_start = 3.0
+delay_on_end = 2.0
+destroy_delay = 1.0
+positions = [NodePath("../Position"), NodePath("../Position2"), NodePath("../2"), NodePath("../3")]
+animator = NodePath("AnimatedSprite2D")
+destroy_animation_name = "destroy"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BetterMovingPlatform/BetterMVBase" index="0"]
+position = Vector2(0, -8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_2dpyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BetterMovingPlatform/BetterMVBase" index="1"]
+shape = SubResource("RectangleShape2D_mec0n")
+
+[node name="Position" type="Node2D" parent="BetterMovingPlatform"]
+position = Vector2(-592, -152)
+script = ExtResource("2_48807")
+
+[node name="Position2" type="Node2D" parent="BetterMovingPlatform"]
+position = Vector2(240, -152)
+script = ExtResource("2_48807")
+
+[node name="2" type="Node2D" parent="BetterMovingPlatform"]
+position = Vector2(-592, 40)
+script = ExtResource("2_48807")
+
+[node name="3" type="Node2D" parent="BetterMovingPlatform"]
+position = Vector2(240, 40)
+script = ExtResource("2_48807")
+
+[editable path="BetterMovingPlatform"]
