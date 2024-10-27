@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="9_ftwoo"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hm4g5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88k8r"]
 texture = ExtResource("10_2ctgp")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -64,9 +64,9 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
-sources/0 = SubResource("TileSetAtlasSource_hm4g5")
+sources/0 = SubResource("TileSetAtlasSource_88k8r")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sktkd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qehsx"]
 texture = ExtResource("10_2ctgp")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -117,7 +117,7 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
-sources/0 = SubResource("TileSetAtlasSource_sktkd")
+sources/0 = SubResource("TileSetAtlasSource_qehsx")
 
 [node name="1" instance=ExtResource("1_1e0av")]
 
