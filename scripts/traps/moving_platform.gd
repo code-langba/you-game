@@ -54,6 +54,7 @@ func destroy_platform() -> void:
 	queue_free()
 
 func flip_platform() -> void:
+	if (!animator): return
 	if sign(velocity.x) == -1:
 		animator.flip_h = true
 	elif sign(velocity.x) == 1:

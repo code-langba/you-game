@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://d3vnimwitkvwk"]
 
-[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/better_moving_platform.tscn" id="1_qqwih"]
-[ext_resource type="Script" path="res://scenes/position.gd" id="2_48807"]
+[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="1_qqwih"]
+[ext_resource type="Script" path="res://scenes/util/position.gd" id="2_48807"]
 [ext_resource type="Texture2D" uid="uid://deixsarktp5fs" path="res://asset/sprites/slime_green.png" id="2_nap0l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqnfg"]
