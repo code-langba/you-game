@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://6u81uxadoaio"]
+[gd_scene load_steps=12 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
-[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
+[ext_resource type="PackedScene" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="5_itdtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ubif"]
@@ -157,9 +157,8 @@ tile_set = SubResource("TileSet_52plv")
 [node name="BetterMovingPlatform" parent="platforms" index="1" instance=ExtResource("4_mts20")]
 position = Vector2(1531, 831)
 
-[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions")]
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0"]
 scale = Vector2(1.8, 1.8)
-positions = [NodePath("../Position"), NodePath("../Position2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="0"]
 shape = SubResource("RectangleShape2D_vbt25")
@@ -179,9 +178,8 @@ script = ExtResource("5_itdtf")
 [node name="BetterMovingPlatform2" parent="platforms" index="2" instance=ExtResource("4_mts20")]
 position = Vector2(2384, 856)
 
-[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0" node_paths=PackedStringArray("positions")]
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0"]
 scale = Vector2(1.8, 1.8)
-positions = [NodePath("../Position"), NodePath("../Position2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="0"]
 shape = SubResource("RectangleShape2D_vbt25")

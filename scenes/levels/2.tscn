@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bk0178o0i37cj"]
+[gd_scene load_steps=20 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_h4p7e"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="4_fuv7a"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
-[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
+[ext_resource type="PackedScene" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="8_au5e5"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="9_e5750"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="9_eb1qh"]
@@ -199,10 +199,6 @@ position = Vector2(4032, 936)
 [node name="BetterMovingPlatform" parent="platforms" index="0" instance=ExtResource("8_3dgy0")]
 position = Vector2(1808, 904)
 
-[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions", "animator")]
-positions = [NodePath("../Position"), NodePath("../Position2")]
-animator = NodePath("AnimatedSprite2D")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="0"]
 shape = SubResource("RectangleShape2D_kkqv2")
 
@@ -220,10 +216,6 @@ script = ExtResource("9_eb1qh")
 
 [node name="BetterMovingPlatform2" parent="platforms" index="1" instance=ExtResource("8_3dgy0")]
 position = Vector2(3064, 904)
-
-[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0" node_paths=PackedStringArray("positions", "animator")]
-positions = [NodePath("../Position"), NodePath("../Position2")]
-animator = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="0"]
 shape = SubResource("RectangleShape2D_kkqv2")
