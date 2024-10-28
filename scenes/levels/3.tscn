@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=12 format=4 uid="uid://6u81uxadoaio"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
-[ext_resource type="PackedScene" uid="uid://b76eqg7eyampd" path="res://scenes/traps/actual_moving_platform.tscn" id="3_ms63n"]
+[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
+[ext_resource type="Script" path="res://scenes/util/position.gd" id="5_itdtf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ubif"]
 texture = ExtResource("2_bchic")
@@ -114,6 +115,24 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_3ue7h")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbt25"]
+size = Vector2(128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4ld4"]
+atlas = ExtResource("2_bchic")
+region = Rect2(384, 1152, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi6pv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4ld4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="level" instance=ExtResource("1_rq4wt")]
 
 [node name="MarginContainer" parent="CanvasLayer" index="0"]
@@ -135,35 +154,49 @@ tile_set = SubResource("TileSet_52plv")
 
 [node name="left_right" type="Node2D" parent="platforms" index="0"]
 
-[node name="actual_moving_platform" parent="platforms/left_right" index="0" instance=ExtResource("3_ms63n")]
-
-[node name="moving_platform" parent="platforms/left_right/actual_moving_platform" index="0" node_paths=PackedStringArray("start", "end")]
+[node name="BetterMovingPlatform" parent="platforms" index="1" instance=ExtResource("4_mts20")]
 position = Vector2(1531, 831)
+
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions")]
 scale = Vector2(1.8, 1.8)
-SPEED = 3.0
-start = NodePath("../start_pt")
-end = NodePath("../end_pt")
+positions = [NodePath("../Position"), NodePath("../Position2")]
 
-[node name="start_pt" parent="platforms/left_right/actual_moving_platform" index="1"]
-position = Vector2(1494, 835)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="0"]
+shape = SubResource("RectangleShape2D_vbt25")
 
-[node name="end_pt" parent="platforms/left_right/actual_moving_platform" index="2"]
-position = Vector2(2158, 835)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="1"]
+position = Vector2(0, -40)
+sprite_frames = SubResource("SpriteFrames_pi6pv")
 
-[node name="actual_moving_platform2" parent="platforms/left_right" index="1" instance=ExtResource("3_ms63n")]
-position = Vector2(1139, 0)
+[node name="Position" type="Node2D" parent="platforms/BetterMovingPlatform" index="1"]
+position = Vector2(-37, 3)
+script = ExtResource("5_itdtf")
 
-[node name="moving_platform" parent="platforms/left_right/actual_moving_platform2" index="0" node_paths=PackedStringArray("start", "end")]
-position = Vector2(1531, 831)
+[node name="Position2" type="Node2D" parent="platforms/BetterMovingPlatform" index="2"]
+position = Vector2(626, 3)
+script = ExtResource("5_itdtf")
+
+[node name="BetterMovingPlatform2" parent="platforms" index="2" instance=ExtResource("4_mts20")]
+position = Vector2(2384, 856)
+
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0" node_paths=PackedStringArray("positions")]
 scale = Vector2(1.8, 1.8)
-start = NodePath("../start_pt")
-end = NodePath("../end_pt")
+positions = [NodePath("../Position"), NodePath("../Position2")]
 
-[node name="start_pt" parent="platforms/left_right/actual_moving_platform2" index="1"]
-position = Vector2(1530, 839)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="0"]
+shape = SubResource("RectangleShape2D_vbt25")
 
-[node name="end_pt" parent="platforms/left_right/actual_moving_platform2" index="2"]
-position = Vector2(1530, -565)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="1"]
+position = Vector2(0, -40)
+sprite_frames = SubResource("SpriteFrames_pi6pv")
 
-[editable path="platforms/left_right/actual_moving_platform"]
-[editable path="platforms/left_right/actual_moving_platform2"]
+[node name="Position" type="Node2D" parent="platforms/BetterMovingPlatform2" index="1"]
+position = Vector2(-8, 24)
+script = ExtResource("5_itdtf")
+
+[node name="Position2" type="Node2D" parent="platforms/BetterMovingPlatform2" index="2"]
+position = Vector2(-16, -729)
+script = ExtResource("5_itdtf")
+
+[editable path="platforms/BetterMovingPlatform"]
+[editable path="platforms/BetterMovingPlatform2"]

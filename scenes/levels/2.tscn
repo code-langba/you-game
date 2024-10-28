@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://4psc66kvofb8"]
+[gd_scene load_steps=20 format=4 uid="uid://bk0178o0i37cj"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
-[ext_resource type="PackedScene" uid="uid://b76eqg7eyampd" path="res://scenes/traps/actual_moving_platform.tscn" id="2_dqbae"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_h4p7e"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="3_i4blj"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="4_fuv7a"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
+[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="8_au5e5"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="9_e5750"]
+[ext_resource type="Script" path="res://scenes/util/position.gd" id="9_eb1qh"]
 [ext_resource type="PackedScene" uid="uid://7rndgha02643" path="res://scenes/ui/game_over.tscn" id="10_mhovl"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="11_p3ad4"]
 
@@ -122,6 +123,24 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_pesew")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkqv2"]
+size = Vector2(128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4ld4"]
+atlas = ExtResource("4_fuv7a")
+region = Rect2(384, 1152, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5od7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4ld4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="2" instance=ExtResource("1_vasr2")]
 
 [node name="Player" parent="." index="0"]
@@ -177,35 +196,49 @@ position = Vector2(4032, 936)
 
 [node name="platforms" type="Node2D" parent="." index="6"]
 
-[node name="actual_moving_platform" parent="platforms" index="0" instance=ExtResource("2_dqbae")]
-position = Vector2(0, -33)
+[node name="BetterMovingPlatform" parent="platforms" index="0" instance=ExtResource("8_3dgy0")]
+position = Vector2(1808, 904)
 
-[node name="moving_platform" parent="platforms/actual_moving_platform" index="0" node_paths=PackedStringArray("start", "end")]
-position = Vector2(1808, 937)
-SPEED = 100.0
-start = NodePath("../start_pt")
-end = NodePath("../end_pt")
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions", "animator")]
+positions = [NodePath("../Position"), NodePath("../Position2")]
+animator = NodePath("AnimatedSprite2D")
 
-[node name="start_pt" parent="platforms/actual_moving_platform" index="1"]
-position = Vector2(1344, 936)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="0"]
+shape = SubResource("RectangleShape2D_kkqv2")
 
-[node name="end_pt" parent="platforms/actual_moving_platform" index="2"]
-position = Vector2(1880, 936)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="1"]
+position = Vector2(0, -40)
+sprite_frames = SubResource("SpriteFrames_t5od7")
 
-[node name="actual_moving_platform2" parent="platforms" index="1" instance=ExtResource("2_dqbae")]
-position = Vector2(0, -33)
+[node name="Position" type="Node2D" parent="platforms/BetterMovingPlatform" index="1"]
+position = Vector2(-464, 0)
+script = ExtResource("9_eb1qh")
 
-[node name="moving_platform" parent="platforms/actual_moving_platform2" index="0" node_paths=PackedStringArray("start", "end")]
-position = Vector2(3064, 937)
-SPEED = 100.0
-start = NodePath("../start_pt")
-end = NodePath("../end_pt")
+[node name="Position2" type="Node2D" parent="platforms/BetterMovingPlatform" index="2"]
+position = Vector2(72, 0)
+script = ExtResource("9_eb1qh")
 
-[node name="start_pt" parent="platforms/actual_moving_platform2" index="1"]
-position = Vector2(2976, 937)
+[node name="BetterMovingPlatform2" parent="platforms" index="1" instance=ExtResource("8_3dgy0")]
+position = Vector2(3064, 904)
 
-[node name="end_pt" parent="platforms/actual_moving_platform2" index="2"]
-position = Vector2(3767, 938)
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0" node_paths=PackedStringArray("positions", "animator")]
+positions = [NodePath("../Position"), NodePath("../Position2")]
+animator = NodePath("AnimatedSprite2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="0"]
+shape = SubResource("RectangleShape2D_kkqv2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="1"]
+position = Vector2(0, -40)
+sprite_frames = SubResource("SpriteFrames_t5od7")
+
+[node name="Position" type="Node2D" parent="platforms/BetterMovingPlatform2" index="1"]
+position = Vector2(-88, 0)
+script = ExtResource("9_eb1qh")
+
+[node name="Position2" type="Node2D" parent="platforms/BetterMovingPlatform2" index="2"]
+position = Vector2(704, 0)
+script = ExtResource("9_eb1qh")
 
 [node name="candles" type="Node2D" parent="." index="7"]
 
@@ -231,5 +264,5 @@ position = Vector2(4824, 848)
 [node name="live_grass2" parent="grass" index="1" instance=ExtResource("11_p3ad4")]
 position = Vector2(4912, 848)
 
-[editable path="platforms/actual_moving_platform"]
-[editable path="platforms/actual_moving_platform2"]
+[editable path="platforms/BetterMovingPlatform"]
+[editable path="platforms/BetterMovingPlatform2"]
