@@ -131,7 +131,10 @@ size = Vector2(541, 94)
 position = Vector2(6, 435)
 
 [node name="Player" parent="." index="0"]
-position = Vector2(9598, -523)
+position = Vector2(4439, -523)
+
+[node name="Knight" parent="Player" index="1"]
+animation = &"idle"
 
 [node name="Camera2D" parent="Player" index="2"]
 offset = Vector2(0, -100)
@@ -172,7 +175,6 @@ is_friendly = true
 
 [node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="10"]
 position = Vector2(6847, 96)
-scale = Vector2(1, 1)
 collision_layer = 16
 collision_mask = 0
 
@@ -182,7 +184,6 @@ shape = SubResource("RectangleShape2D_au0k1")
 
 [node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="11"]
 position = Vector2(5449, 87)
-scale = Vector2(1, 1)
 collision_layer = 16
 collision_mask = 0
 

@@ -33,10 +33,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if is_ascend:
 		print('ascending')
-		velocity = Vector2.UP * delta * 9000
+		velocity = Vector2.UP * delta * 8000
 		var tween = create_tween()
 		tween.tween_property(self, "position:x", 3400, 2)
-		player.stop()
+		player.play("ascending")
 		move_and_slide()
 		return
 	if not is_on_floor():
