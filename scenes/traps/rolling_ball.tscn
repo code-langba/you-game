@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://7ethfy8v7636"]
+
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_kd7ma"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vlfs"]
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lx4gh"]
+radius = 363.006
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35ctv"]
+radius = 354.114
+
+[node name="rolling_ball" type="RigidBody2D"]
+collision_mask = 17
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -361.0
+offset_top = -360.0
+offset_right = 362.0
+offset_bottom = 363.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7vlfs")
+
+[node name="killzone" parent="." instance=ExtResource("2_kd7ma")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("CircleShape2D_lx4gh")
+debug_color = Color(0, 0.0183077, 0.025747, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_35ctv")
+debug_color = Color(0, 0.0183077, 0.025747, 0.42)
