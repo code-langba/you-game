@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
-[ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_5gr4d"]
+[ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="2_oijpp"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="4_0m3ev"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="5_r51gs"]
 [ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
@@ -131,7 +131,7 @@ size = Vector2(541, 94)
 position = Vector2(6, 435)
 
 [node name="Player" parent="." index="0"]
-position = Vector2(9601, -175)
+position = Vector2(9598, -523)
 
 [node name="Camera2D" parent="Player" index="2"]
 offset = Vector2(0, -100)
@@ -143,7 +143,7 @@ position = Vector2(0, -616)
 [node name="blocks" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true
 position = Vector2(236, 64)
-tile_map_data = PackedByteArray("AAAiAAsAAAADAAcAAAAjAAsAAAADAAcAAAAkAAsAAAADAAcAAAAlAAsAAAADAAcAAAAlAAcAAAAFAAcAAAAlAAgAAAADAAcAAAAlAAkAAAADAAcAAAAlAAoAAAADAAcAAAAkAAcAAAAFAAcAAAAkAAgAAAADAAcAAAAkAAkAAAADAAcAAAAkAAoAAAADAAcAAAAmAAcAAAAFAAcAAAAmAAgAAAADAAcAAAAmAAkAAAADAAcAAAAmAAoAAAADAAcAAAAmAAsAAAADAAcAAAAnAAcAAAAFAAcAAAAnAAgAAAADAAcAAAAnAAkAAAADAAcAAAAnAAoAAAADAAcAAAAnAAsAAAADAAcAAAAoAAYAAAADAAgAAAAoAAcAAAADAAcAAAAoAAgAAAADAAcAAAAoAAkAAAADAAcAAAAoAAoAAAADAAcAAAAoAAsAAAADAAcAAAAoAAUAAAADAAgAAAAhAAcAAAAFAAcAAAAhAAgAAAADAAcAAAAhAAkAAAADAAcAAAAhAAoAAAADAAcAAAAiAAcAAAAFAAcAAAAiAAgAAAADAAcAAAAiAAkAAAADAAcAAAAiAAoAAAADAAcAAAAjAAcAAAAFAAcAAAAjAAgAAAADAAcAAAAjAAkAAAADAAcAAAAjAAoAAAADAAcAAADm/9//AAADAAIAAAAhAAsAAAADAAcAAAA6AAUAAAAFAAcAAAA7AAUAAAAFAAcAAAA8AAUAAAAFAAcAAAA9AAUAAAAFAAcAAAA+AAUAAAAFAAcAAAA/AAUAAAAFAAcAAABAAAUAAAAFAAcAAABBAAUAAAAFAAcAAABCAAUAAAAFAAcAAABDAAUAAAAFAAcAAABEAAUAAAAFAAcAAABFAAUAAAAFAAcAAABGAAUAAAAFAAcAAABHAAUAAAAFAAcAAABIAAUAAAAFAAcAAABJAAUAAAAFAAcAAAA0AAEAAAAFAAcAAAA1AAEAAAAFAAcAAAA2AAEAAAAFAAcAAAA3AAEAAAAFAAcAAAA4AAEAAAAFAAcAAAA5AAEAAAAFAAcAAAA6AAEAAAAFAAcAAAA7AAMAAAAFAAcAAAA8AAMAAAAFAAcAAAA9AAMAAAAFAAcAAAA+AAMAAAAFAAcAAAApAAQAAAAFAAcAAAAqAAQAAAAFAAcAAAArAAQAAAAFAAcAAAAsAAQAAAAFAAcAAAAtAAQAAAAFAAcAAAAuAAQAAAAFAAcAAAAvAAQAAAAFAAcAAAAwAAQAAAAFAAcAAAAxAAQAAAAFAAcAAAAyAAQAAAAFAAcAAAAzAAQAAAAFAAcAAAAoAAQAAAABAAgAAAAdAAcAAAAFAAcAAAAeAAcAAAAFAAcAAAAfAAcAAAAFAAcAAAAgAAcAAAAFAAcAAAAdAAgAAAADAAcAAAAdAAkAAAADAAcAAAAdAAoAAAADAAcAAAAdAAsAAAADAAcAAAAeAAgAAAADAAcAAAAeAAkAAAADAAcAAAAeAAoAAAADAAcAAAAeAAsAAAADAAcAAAAfAAgAAAADAAcAAAAfAAkAAAADAAcAAAAfAAoAAAADAAcAAAAfAAsAAAADAAcAAAAgAAgAAAADAAcAAAAgAAkAAAADAAcAAAAgAAoAAAADAAcAAAAgAAsAAAADAAcAAAAcAAcAAAABAAgAAAAcAAgAAAADAAgAAAAcAAkAAAADAAgAAAAcAAoAAAADAAgAAAAcAAsAAAADAAgAAAA3AAUAAAAFAAcAAAA2AAUAAAABAAgAAAA=")
+tile_map_data = PackedByteArray("AAAiAAsAAAADAAcAAAAjAAsAAAADAAcAAAAkAAsAAAADAAcAAAAlAAsAAAADAAcAAAAlAAcAAAAFAAcAAAAlAAgAAAADAAcAAAAlAAkAAAADAAcAAAAlAAoAAAADAAcAAAAkAAcAAAAFAAcAAAAkAAgAAAADAAcAAAAkAAkAAAADAAcAAAAkAAoAAAADAAcAAAAmAAcAAAAFAAcAAAAmAAgAAAADAAcAAAAmAAkAAAADAAcAAAAmAAoAAAADAAcAAAAmAAsAAAADAAcAAAAnAAcAAAAFAAcAAAAnAAgAAAADAAcAAAAnAAkAAAADAAcAAAAnAAoAAAADAAcAAAAnAAsAAAADAAcAAAAoAAYAAAADAAgAAAAoAAcAAAADAAcAAAAoAAgAAAADAAcAAAAoAAkAAAADAAcAAAAoAAoAAAADAAcAAAAoAAsAAAADAAcAAAAoAAUAAAADAAgAAAAhAAcAAAAFAAcAAAAhAAgAAAADAAcAAAAhAAkAAAADAAcAAAAhAAoAAAADAAcAAAAiAAcAAAAFAAcAAAAiAAgAAAADAAcAAAAiAAkAAAADAAcAAAAiAAoAAAADAAcAAAAjAAcAAAAFAAcAAAAjAAgAAAADAAcAAAAjAAkAAAADAAcAAAAjAAoAAAADAAcAAADm/9//AAADAAIAAAAhAAsAAAADAAcAAAA6AAUAAAAFAAcAAAA7AAUAAAAFAAcAAAA8AAUAAAAFAAcAAAA9AAUAAAAFAAcAAAA+AAUAAAAFAAcAAAA/AAUAAAAFAAcAAABAAAUAAAAFAAcAAABBAAUAAAAFAAcAAABCAAUAAAAFAAcAAABDAAUAAAAFAAcAAABEAAUAAAAFAAcAAABFAAUAAAAFAAcAAABGAAUAAAAFAAcAAABHAAUAAAAFAAcAAABIAAUAAAAFAAcAAABJAAUAAAAFAAcAAAA0AAEAAAAFAAcAAAA1AAEAAAAFAAcAAAA2AAEAAAAFAAcAAAA3AAEAAAAFAAcAAAA4AAEAAAAFAAcAAAA5AAEAAAAFAAcAAAA6AAEAAAAFAAcAAAA7AAMAAAAFAAcAAAA8AAMAAAAFAAcAAAA9AAMAAAAFAAcAAAA+AAMAAAAFAAcAAAApAAQAAAAFAAcAAAAqAAQAAAAFAAcAAAArAAQAAAAFAAcAAAAsAAQAAAAFAAcAAAAtAAQAAAAFAAcAAAAuAAQAAAAFAAcAAAAvAAQAAAAFAAcAAAAwAAQAAAAFAAcAAAAxAAQAAAAFAAcAAAAyAAQAAAAFAAcAAAAzAAQAAAAFAAcAAAAoAAQAAAABAAgAAAAdAAcAAAAFAAcAAAAeAAcAAAAFAAcAAAAfAAcAAAAFAAcAAAAgAAcAAAAFAAcAAAAdAAgAAAADAAcAAAAdAAkAAAADAAcAAAAdAAoAAAADAAcAAAAdAAsAAAADAAcAAAAeAAgAAAADAAcAAAAeAAkAAAADAAcAAAAeAAoAAAADAAcAAAAeAAsAAAADAAcAAAAfAAgAAAADAAcAAAAfAAkAAAADAAcAAAAfAAoAAAADAAcAAAAfAAsAAAADAAcAAAAgAAgAAAADAAcAAAAgAAkAAAADAAcAAAAgAAoAAAADAAcAAAAgAAsAAAADAAcAAAAcAAcAAAABAAgAAAAcAAgAAAADAAgAAAAcAAkAAAADAAgAAAAcAAoAAAADAAgAAAAcAAsAAAADAAgAAAA4AAUAAAAFAAcAAAA5AAUAAAAFAAcAAAA=")
 tile_set = SubResource("TileSet_rp4cy")
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="1"]
@@ -151,21 +151,26 @@ use_parent_material = true
 position = Vector2(0, 10)
 tile_set = SubResource("TileSet_syavs")
 
-[node name="platforms" type="Node2D" parent="." index="5"]
-
-[node name="traps" type="Node2D" parent="platforms" index="0"]
-
-[node name="falling_platform" parent="platforms/traps" index="0" instance=ExtResource("3_5gr4d")]
-position = Vector2(7532, 151)
-
-[node name="invisible_box" parent="." index="6" instance=ExtResource("4_0m3ev")]
+[node name="invisible_box" parent="." index="5" instance=ExtResource("4_0m3ev")]
 position = Vector2(8372, -238)
 
-[node name="walker" parent="." index="7" instance=ExtResource("5_r51gs")]
+[node name="walker" parent="." index="6" instance=ExtResource("5_r51gs")]
 position = Vector2(5655, -106)
 is_friendly = true
 
-[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="8"]
+[node name="walker2" parent="." index="7" instance=ExtResource("5_r51gs")]
+position = Vector2(5967, -106)
+is_friendly = true
+
+[node name="walker3" parent="." index="8" instance=ExtResource("5_r51gs")]
+position = Vector2(6458, -106)
+is_friendly = true
+
+[node name="walker4" parent="." index="9" instance=ExtResource("5_r51gs")]
+position = Vector2(6642, -106)
+is_friendly = true
+
+[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="10"]
 position = Vector2(6847, 96)
 scale = Vector2(1, 1)
 collision_layer = 16
@@ -175,7 +180,7 @@ collision_mask = 0
 position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_au0k1")
 
-[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="9"]
+[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="11"]
 position = Vector2(5449, 87)
 scale = Vector2(1, 1)
 collision_layer = 16
@@ -185,7 +190,7 @@ collision_mask = 0
 position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_au0k1")
 
-[node name="ascend" type="Area2D" parent="." index="10"]
+[node name="ascend" type="Area2D" parent="." index="12"]
 collision_mask = 2
 script = ExtResource("6_55bqg")
 
@@ -201,7 +206,7 @@ offset_bottom = 4.0
 color = Color(0.0313726, 0.0313726, 0.0313726, 0.431373)
 metadata/_edit_lock_ = true
 
-[node name="credits" type="Node2D" parent="." index="11"]
+[node name="credits" type="Node2D" parent="." index="13"]
 
 [node name="Label" type="Label" parent="credits" index="0"]
 offset_left = 2660.0
@@ -288,8 +293,13 @@ text = "Our next project will be BIG.
 Spoiler alert: I love vampires and zombies"
 autowrap_mode = 2
 
-[node name="finish2" parent="." index="12" instance=ExtResource("8_knafx")]
+[node name="finish2" parent="." index="14" instance=ExtResource("8_knafx")]
 position = Vector2(3400, -3366)
 next_level = ExtResource("9_1ag0o")
+
+[node name="heart" parent="." index="15" instance=ExtResource("2_oijpp")]
+position = Vector2(9185, 35)
+collision_layer = 1
+collision_mask = 2
 
 [editable path="Player"]
