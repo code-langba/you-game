@@ -440,7 +440,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
-collision_mask = 5
+collision_mask = 9
 script = ExtResource("1_w05b1")
 default_gravity = 6000
 fall_gravity = 6500
@@ -464,8 +464,8 @@ limit_left = 0
 limit_bottom = 1080
 limit_smoothed = true
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SceneResetTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SceneResetTimer" to="." method="_on_timer_timeout"]

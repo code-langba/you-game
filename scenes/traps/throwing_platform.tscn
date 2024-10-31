@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://mvuwvptwis3e"]
+
+[ext_resource type="Script" path="res://scripts/traps/throwing_platform.gd" id="1_2liog"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4fs3"]
+size = Vector2(192, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhg1y"]
+size = Vector2(192, 24)
+
+[sub_resource type="Animation" id="Animation_ihf3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_isneo"]
+resource_name = "throw"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(0.189465, 2, 2),
+"update": 0,
+"values": [0.0, 0.436332, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"add_impulse"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4d7e"]
+_data = {
+"RESET": SubResource("Animation_ihf3a"),
+"throw": SubResource("Animation_isneo")
+}
+
+[node name="ThrowingPlatform" type="AnimatableBody2D"]
+collision_mask = 6
+script = ExtResource("1_2liog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-96, -20)
+shape = SubResource("RectangleShape2D_x4fs3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-96, -36)
+shape = SubResource("RectangleShape2D_yhg1y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -192.0
+offset_top = -40.0
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t4d7e")
+}

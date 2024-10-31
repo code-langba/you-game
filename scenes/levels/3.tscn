@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=15 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
-[ext_resource type="PackedScene" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
+[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="5_itdtf"]
+[ext_resource type="PackedScene" uid="uid://d3w8opvylbqii" path="res://scenes/enemies/grim.tscn" id="5_jleem"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oo4c3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ubif"]
 texture = ExtResource("2_bchic")
@@ -112,7 +115,7 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_52plv"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 6
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_3ue7h")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbt25"]
@@ -133,7 +136,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooih2"]
+size = Vector2(48, 160)
+
 [node name="level" instance=ExtResource("1_rq4wt")]
+
+[node name="killzone" parent="." index="1"]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" parent="killzone" index="0"]
+position = Vector2(0, 1280)
+shape = SubResource("WorldBoundaryShape2D_oo4c3")
 
 [node name="MarginContainer" parent="CanvasLayer" index="0"]
 offset_top = 5.0
@@ -157,8 +171,9 @@ tile_set = SubResource("TileSet_52plv")
 [node name="BetterMovingPlatform" parent="platforms" index="1" instance=ExtResource("4_mts20")]
 position = Vector2(1531, 831)
 
-[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0"]
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions")]
 scale = Vector2(1.8, 1.8)
+positions = [NodePath("../Position"), NodePath("../Position2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="0"]
 shape = SubResource("RectangleShape2D_vbt25")
@@ -178,8 +193,9 @@ script = ExtResource("5_itdtf")
 [node name="BetterMovingPlatform2" parent="platforms" index="2" instance=ExtResource("4_mts20")]
 position = Vector2(2384, 856)
 
-[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0"]
+[node name="BetterMVBase" parent="platforms/BetterMovingPlatform2" index="0" node_paths=PackedStringArray("positions")]
 scale = Vector2(1.8, 1.8)
+positions = [NodePath("../Position"), NodePath("../Position2")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="0"]
 shape = SubResource("RectangleShape2D_vbt25")
@@ -195,6 +211,18 @@ script = ExtResource("5_itdtf")
 [node name="Position2" type="Node2D" parent="platforms/BetterMovingPlatform2" index="2"]
 position = Vector2(-16, -729)
 script = ExtResource("5_itdtf")
+
+[node name="Grim" parent="." index="6" instance=ExtResource("5_jleem")]
+position = Vector2(560, 776)
+
+[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="7"]
+process_mode = 4
+position = Vector2(1368, 704)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable" index="0"]
+shape = SubResource("RectangleShape2D_ooih2")
 
 [editable path="platforms/BetterMovingPlatform"]
 [editable path="platforms/BetterMovingPlatform2"]

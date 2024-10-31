@@ -6,5 +6,3 @@ func _ready() -> void:
 
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/1.tscn")
-
-

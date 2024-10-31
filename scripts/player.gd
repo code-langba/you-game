@@ -1,5 +1,4 @@
 class_name Player
-
 extends CharacterBody2D
 
 
@@ -10,12 +9,13 @@ extends CharacterBody2D
 @export var jump_velocity := 800.0
 @export var game_over_scene: PackedScene
 
-@onready var player:AnimatedSprite2D = $Knight
-@onready var killzone: Area2D = get_parent().get_node("killzone")
+@onready var player: AnimatedSprite2D = $Knight
+#@onready var killzone: Area2D = get_parent().get_node("killzone")
 @onready var gravity = default_gravity
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $SceneResetTimer
 
 var is_dead := false
+var force: Vector2
 
 func _ready() -> void:
 	is_dead = false
@@ -24,7 +24,8 @@ func _ready() -> void:
 	if PlayerManager.current_checkpoint != Vector2.ZERO:
 		position = PlayerManager.current_checkpoint
 
-	PlayerManager.player_died.connect(on_dead)
+	EventBus.player_died.connect(on_dead)
+	EventBus.add_impulse.connect(add_impulse)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -34,11 +35,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y += fall_gravity * delta
 
-
 	var direction = 0
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 
 	if not is_dead:
 		direction = Input.get_axis("move_left", "move_right")
@@ -48,6 +45,10 @@ func _physics_process(delta: float) -> void:
 	if not is_dead:
 		handle_animation(direction)
 		handle_jump()
+	if not force == Vector2.ZERO:
+		velocity += force
+	if is_on_wall() or is_on_floor():
+		force = Vector2.ZERO
 	move_and_slide()
 
 
@@ -55,11 +56,11 @@ func handle_jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_dead:
 		velocity.y = -jump_velocity
 
-func handle_flip(direction:float):
+func handle_flip(direction: float):
 	if direction:
 		player.flip_h = direction < 0
 		
-func handle_animation(direction:float):
+func handle_animation(direction: float):
 	if direction and is_on_floor():
 		player.play("run")
 	elif not direction and is_on_floor():
@@ -95,4 +96,5 @@ func reload():
 func load_game_over() -> void:
 	get_tree().change_scene_to_packed(game_over_scene)
 
-
+func add_impulse(force_vector: Vector2) -> void:
+	force = force_vector
