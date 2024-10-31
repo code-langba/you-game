@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://chhr3huoi4djx"]
+
+[ext_resource type="Script" path="res://scripts/world/hippo.gd" id="1_7ndei"]
+[ext_resource type="Texture2D" uid="uid://c3c4hi162dpbg" path="res://asset/sprites/fx.png" id="1_rxma1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1i6"]
+size = Vector2(262, 120)
+
+[node name="hippo" type="Node2D"]
+script = ExtResource("1_7ndei")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(2.2, 1.475)
+texture = ExtResource("1_rxma1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_1u1i6")

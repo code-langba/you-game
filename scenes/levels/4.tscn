@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=4 uid="uid://dmwhkhcbfhwfi"]
+[gd_scene load_steps=16 format=4 uid="uid://dmwhkhcbfhwfi"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_5gr4d"]
+[ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="4_0m3ev"]
+[ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="5_r51gs"]
+[ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
+[ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="7_cngk8"]
+[ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="8_knafx"]
+[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/main.tscn" id="9_1ag0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2n8f"]
 texture = ExtResource("2_27drq")
@@ -115,10 +121,21 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_uh47u")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au0k1"]
+size = Vector2(102, 984)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcci6"]
+size = Vector2(541, 94)
+
 [node name="level" instance=ExtResource("1_edo13")]
+position = Vector2(6, 435)
 
 [node name="Player" parent="." index="0"]
-position = Vector2(9505, -456)
+position = Vector2(9601, -175)
+
+[node name="Camera2D" parent="Player" index="2"]
+offset = Vector2(0, -100)
+limit_right = 10000
 
 [node name="Tilemap" parent="." index="4"]
 position = Vector2(0, -616)
@@ -126,7 +143,7 @@ position = Vector2(0, -616)
 [node name="blocks" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true
 position = Vector2(236, 64)
-tile_map_data = PackedByteArray("AAAiAAsAAAADAAcAAAAjAAsAAAADAAcAAAAkAAsAAAADAAcAAAAlAAsAAAADAAcAAAAlAAYAAAADAAcAAAAlAAcAAAADAAcAAAAlAAgAAAADAAcAAAAlAAkAAAADAAcAAAAlAAoAAAADAAcAAAAkAAYAAAADAAgAAAAkAAcAAAADAAcAAAAkAAgAAAADAAcAAAAkAAkAAAADAAcAAAAkAAoAAAADAAcAAAAmAAYAAAADAAcAAAAmAAcAAAADAAcAAAAmAAgAAAADAAcAAAAmAAkAAAADAAcAAAAmAAoAAAADAAcAAAAmAAsAAAADAAcAAAAnAAYAAAADAAcAAAAnAAcAAAADAAcAAAAnAAgAAAADAAcAAAAnAAkAAAADAAcAAAAnAAoAAAADAAcAAAAnAAsAAAADAAcAAAAoAAYAAAADAAcAAAAoAAcAAAADAAcAAAAoAAgAAAADAAcAAAAoAAkAAAADAAcAAAAoAAoAAAADAAcAAAAoAAsAAAADAAcAAAAoAAUAAAADAAcAAAAkAAUAAAABAAgAAAAlAAUAAAAFAAcAAAAmAAUAAAAFAAcAAAAnAAUAAAAFAAcAAAAhAAcAAAAFAAcAAAAhAAgAAAADAAcAAAAhAAkAAAADAAcAAAAhAAoAAAADAAcAAAAiAAcAAAAFAAcAAAAiAAgAAAADAAcAAAAiAAkAAAADAAcAAAAiAAoAAAADAAcAAAAjAAcAAAAFAAcAAAAjAAgAAAADAAcAAAAjAAkAAAADAAcAAAAjAAoAAAADAAcAAADm/9//AAADAAIAAAAhAAsAAAADAAcAAAA6AAUAAAAFAAcAAAA7AAUAAAAFAAcAAAA8AAUAAAAFAAcAAAA9AAUAAAAFAAcAAAA+AAUAAAAFAAcAAAA/AAUAAAAFAAcAAABAAAUAAAAFAAcAAABBAAUAAAAFAAcAAABCAAUAAAAFAAcAAABDAAUAAAAFAAcAAABEAAUAAAAFAAcAAABFAAUAAAAFAAcAAABGAAUAAAAFAAcAAABHAAUAAAAFAAcAAABIAAUAAAAFAAcAAABJAAUAAAAFAAcAAAA0AAEAAAAFAAcAAAA1AAEAAAAFAAcAAAA2AAEAAAAFAAcAAAA3AAEAAAAFAAcAAAA4AAEAAAAFAAcAAAA5AAEAAAAFAAcAAAA6AAEAAAAFAAcAAAA7AAMAAAAFAAcAAAA8AAMAAAAFAAcAAAA9AAMAAAAFAAcAAAA+AAMAAAAFAAcAAAApAAQAAAAFAAcAAAAqAAQAAAAFAAcAAAArAAQAAAAFAAcAAAAsAAQAAAAFAAcAAAAtAAQAAAAFAAcAAAAuAAQAAAAFAAcAAAAvAAQAAAAFAAcAAAAwAAQAAAAFAAcAAAAxAAQAAAAFAAcAAAAyAAQAAAAFAAcAAAAzAAQAAAAFAAcAAAAoAAQAAAAFAAcAAAAdAAcAAAAFAAcAAAAeAAcAAAAFAAcAAAAfAAcAAAAFAAcAAAAgAAcAAAAFAAcAAAAdAAgAAAADAAcAAAAdAAkAAAADAAcAAAAdAAoAAAADAAcAAAAdAAsAAAADAAcAAAAeAAgAAAADAAcAAAAeAAkAAAADAAcAAAAeAAoAAAADAAcAAAAeAAsAAAADAAcAAAAfAAgAAAADAAcAAAAfAAkAAAADAAcAAAAfAAoAAAADAAcAAAAfAAsAAAADAAcAAAAgAAgAAAADAAcAAAAgAAkAAAADAAcAAAAgAAoAAAADAAcAAAAgAAsAAAADAAcAAAAcAAcAAAABAAgAAAAcAAgAAAADAAgAAAAcAAkAAAADAAgAAAAcAAoAAAADAAgAAAAcAAsAAAADAAgAAAA=")
+tile_map_data = PackedByteArray("AAAiAAsAAAADAAcAAAAjAAsAAAADAAcAAAAkAAsAAAADAAcAAAAlAAsAAAADAAcAAAAlAAcAAAAFAAcAAAAlAAgAAAADAAcAAAAlAAkAAAADAAcAAAAlAAoAAAADAAcAAAAkAAcAAAAFAAcAAAAkAAgAAAADAAcAAAAkAAkAAAADAAcAAAAkAAoAAAADAAcAAAAmAAcAAAAFAAcAAAAmAAgAAAADAAcAAAAmAAkAAAADAAcAAAAmAAoAAAADAAcAAAAmAAsAAAADAAcAAAAnAAcAAAAFAAcAAAAnAAgAAAADAAcAAAAnAAkAAAADAAcAAAAnAAoAAAADAAcAAAAnAAsAAAADAAcAAAAoAAYAAAADAAgAAAAoAAcAAAADAAcAAAAoAAgAAAADAAcAAAAoAAkAAAADAAcAAAAoAAoAAAADAAcAAAAoAAsAAAADAAcAAAAoAAUAAAADAAgAAAAhAAcAAAAFAAcAAAAhAAgAAAADAAcAAAAhAAkAAAADAAcAAAAhAAoAAAADAAcAAAAiAAcAAAAFAAcAAAAiAAgAAAADAAcAAAAiAAkAAAADAAcAAAAiAAoAAAADAAcAAAAjAAcAAAAFAAcAAAAjAAgAAAADAAcAAAAjAAkAAAADAAcAAAAjAAoAAAADAAcAAADm/9//AAADAAIAAAAhAAsAAAADAAcAAAA6AAUAAAAFAAcAAAA7AAUAAAAFAAcAAAA8AAUAAAAFAAcAAAA9AAUAAAAFAAcAAAA+AAUAAAAFAAcAAAA/AAUAAAAFAAcAAABAAAUAAAAFAAcAAABBAAUAAAAFAAcAAABCAAUAAAAFAAcAAABDAAUAAAAFAAcAAABEAAUAAAAFAAcAAABFAAUAAAAFAAcAAABGAAUAAAAFAAcAAABHAAUAAAAFAAcAAABIAAUAAAAFAAcAAABJAAUAAAAFAAcAAAA0AAEAAAAFAAcAAAA1AAEAAAAFAAcAAAA2AAEAAAAFAAcAAAA3AAEAAAAFAAcAAAA4AAEAAAAFAAcAAAA5AAEAAAAFAAcAAAA6AAEAAAAFAAcAAAA7AAMAAAAFAAcAAAA8AAMAAAAFAAcAAAA9AAMAAAAFAAcAAAA+AAMAAAAFAAcAAAApAAQAAAAFAAcAAAAqAAQAAAAFAAcAAAArAAQAAAAFAAcAAAAsAAQAAAAFAAcAAAAtAAQAAAAFAAcAAAAuAAQAAAAFAAcAAAAvAAQAAAAFAAcAAAAwAAQAAAAFAAcAAAAxAAQAAAAFAAcAAAAyAAQAAAAFAAcAAAAzAAQAAAAFAAcAAAAoAAQAAAABAAgAAAAdAAcAAAAFAAcAAAAeAAcAAAAFAAcAAAAfAAcAAAAFAAcAAAAgAAcAAAAFAAcAAAAdAAgAAAADAAcAAAAdAAkAAAADAAcAAAAdAAoAAAADAAcAAAAdAAsAAAADAAcAAAAeAAgAAAADAAcAAAAeAAkAAAADAAcAAAAeAAoAAAADAAcAAAAeAAsAAAADAAcAAAAfAAgAAAADAAcAAAAfAAkAAAADAAcAAAAfAAoAAAADAAcAAAAfAAsAAAADAAcAAAAgAAgAAAADAAcAAAAgAAkAAAADAAcAAAAgAAoAAAADAAcAAAAgAAsAAAADAAcAAAAcAAcAAAABAAgAAAAcAAgAAAADAAgAAAAcAAkAAAADAAgAAAAcAAoAAAADAAgAAAAcAAsAAAADAAgAAAA3AAUAAAAFAAcAAAA2AAUAAAABAAgAAAA=")
 tile_set = SubResource("TileSet_rp4cy")
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="1"]
@@ -140,3 +157,139 @@ tile_set = SubResource("TileSet_syavs")
 
 [node name="falling_platform" parent="platforms/traps" index="0" instance=ExtResource("3_5gr4d")]
 position = Vector2(7532, 151)
+
+[node name="invisible_box" parent="." index="6" instance=ExtResource("4_0m3ev")]
+position = Vector2(8372, -238)
+
+[node name="walker" parent="." index="7" instance=ExtResource("5_r51gs")]
+position = Vector2(5655, -106)
+is_friendly = true
+
+[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="8"]
+position = Vector2(6847, 96)
+scale = Vector2(1, 1)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_au0k1")
+
+[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="9"]
+position = Vector2(5449, 87)
+scale = Vector2(1, 1)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable2" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_au0k1")
+
+[node name="ascend" type="Area2D" parent="." index="10"]
+collision_mask = 2
+script = ExtResource("6_55bqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ascend" index="0"]
+position = Vector2(3553, 469)
+shape = SubResource("RectangleShape2D_mcci6")
+
+[node name="ColorRect" type="ColorRect" parent="ascend" index="1"]
+offset_left = 2495.0
+offset_top = -2102.0
+offset_right = 4287.0
+offset_bottom = 4.0
+color = Color(0.0313726, 0.0313726, 0.0313726, 0.431373)
+metadata/_edit_lock_ = true
+
+[node name="credits" type="Node2D" parent="." index="11"]
+
+[node name="Label" type="Label" parent="credits" index="0"]
+offset_left = 2660.0
+offset_top = -827.0
+offset_right = 4735.0
+offset_bottom = -690.0
+theme_override_colors/font_color = Color(0.882353, 0.709804, 0.45098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cngk8")
+theme_override_font_sizes/font_size = 70
+text = "THANK YOU FOR PLAYING!!"
+
+[node name="Label5" type="Label" parent="credits" index="1"]
+offset_left = 2645.0
+offset_top = -2247.0
+offset_right = 4720.0
+offset_bottom = -2110.0
+theme_override_colors/font_color = Color(0.882353, 0.709804, 0.45098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cngk8")
+theme_override_font_sizes/font_size = 70
+text = "CREDITS"
+
+[node name="Label8" type="Label" parent="credits" index="2"]
+offset_left = 2946.0
+offset_top = -3091.0
+offset_right = 5021.0
+offset_bottom = -2954.0
+theme_override_colors/font_color = Color(0.882353, 0.709804, 0.45098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cngk8")
+theme_override_font_sizes/font_size = 70
+text = "TO BE CONTINUED..."
+
+[node name="Label2" type="Label" parent="credits" index="3"]
+offset_left = 3689.0
+offset_top = -1251.0
+offset_right = 4200.27
+offset_bottom = -759.0
+theme_override_font_sizes/font_size = 30
+text = "We had a lot of fun making this game."
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="credits" index="4"]
+offset_left = 2650.0
+offset_top = -2592.0
+offset_right = 3161.27
+offset_bottom = -2100.0
+theme_override_font_sizes/font_size = 30
+text = "Alixandre
+Shawn
+Aiden
+
+Developed by:"
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="credits" index="5"]
+offset_left = 3967.0
+offset_top = -3218.0
+offset_right = 4478.27
+offset_bottom = -2726.0
+theme_override_font_sizes/font_size = 30
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="credits" index="6"]
+offset_left = 2639.0
+offset_top = -1595.0
+offset_right = 3239.0
+offset_bottom = -1463.0
+theme_override_font_sizes/font_size = 30
+text = "This is our first step toward becoming gamedev lords :P "
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="credits" index="7"]
+offset_left = 3651.0
+offset_top = -2014.0
+offset_right = 4251.0
+offset_bottom = -1882.0
+theme_override_font_sizes/font_size = 30
+text = "Our next project will be BIG.
+Spoiler alert: I love vampires and zombies"
+autowrap_mode = 2
+
+[node name="finish2" parent="." index="12" instance=ExtResource("8_knafx")]
+position = Vector2(3400, -3366)
+next_level = ExtResource("9_1ag0o")
+
+[editable path="Player"]

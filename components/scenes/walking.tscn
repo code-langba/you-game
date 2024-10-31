@@ -7,3 +7,4 @@ script = ExtResource("1_008kb")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(72, 0)
+collision_mask = 17

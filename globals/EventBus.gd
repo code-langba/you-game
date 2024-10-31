@@ -8,3 +8,6 @@ signal player_died()
 
 @warning_ignore("unused_signal")
 signal add_impulse(force_vector: Vector2)
+
+@warning_ignore("unused_signal")
+signal ascend()

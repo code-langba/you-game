@@ -1,6 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
+[ext_resource type="PackedScene" uid="uid://bmk8onibxyk57" path="res://scenes/levels/3.tscn" id="2_kghkq"]
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="3_7lihg"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_h4p7e"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="3_i4blj"]
@@ -11,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="8_au5e5"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="9_e5750"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="9_eb1qh"]
-[ext_resource type="PackedScene" uid="uid://7rndgha02643" path="res://scenes/ui/game_over.tscn" id="10_mhovl"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="11_p3ad4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkqv2"]
@@ -35,11 +35,11 @@ animations = [{
 [node name="2" instance=ExtResource("1_vasr2")]
 
 [node name="Player" parent="." index="0"]
-position = Vector2(216, 416)
+position = Vector2(214, 381)
 
 [node name="finish" parent="." index="3"]
 position = Vector2(6184, 728)
-next_level = ExtResource("10_mhovl")
+next_level = ExtResource("2_kghkq")
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true

@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var gravity = default_gravity
 @onready var timer: Timer = $SceneResetTimer
 
+var is_ascend = false
 var is_dead := false
 var force: Vector2
 
@@ -26,9 +27,18 @@ func _ready() -> void:
 
 	EventBus.player_died.connect(on_dead)
 	EventBus.add_impulse.connect(add_impulse)
+	EventBus.ascend.connect(func(): is_ascend = true)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if is_ascend:
+		print('ascending')
+		velocity = Vector2.UP * delta * 9000
+		var tween = create_tween()
+		tween.tween_property(self, "position:x", 3400, 2)
+		player.stop()
+		move_and_slide()
+		return
 	if not is_on_floor():
 		if velocity.y < 0:
 			velocity.y += gravity * delta
