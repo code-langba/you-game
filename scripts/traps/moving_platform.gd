@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var is_fake := false
 @export var loop: bool = true
 @export var destroy_on_end: bool = false
-@export var delay_on_start: float
-@export var delay_on_end: float
+#@export var delay_on_start: float
+#@export var delay_on_end: float
 @export_range(0, 5, 0.1, "or_greater", "suffix:secs") var destroy_delay: float
 @export var SPEED := 300.0
 @export var positions: Array[Position]

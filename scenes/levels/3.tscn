@@ -215,13 +215,12 @@ script = ExtResource("5_itdtf")
 [node name="Grim" parent="." index="6" instance=ExtResource("5_jleem")]
 position = Vector2(560, 776)
 
-[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="7"]
-process_mode = 4
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="7"]
 position = Vector2(1368, 704)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("RectangleShape2D_ooih2")
 
 [editable path="platforms/BetterMovingPlatform"]

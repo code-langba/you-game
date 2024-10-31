@@ -17,7 +17,7 @@ func walk(body: CharacterBody2D, speed: float, _delta: float = 1) -> void:
 		body.velocity.x = direction * speed * _delta
 		if raycast and raycast.is_colliding():
 			body.scale.x *= -1
-			direction *= -1
+			direction *= -1 as DIRECTIONS
 	else:
 		body.velocity.x = DIRECTIONS.STILL
 

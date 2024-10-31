@@ -533,4 +533,4 @@ raycast = NodePath("../RayCast2D")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(0, -64)
 target_position = Vector2(64, 0)
-collision_mask = 16
+collision_mask = 17

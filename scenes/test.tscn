@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=4 uid="uid://d3vnimwitkvwk"]
+[gd_scene load_steps=25 format=4 uid="uid://d3vnimwitkvwk"]
 
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="1_qqwih"]
 [ext_resource type="PackedScene" uid="uid://dcsgncsfn3jqn" path="res://scenes/player.tscn" id="1_w6r0x"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="2_48807"]
 [ext_resource type="Texture2D" uid="uid://deixsarktp5fs" path="res://asset/sprites/slime_green.png" id="2_nap0l"]
 [ext_resource type="PackedScene" uid="uid://d3w8opvylbqii" path="res://scenes/enemies/grim.tscn" id="4_7ns8k"]
+[ext_resource type="PackedScene" uid="uid://cm826kvfjn2fc" path="res://scenes/world/mushroom.tscn" id="6_4ofdp"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="6_wrx6x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqnfg"]
@@ -182,8 +183,6 @@ position = Vector2(720, 408)
 
 [node name="BetterMVBase" parent="BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions", "animator")]
 destroy_on_end = true
-delay_on_start = 3.0
-delay_on_end = 2.0
 destroy_delay = 1.0
 positions = [NodePath("../Position"), NodePath("../Position2"), NodePath("../2"), NodePath("../3")]
 animator = NodePath("AnimatedSprite2D")
@@ -215,6 +214,9 @@ script = ExtResource("2_48807")
 
 [node name="Grim" parent="." instance=ExtResource("4_7ns8k")]
 position = Vector2(912, 902)
+
+[node name="Mushroom" parent="." instance=ExtResource("6_4ofdp")]
+position = Vector2(552, 872)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAcAAAADAAcAAAABAAcAAAAFAAcAAAACAAcAAAAFAAcAAAADAAcAAAAFAAcAAAAEAAcAAAAFAAcAAAAFAAcAAAAFAAcAAAAGAAcAAAAFAAcAAAAHAAcAAAAFAAcAAAAIAAcAAAAFAAcAAAAJAAcAAAAFAAcAAAAKAAcAAAAFAAcAAAALAAcAAAAFAAcAAAAMAAcAAAAFAAcAAAANAAcAAAAFAAcAAAAOAAcAAAADAAcAAAAOAAYAAAADAAgAAAAOAAUAAAADAAgAAAAOAAQAAAADAAgAAAAOAAMAAAADAAgAAAAOAAIAAAADAAgAAAAOAAEAAAADAAgAAAAOAAAAAAADAAgAAAAOAP//AAADAAgAAAAOAP7/AAADAAgAAAAAAAYAAAACAAgAAAAAAAUAAAACAAgAAAAAAAQAAAACAAgAAAAAAAMAAAACAAgAAAAAAAIAAAACAAgAAAAAAAEAAAACAAgAAAAAAAAAAAACAAgAAAAAAP//AAACAAgAAAAAAP7/AAACAAgAAAAAAAgAAAADAAcAAAABAAgAAAADAAcAAAACAAgAAAADAAcAAAADAAgAAAADAAcAAAAEAAgAAAADAAcAAAAFAAgAAAADAAcAAAAGAAgAAAADAAcAAAAHAAgAAAADAAcAAAAIAAgAAAADAAcAAAAJAAgAAAADAAcAAAAKAAgAAAADAAcAAAALAAgAAAADAAcAAAAMAAgAAAADAAcAAAANAAgAAAADAAcAAAAOAAgAAAADAAcAAAA=")

@@ -3,6 +3,9 @@
 [ext_resource type="Script" path="res://scripts/traps/moving_platform.gd" id="1_rsos4"]
 
 [node name="BetterMVBase" type="CharacterBody2D"]
+editor_description = "This is the actual platform with logic. Add a CollisionShape2D and a sprite to it. 
+
+Positions array cannot be empty."
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_rsos4")

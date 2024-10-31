@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cncxab0qkyebp"]
+
+[ext_resource type="Script" path="res://components/scripts/bounce.gd" id="1_2mwvv"]
+
+[node name="BounceComponent" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_2mwvv")
