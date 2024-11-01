@@ -230,7 +230,7 @@ script = ExtResource("2_5mopt")
 bgm = ExtResource("3_ai0cw")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(6155, -1514)
+position = Vector2(90, 711)
 fall_gravity = 5000
 
 [node name="killzone" parent="." index="1"]
