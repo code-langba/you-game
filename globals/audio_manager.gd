@@ -7,9 +7,12 @@ var is_playing = false
 func _ready() -> void:
 	pass # Replace with function body.
 
-func play(song:Variant):
+func play(song:AudioStream):
 	audio.stream = song
 	audio.play()
 	is_playing = true
 	pass
+
+func stop():
+	audio.stop()
 

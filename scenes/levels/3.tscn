@@ -226,7 +226,7 @@ script = ExtResource("2_5mopt")
 bgm = ExtResource("3_ai0cw")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(16228, -977)
+position = Vector2(104, 492)
 fall_gravity = 5000
 
 [node name="killzone" parent="." index="1"]
@@ -397,7 +397,7 @@ scale = Vector2(5, 1)
 bounce_strength = 2600.0
 
 [node name="splike" parent="." index="18" instance=ExtResource("10_11ghb")]
-position = Vector2(8053, -1142)
+position = Vector2(8053, -1109)
 
 [node name="walker" parent="." index="19" instance=ExtResource("12_1a0ao")]
 position = Vector2(12919, -1247)

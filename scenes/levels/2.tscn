@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://4psc66kvofb8"]
+[gd_scene load_steps=20 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_jmpdd"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="9_e5750"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="9_eb1qh"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="11_p3ad4"]
+[ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="16_fa570"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkqv2"]
 size = Vector2(128, 32)
@@ -156,6 +157,10 @@ position = Vector2(4824, 848)
 
 [node name="live_grass2" parent="grass" index="1" instance=ExtResource("11_p3ad4")]
 position = Vector2(4912, 848)
+
+[node name="heart" parent="." index="12" instance=ExtResource("16_fa570")]
+position = Vector2(57, 844)
+health = -5
 
 [editable path="platforms/BetterMovingPlatform"]
 [editable path="platforms/BetterMovingPlatform2"]

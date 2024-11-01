@@ -6,6 +6,7 @@ extends Area2D
 func _ready() -> void:
 	body_entered.connect(func(_body): 
 		ball.constant_force = Vector2(-1000,0)
+		queue_free()
 		await get_tree().create_timer(10).timeout
 		ball.queue_free()
 		)

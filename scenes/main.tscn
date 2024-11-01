@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7o63ahu5ny3l"]
+[gd_scene load_steps=3 format=3 uid="uid://b7o63ahu5ny3l"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tjsfp"]
+[ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="2_ff22k"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tjsfp")
+bgm = ExtResource("2_ff22k")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
