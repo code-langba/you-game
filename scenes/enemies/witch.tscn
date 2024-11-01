@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbrv4g35mhn1c"]
+
+[ext_resource type="Script" path="res://scripts/enemies/witch.gd" id="1_r18j7"]
+[ext_resource type="PackedScene" uid="uid://7m34gm3hg474" path="res://components/scenes/movement.tscn" id="2_beml7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w48nh"]
+radius = 32.0
+height = 128.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nfl0"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjbk0"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qw28"]
+size = Vector2(970, 320)
+
+[node name="Witch" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 17
+script = ExtResource("1_r18j7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_w48nh")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = -40.0
+offset_top = -48.0
+offset_right = -24.0
+offset_bottom = -32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nfl0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjbk0")
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = -24.0
+offset_top = -48.0
+offset_right = -8.0
+offset_bottom = -32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nfl0")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-475, -96)
+shape = SubResource("RectangleShape2D_0qw28")
+
+[node name="AttackDelayTimer" type="Timer" parent="."]
+
+[node name="ThrowPos" type="Marker2D" parent="."]
+position = Vector2(-24, -40)
+
+[node name="Movement" parent="." instance=ExtResource("2_beml7")]

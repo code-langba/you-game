@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=36 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_5mopt"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://dmwhkhcbfhwfi" path="res://scenes/levels/4.tscn" id="15_o36qm"]
 [ext_resource type="PackedScene" uid="uid://chhr3huoi4djx" path="res://scenes/world/hippo.tscn" id="16_hivsn"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="17_rnm5u"]
+[ext_resource type="PackedScene" uid="uid://bbrv4g35mhn1c" path="res://scenes/enemies/witch.tscn" id="20_jxm45"]
+[ext_resource type="PackedScene" uid="uid://b5uqojt21b7g4" path="res://scenes/particles/rain_particles.tscn" id="21_0rca8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oo4c3"]
 
@@ -152,9 +154,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooih2"]
-size = Vector2(102, 984)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uasd"]
 size = Vector2(279, 316)
 
@@ -223,12 +222,15 @@ _data = {
 "move": SubResource("Animation_vbbf3")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ooih2"]
+size = Vector2(102, 984)
+
 [node name="level" instance=ExtResource("1_rq4wt")]
 script = ExtResource("2_5mopt")
 bgm = ExtResource("3_ai0cw")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(104, 492)
+position = Vector2(90, 711)
 fall_gravity = 5000
 
 [node name="killzone" parent="." index="1"]
@@ -238,10 +240,6 @@ collision_mask = 6
 [node name="CollisionShape2D" parent="killzone" index="0"]
 position = Vector2(0, 1280)
 shape = SubResource("WorldBoundaryShape2D_oo4c3")
-
-[node name="MarginContainer" parent="CanvasLayer" index="0"]
-offset_top = 5.0
-offset_bottom = 5.0
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true
@@ -307,77 +305,23 @@ script = ExtResource("5_itdtf")
 [node name="Grim" parent="." index="6" instance=ExtResource("5_jleem")]
 position = Vector2(8281, -1152)
 
-[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="7"]
-position = Vector2(1368, 704)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable" index="0"]
-position = Vector2(-27, -415)
-shape = SubResource("RectangleShape2D_ooih2")
-
-[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="8"]
-position = Vector2(1368, 704)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable2" index="0"]
-position = Vector2(8295, -2236)
-shape = SubResource("RectangleShape2D_ooih2")
-
-[node name="Change Process > Mode to Inherit to enable3" type="StaticBody2D" parent="." index="9"]
-position = Vector2(8196, -1100)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable3" index="0"]
-position = Vector2(-27, -415)
-shape = SubResource("RectangleShape2D_ooih2")
-
-[node name="Change Process > Mode to Inherit to enable4" type="StaticBody2D" parent="." index="10"]
-position = Vector2(13307, -1064)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable4" index="0"]
-position = Vector2(-27, -415)
-shape = SubResource("RectangleShape2D_ooih2")
-
-[node name="Change Process > Mode to Inherit to enable5" type="StaticBody2D" parent="." index="11"]
-position = Vector2(3936, 225)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable5" index="0"]
-position = Vector2(-27, -415)
-shape = SubResource("RectangleShape2D_ooih2")
-
-[node name="Change Process > Mode to Inherit to enable6" type="StaticBody2D" parent="." index="12"]
-position = Vector2(2781, 225)
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Change Process > Mode to Inherit to enable6" index="0"]
-position = Vector2(-27, -415)
-shape = SubResource("RectangleShape2D_ooih2")
-
-[node name="rolling_ball" parent="." index="13" instance=ExtResource("6_dbdtd")]
+[node name="rolling_ball" parent="." index="7" instance=ExtResource("6_dbdtd")]
 position = Vector2(-1214, 409)
 constant_force = Vector2(1000, 0)
 
-[node name="rolling_ball2" parent="." index="14" instance=ExtResource("6_dbdtd")]
+[node name="rolling_ball2" parent="." index="8" instance=ExtResource("6_dbdtd")]
 unique_name_in_owner = true
 position = Vector2(18032, -1135)
 
-[node name="checkpoint" parent="." index="15" instance=ExtResource("7_vcymw")]
+[node name="checkpoint" parent="." index="9" instance=ExtResource("7_vcymw")]
 position = Vector2(6065, -1272)
 
-[node name="Node2D" type="Node2D" parent="." index="16"]
+[node name="Node2D" type="Node2D" parent="." index="10"]
 
 [node name="falling_spike" parent="Node2D" index="0" instance=ExtResource("8_ifwkw")]
 position = Vector2(2404, -811)
 
-[node name="bouncy" type="Node2D" parent="." index="17"]
+[node name="bouncy" type="Node2D" parent="." index="11"]
 
 [node name="Mushroom" parent="bouncy" index="0" instance=ExtResource("9_nrhoi")]
 position = Vector2(3915, 230)
@@ -398,23 +342,23 @@ position = Vector2(4451, -9)
 scale = Vector2(5, 1)
 bounce_strength = 2600.0
 
-[node name="splike" parent="." index="18" instance=ExtResource("10_11ghb")]
+[node name="splike" parent="." index="12" instance=ExtResource("10_11ghb")]
 position = Vector2(8053, -1109)
 
-[node name="walker" parent="." index="19" instance=ExtResource("12_1a0ao")]
+[node name="walker" parent="." index="13" instance=ExtResource("12_1a0ao")]
 position = Vector2(12919, -1247)
 
-[node name="walker2" parent="." index="20" instance=ExtResource("12_1a0ao")]
+[node name="walker2" parent="." index="14" instance=ExtResource("12_1a0ao")]
 position = Vector2(1220, 697)
 
-[node name="walker3" parent="." index="21" instance=ExtResource("12_1a0ao")]
+[node name="walker3" parent="." index="15" instance=ExtResource("12_1a0ao")]
 position = Vector2(3635, 178)
 is_friendly = true
 
-[node name="invisible_box" parent="." index="22" instance=ExtResource("11_hu3rx")]
+[node name="invisible_box" parent="." index="16" instance=ExtResource("11_hu3rx")]
 position = Vector2(14264, -832)
 
-[node name="Area2D" type="Area2D" parent="." index="23" node_paths=PackedStringArray("ball")]
+[node name="Area2D" type="Area2D" parent="." index="17" node_paths=PackedStringArray("ball")]
 position = Vector2(16878, -884)
 collision_mask = 2
 script = ExtResource("13_3cehg")
@@ -424,31 +368,97 @@ ball = NodePath("../rolling_ball2")
 position = Vector2(-111, -49)
 shape = SubResource("RectangleShape2D_8uasd")
 
-[node name="finish2" parent="." index="24" instance=ExtResource("14_apicr")]
+[node name="finish2" parent="." index="18" instance=ExtResource("14_apicr")]
 position = Vector2(18538, 79)
 next_level = ExtResource("15_o36qm")
 
-[node name="killzone2" parent="." index="25" instance=ExtResource("17_rnm5u")]
+[node name="killzone2" parent="." index="19" instance=ExtResource("17_rnm5u")]
 position = Vector2(14964, -394)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2" index="0"]
 position = Vector2(464, -59)
 shape = SubResource("RectangleShape2D_obrgx")
 
-[node name="Node2D2" type="Node2D" parent="." index="26"]
+[node name="Platform" type="Node2D" parent="." index="20"]
 
-[node name="hippo" parent="Node2D2" index="0" instance=ExtResource("16_hivsn")]
+[node name="hippo" parent="Platform" index="0" instance=ExtResource("16_hivsn")]
 position = Vector2(15107, -661)
 
-[node name="hippo2" parent="Node2D2" index="1" instance=ExtResource("16_hivsn")]
+[node name="hippo2" parent="Platform" index="1" instance=ExtResource("16_hivsn")]
 position = Vector2(15674, -314)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D2" index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_6n7q1")
 }
 autoplay = "move"
 speed_scale = 0.5
+
+[node name="EnemyCollideables" type="Node2D" parent="." index="21"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="EnemyCollideables" index="0"]
+position = Vector2(1368, 704)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollideables/StaticBody2D" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_ooih2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="EnemyCollideables" index="1"]
+position = Vector2(1368, 704)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollideables/StaticBody2D2" index="0"]
+position = Vector2(8295, -2236)
+shape = SubResource("RectangleShape2D_ooih2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="EnemyCollideables" index="2"]
+position = Vector2(8196, -1100)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollideables/StaticBody2D3" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_ooih2")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="EnemyCollideables" index="3"]
+position = Vector2(13307, -1064)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollideables/StaticBody2D4" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_ooih2")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="EnemyCollideables" index="4"]
+position = Vector2(3936, 225)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollideables/StaticBody2D5" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_ooih2")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="EnemyCollideables" index="5"]
+position = Vector2(2781, 225)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollideables/StaticBody2D6" index="0"]
+position = Vector2(-27, -415)
+shape = SubResource("RectangleShape2D_ooih2")
+
+[node name="Witch" parent="." index="22" instance=ExtResource("20_jxm45")]
+position = Vector2(7841, -1210)
+
+[node name="RainParticles" parent="." index="23" instance=ExtResource("21_0rca8")]
+position = Vector2(7820, -1822)
+scale = Vector2(4.72001, 1)
+particle_lifetime = 1.6
+particle_amount = 2000
+sound_distance = 3500.0
 
 [editable path="platforms/BetterMovingPlatform"]
 [editable path="platforms/BetterMovingPlatform2"]

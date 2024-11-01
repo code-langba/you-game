@@ -19,9 +19,9 @@ position = Vector2(180, 646)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 shape = SubResource("WorldBoundaryShape2D_4djff")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Ui" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="Ui"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,17 +31,17 @@ scale = Vector2(0.525, 0.525)
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Ui/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 30
 
-[node name="heart" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="heart" type="TextureRect" parent="Ui/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(-14.465, 0)
 layout_mode = 2
 texture = ExtResource("3_pk0u1")
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="Ui/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 87
 text = "0"
