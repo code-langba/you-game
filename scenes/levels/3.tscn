@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=36 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_5mopt"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://chhr3huoi4djx" path="res://scenes/world/hippo.tscn" id="16_hivsn"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="17_rnm5u"]
 [ext_resource type="PackedScene" uid="uid://bbrv4g35mhn1c" path="res://scenes/enemies/witch.tscn" id="20_jxm45"]
+[ext_resource type="PackedScene" uid="uid://b5uqojt21b7g4" path="res://scenes/particles/rain_particles.tscn" id="21_0rca8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oo4c3"]
 
@@ -229,7 +230,7 @@ script = ExtResource("2_5mopt")
 bgm = ExtResource("3_ai0cw")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(69, 706)
+position = Vector2(6155, -1514)
 fall_gravity = 5000
 
 [node name="killzone" parent="." index="1"]
@@ -451,6 +452,13 @@ shape = SubResource("RectangleShape2D_ooih2")
 
 [node name="Witch" parent="." index="22" instance=ExtResource("20_jxm45")]
 position = Vector2(7841, -1210)
+
+[node name="RainParticles" parent="." index="23" instance=ExtResource("21_0rca8")]
+position = Vector2(7820, -1822)
+scale = Vector2(4.72001, 1)
+particle_lifetime = 1.6
+particle_amount = 2000
+sound_distance = 3500.0
 
 [editable path="platforms/BetterMovingPlatform"]
 [editable path="platforms/BetterMovingPlatform2"]
