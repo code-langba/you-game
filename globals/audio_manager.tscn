@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk4nh2l2bkqd1"]
+
+[ext_resource type="Script" path="res://globals/audio_manager.gd" id="1_ioiqs"]
+
+[node name="audio_manager" type="Node"]
+script = ExtResource("1_ioiqs")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+max_distance = 99999.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=12 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
+[ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_t4h0w"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
 [ext_resource type="PackedScene" uid="uid://4psc66kvofb8" path="res://scenes/levels/2.tscn" id="4_l0x5u"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_8yscw"]
@@ -9,8 +10,11 @@
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="9_7pnl8"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="9_ftwoo"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
+[ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
 
 [node name="1" instance=ExtResource("1_1e0av")]
+script = ExtResource("2_t4h0w")
+bgm = ExtResource("10_65fjq")
 
 [node name="Player" parent="." index="0"]
 position = Vector2(104, 840)

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerManager="*res://globals/PlayerManager.gd"
 EventBus="*res://globals/EventBus.gd"
+AudioManager="*res://globals/audio_manager.tscn"
 
 [display]
 

@@ -1,12 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://dmwhkhcbfhwfi"]
+[gd_scene load_steps=19 format=4 uid="uid://dmwhkhcbfhwfi"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
 [ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="2_oijpp"]
+[ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_ss6r6"]
+[ext_resource type="AudioStream" uid="uid://drrm716sc47tm" path="res://asset/music/bgm/4.ogg" id="3_etc5n"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="4_0m3ev"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="5_r51gs"]
 [ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="7_cngk8"]
+[ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="8_knafx"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/main.tscn" id="9_1ag0o"]
 
@@ -129,12 +132,15 @@ size = Vector2(541, 94)
 
 [node name="level" instance=ExtResource("1_edo13")]
 position = Vector2(6, 435)
+script = ExtResource("2_ss6r6")
+bgm = ExtResource("3_etc5n")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(4439, -523)
+position = Vector2(9504, -404)
 
 [node name="Knight" parent="Player" index="1"]
 animation = &"idle"
+flip_h = true
 
 [node name="Camera2D" parent="Player" index="2"]
 offset = Vector2(0, -100)
@@ -161,19 +167,27 @@ position = Vector2(8372, -238)
 position = Vector2(5655, -106)
 is_friendly = true
 
-[node name="walker2" parent="." index="7" instance=ExtResource("5_r51gs")]
+[node name="walker5" parent="." index="7" instance=ExtResource("5_r51gs")]
+position = Vector2(5796, -106)
+is_friendly = true
+
+[node name="walker6" parent="." index="8" instance=ExtResource("5_r51gs")]
+position = Vector2(6211, -106)
+is_friendly = true
+
+[node name="walker2" parent="." index="9" instance=ExtResource("5_r51gs")]
 position = Vector2(5967, -106)
 is_friendly = true
 
-[node name="walker3" parent="." index="8" instance=ExtResource("5_r51gs")]
+[node name="walker3" parent="." index="10" instance=ExtResource("5_r51gs")]
 position = Vector2(6458, -106)
 is_friendly = true
 
-[node name="walker4" parent="." index="9" instance=ExtResource("5_r51gs")]
+[node name="walker4" parent="." index="11" instance=ExtResource("5_r51gs")]
 position = Vector2(6642, -106)
 is_friendly = true
 
-[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="10"]
+[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="12"]
 position = Vector2(6847, 96)
 collision_layer = 16
 collision_mask = 0
@@ -182,7 +196,7 @@ collision_mask = 0
 position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_au0k1")
 
-[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="11"]
+[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="13"]
 position = Vector2(5449, 87)
 collision_layer = 16
 collision_mask = 0
@@ -191,9 +205,10 @@ collision_mask = 0
 position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_au0k1")
 
-[node name="ascend" type="Area2D" parent="." index="12"]
+[node name="ascend" type="Area2D" parent="." index="14"]
 collision_mask = 2
 script = ExtResource("6_55bqg")
+ascend_bgm = ExtResource("8_cyhvv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ascend" index="0"]
 position = Vector2(3553, 469)
@@ -207,7 +222,7 @@ offset_bottom = 4.0
 color = Color(0.0313726, 0.0313726, 0.0313726, 0.431373)
 metadata/_edit_lock_ = true
 
-[node name="credits" type="Node2D" parent="." index="13"]
+[node name="credits" type="Node2D" parent="." index="15"]
 
 [node name="Label" type="Label" parent="credits" index="0"]
 offset_left = 2660.0
@@ -294,11 +309,11 @@ text = "Our next project will be BIG.
 Spoiler alert: I love vampires and zombies"
 autowrap_mode = 2
 
-[node name="finish2" parent="." index="14" instance=ExtResource("8_knafx")]
+[node name="finish2" parent="." index="16" instance=ExtResource("8_knafx")]
 position = Vector2(3400, -3366)
 next_level = ExtResource("9_1ag0o")
 
-[node name="heart" parent="." index="15" instance=ExtResource("2_oijpp")]
+[node name="heart" parent="." index="17" instance=ExtResource("2_oijpp")]
 position = Vector2(9185, 35)
 collision_layer = 1
 collision_mask = 2
