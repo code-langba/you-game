@@ -30,6 +30,11 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="D:/projects/game/godot/movie/movie.avi"
+
 [input]
 
 move_left={
