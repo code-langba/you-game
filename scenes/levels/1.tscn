@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=13 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_t4h0w"]
@@ -11,18 +11,31 @@
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="9_ftwoo"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
 [ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
+[ext_resource type="Texture2D" uid="uid://cwcdtrr425yak" path="res://asset/sprites/lvl1/bg1.png" id="12_h5r71"]
 
 [node name="1" instance=ExtResource("1_1e0av")]
 script = ExtResource("2_t4h0w")
 bgm = ExtResource("10_65fjq")
 
-[node name="Player" parent="." index="0"]
+[node name="bg" type="Node2D" parent="." index="0"]
+
+[node name="Bg1" type="Sprite2D" parent="bg" index="0"]
+position = Vector2(1441, 257)
+scale = Vector2(1.63681, 1.63681)
+texture = ExtResource("12_h5r71")
+
+[node name="Bg2" type="Sprite2D" parent="bg" index="1"]
+position = Vector2(4583, 257)
+scale = Vector2(1.63681, 1.63681)
+texture = ExtResource("12_h5r71")
+
+[node name="Player" parent="." index="1"]
 position = Vector2(104, 840)
 
-[node name="checkpoint" parent="." index="2" instance=ExtResource("6_25abd")]
+[node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)
 
-[node name="traps" type="Node2D" parent="." index="3"]
+[node name="traps" type="Node2D" parent="." index="4"]
 
 [node name="falling_platforms" type="Node2D" parent="traps" index="0"]
 position = Vector2(432, -56)
@@ -47,11 +60,11 @@ texture = ExtResource("10_2ctgp")
 region_enabled = true
 region_rect = Rect2(384, 896, 128, 128)
 
-[node name="finish" parent="." index="5"]
+[node name="finish" parent="." index="6"]
 position = Vector2(4528, 464)
 next_level = ExtResource("4_l0x5u")
 
-[node name="grass" type="Node2D" parent="." index="6"]
+[node name="grass" type="Node2D" parent="." index="7"]
 position = Vector2(0, 5)
 
 [node name="live_grass2" parent="grass" index="0" instance=ExtResource("7_gmib8")]
@@ -72,10 +85,10 @@ position = Vector2(3512, 840)
 [node name="live_grass7" parent="grass" index="5" instance=ExtResource("7_gmib8")]
 position = Vector2(3792, 840)
 
-[node name="splike" parent="." index="7" instance=ExtResource("5_8yscw")]
+[node name="splike" parent="." index="8" instance=ExtResource("5_8yscw")]
 position = Vector2(4160, 688)
 
-[node name="candles" type="Node2D" parent="." index="8"]
+[node name="candles" type="Node2D" parent="." index="9"]
 position = Vector2(0, 5)
 
 [node name="candle" parent="candles" index="0" instance=ExtResource("9_ftwoo")]
@@ -87,7 +100,7 @@ position = Vector2(1224, 840)
 [node name="candle2" parent="candles" index="2" instance=ExtResource("9_ftwoo")]
 position = Vector2(4584, 472)
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="9"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="10"]
 position = Vector2(876, 839)
 texture = ExtResource("10_2ctgp")
 region_enabled = true

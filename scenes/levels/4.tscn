@@ -136,7 +136,7 @@ script = ExtResource("2_ss6r6")
 bgm = ExtResource("3_etc5n")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(5017, -1656)
+position = Vector2(9498, -665)
 
 [node name="Knight" parent="Player" index="1"]
 animation = &"idle"

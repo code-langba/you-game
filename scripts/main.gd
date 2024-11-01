@@ -6,6 +6,7 @@ func _ready() -> void:
 	var manager = AudioManager
 	if not manager.is_playing:
 		manager.play(bgm)
+		manager.is_playing = false
 	%Button.pressed.connect(start_game)
 
 func start_game() -> void:
