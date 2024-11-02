@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=37 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_5mopt"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="10_11ghb"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="11_hu3rx"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="12_1a0ao"]
+[ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="12_1kriy"]
 [ext_resource type="Script" path="res://scripts/traps/rolling_ball_area.gd" id="13_3cehg"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="14_apicr"]
 [ext_resource type="PackedScene" uid="uid://dmwhkhcbfhwfi" path="res://scenes/levels/4.tscn" id="15_o36qm"]
@@ -230,7 +231,7 @@ script = ExtResource("2_5mopt")
 bgm = ExtResource("3_ai0cw")
 
 [node name="Player" parent="." index="0"]
-position = Vector2(90, 711)
+position = Vector2(90, 699)
 fall_gravity = 5000
 
 [node name="killzone" parent="." index="1"]
@@ -322,25 +323,50 @@ position = Vector2(6065, -1272)
 position = Vector2(2404, -811)
 
 [node name="bouncy" type="Node2D" parent="." index="11"]
+z_index = 1
 
 [node name="Mushroom" parent="bouncy" index="0" instance=ExtResource("9_nrhoi")]
 position = Vector2(3915, 230)
 bounce_strength = 2600.0
 
-[node name="Mushroom2" parent="bouncy" index="1" instance=ExtResource("9_nrhoi")]
-position = Vector2(5125, -441)
-scale = Vector2(5.2, 1)
-bounce_strength = 3500.0
-
-[node name="Mushroom4" parent="bouncy" index="2" instance=ExtResource("9_nrhoi")]
+[node name="Mushroom4" parent="bouncy" index="1" instance=ExtResource("9_nrhoi")]
 position = Vector2(4533, -1058)
 scale = Vector2(5.2, 1)
 bounce_strength = 0.0
 
-[node name="Mushroom3" parent="bouncy" index="3" instance=ExtResource("9_nrhoi")]
+[node name="Mushroom3" parent="bouncy" index="2" instance=ExtResource("9_nrhoi")]
 position = Vector2(4451, -9)
 scale = Vector2(5, 1)
 bounce_strength = 2600.0
+
+[node name="Mushroom2" parent="bouncy" index="3" instance=ExtResource("9_nrhoi")]
+position = Vector2(5125, -441)
+scale = Vector2(5.2, 1)
+bounce_strength = 3500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="bouncy" index="4"]
+position = Vector2(5120, -478)
+texture = ExtResource("12_1kriy")
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 128)
+
+[node name="Sprite2D2" type="Sprite2D" parent="bouncy" index="5"]
+position = Vector2(4452, -41)
+texture = ExtResource("12_1kriy")
+region_enabled = true
+region_rect = Rect2(0, 128, 384, 128)
+
+[node name="Sprite2D3" type="Sprite2D" parent="bouncy" index="6"]
+position = Vector2(4524, -1094)
+texture = ExtResource("12_1kriy")
+region_enabled = true
+region_rect = Rect2(384, 0, 384, 128)
+
+[node name="Sprite2D4" type="Sprite2D" parent="bouncy" index="7"]
+position = Vector2(3910, 217)
+texture = ExtResource("12_1kriy")
+region_enabled = true
+region_rect = Rect2(384, 128, 128, 128)
 
 [node name="splike" parent="." index="12" instance=ExtResource("10_11ghb")]
 position = Vector2(8053, -1109)

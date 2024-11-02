@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_y4eae")
 debug_color = Color(0.357924, 0.819257, 0.606085, 0.42)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+visible = false
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0

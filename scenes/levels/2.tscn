@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://4psc66kvofb8"]
+[gd_scene load_steps=27 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_jmpdd"]
@@ -7,15 +7,20 @@
 [ext_resource type="AudioStream" uid="uid://cp0rv4saf5bw5" path="res://asset/music/bgm/mystical.mp3" id="3_41qmk"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_h4p7e"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="3_i4blj"]
-[ext_resource type="Texture2D" uid="uid://c8di6iwf4t0bh" path="res://asset/sprites/bg/lvl2/sky.png" id="4_3yshd"]
+[ext_resource type="Texture2D" uid="uid://cei7vawvccxe7" path="res://asset/sprites/bg/lvl2/Background.PNG" id="4_12a7c"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="4_fuv7a"]
+[ext_resource type="Texture2D" uid="uid://d0at21nh2bbon" path="res://asset/sprites/bg/lvl2/8.PNG" id="5_45axh"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
-[ext_resource type="Texture2D" uid="uid://dssyfpvknpchk" path="res://asset/sprites/bg/lvl2/1.png" id="5_qlp1q"]
+[ext_resource type="Texture2D" uid="uid://dssyfpvknpchk" path="res://asset/sprites/bg/lvl2/1.PNG" id="5_qlp1q"]
+[ext_resource type="Texture2D" uid="uid://clisb0hahwt84" path="res://asset/sprites/bg/lvl2/7.PNG" id="6_yp0v5"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
+[ext_resource type="Texture2D" uid="uid://c55pe7t6j8f56" path="res://asset/sprites/bg/lvl2/2.PNG" id="7_kv7ix"]
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
+[ext_resource type="Texture2D" uid="uid://dkbw7gfqc6gti" path="res://asset/sprites/bg/lvl2/5.PNG" id="8_acnjh"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="8_au5e5"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="9_e5750"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="9_eb1qh"]
+[ext_resource type="Texture2D" uid="uid://b4h3wjpe6k1j3" path="res://asset/sprites/bg/lvl2/3.PNG" id="9_w6lm2"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="11_p3ad4"]
 [ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="16_fa570"]
 
@@ -42,69 +47,69 @@ script = ExtResource("2_jmpdd")
 bgm = ExtResource("3_41qmk")
 
 [node name="Parallax2D4" type="Parallax2D" parent="." index="0"]
-visible = false
 scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="Parallax2D4" index="0"]
 position = Vector2(930, 525)
 scale = Vector2(1, 1.5)
-texture = ExtResource("4_3yshd")
+texture = ExtResource("4_12a7c")
 
 [node name="Parallax2D5" type="Parallax2D" parent="." index="1"]
 scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="Parallax2D5" index="0"]
-position = Vector2(1931, 1133)
-texture = ExtResource("5_qlp1q")
+position = Vector2(958, 639)
+texture = ExtResource("5_45axh")
 
 [node name="Parallax2D6" type="Parallax2D" parent="." index="2"]
-visible = false
-scroll_scale = Vector2(0.1, 0.1)
+scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="Parallax2D6" index="0"]
-position = Vector2(930, 525)
-texture = ExtResource("5_qlp1q")
+position = Vector2(958, 681)
+texture = ExtResource("6_yp0v5")
 
-[node name="Parallax2D7" type="Parallax2D" parent="." index="3"]
-visible = false
+[node name="Parallax2D10" type="Parallax2D" parent="." index="3"]
 scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1920, 0)
-
-[node name="Bg1" type="Sprite2D" parent="Parallax2D7" index="0"]
-position = Vector2(930, 525)
-texture = ExtResource("5_qlp1q")
-
-[node name="Parallax2D8" type="Parallax2D" parent="." index="4"]
-visible = false
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1920, 0)
-
-[node name="Bg1" type="Sprite2D" parent="Parallax2D8" index="0"]
-position = Vector2(930, 525)
-texture = ExtResource("5_qlp1q")
-
-[node name="Parallax2D9" type="Parallax2D" parent="." index="5"]
-visible = false
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1920, 0)
-
-[node name="Bg1" type="Sprite2D" parent="Parallax2D9" index="0"]
-position = Vector2(930, 525)
-texture = ExtResource("5_qlp1q")
-
-[node name="Parallax2D10" type="Parallax2D" parent="." index="6"]
-visible = false
-scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(148, -8)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="Parallax2D10" index="0"]
-position = Vector2(930, 525)
+position = Vector2(958, 670)
+texture = ExtResource("7_kv7ix")
+
+[node name="Parallax2D7" type="Parallax2D" parent="." index="4"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(1920, 0)
+
+[node name="Bg1" type="Sprite2D" parent="Parallax2D7" index="0"]
+position = Vector2(958, 625)
+texture = ExtResource("8_acnjh")
+
+[node name="Parallax2D8" type="Parallax2D" parent="." index="5"]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(1920, 0)
+
+[node name="Bg1" type="Sprite2D" parent="Parallax2D8" index="0"]
+position = Vector2(958, 588)
+texture = ExtResource("9_w6lm2")
+
+[node name="Parallax2D9" type="Parallax2D" parent="." index="6"]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-179, 0)
+repeat_size = Vector2(1920, 0)
+
+[node name="Bg1" type="Sprite2D" parent="Parallax2D9" index="0"]
+position = Vector2(958, 776)
 texture = ExtResource("5_qlp1q")
 
 [node name="Player" parent="." index="7"]
-position = Vector2(214, 381)
+position = Vector2(204, 384)
+
+[node name="Camera2D" parent="Player" index="2"]
+limit_right = 6400
 
 [node name="finish" parent="." index="10"]
 position = Vector2(6184, 728)
@@ -227,5 +232,6 @@ position = Vector2(4912, 848)
 position = Vector2(57, 844)
 health = -5
 
+[editable path="Player"]
 [editable path="platforms/BetterMovingPlatform"]
 [editable path="platforms/BetterMovingPlatform2"]
