@@ -1,119 +1,8 @@
-[gd_scene load_steps=25 format=4 uid="uid://d3vnimwitkvwk"]
+[gd_scene load_steps=7 format=4 uid="uid://d3vnimwitkvwk"]
 
-[ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="1_qqwih"]
 [ext_resource type="PackedScene" uid="uid://dcsgncsfn3jqn" path="res://scenes/player.tscn" id="1_w6r0x"]
-[ext_resource type="Script" path="res://scenes/util/position.gd" id="2_48807"]
-[ext_resource type="Texture2D" uid="uid://deixsarktp5fs" path="res://asset/sprites/slime_green.png" id="2_nap0l"]
-[ext_resource type="PackedScene" uid="uid://d3w8opvylbqii" path="res://scenes/enemies/grim.tscn" id="4_7ns8k"]
-[ext_resource type="PackedScene" uid="uid://cm826kvfjn2fc" path="res://scenes/world/mushroom.tscn" id="6_4ofdp"]
+[ext_resource type="PackedScene" uid="uid://daih7dx7svxjc" path="res://scenes/world/bridge.tscn" id="3_3wy51"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="6_wrx6x"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqnfg"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_51o55"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tyx2p"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_88xvo"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sae7w"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwfa1"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6wk04"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6xt3k"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d28p3"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_081ut"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufjfy"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6yd2r"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4npf"]
-atlas = ExtResource("2_nap0l")
-region = Rect2(72, 48, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2dpyj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eqnfg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_51o55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tyx2p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_88xvo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sae7w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwfa1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6wk04")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6xt3k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d28p3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_081ut")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ufjfy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6yd2r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f4npf")
-}],
-"loop": false,
-"name": &"destroy",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mec0n"]
-size = Vector2(64, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88k8r"]
 texture = ExtResource("6_wrx6x")
@@ -172,54 +61,113 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_88k8r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jowu"]
+size = Vector2(64, 64)
+
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_w6r0x")]
-position = Vector2(240, 840)
-
-[node name="BetterMovingPlatform" parent="." instance=ExtResource("1_qqwih")]
-visible = false
-position = Vector2(720, 408)
-
-[node name="BetterMVBase" parent="BetterMovingPlatform" index="0" node_paths=PackedStringArray("positions", "animator")]
-destroy_on_end = true
-destroy_delay = 1.0
-positions = [NodePath("../Position"), NodePath("../Position2"), NodePath("../2"), NodePath("../3")]
-animator = NodePath("AnimatedSprite2D")
-destroy_animation_name = "destroy"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BetterMovingPlatform/BetterMVBase" index="0"]
-position = Vector2(0, -8)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_2dpyj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BetterMovingPlatform/BetterMVBase" index="1"]
-shape = SubResource("RectangleShape2D_mec0n")
-
-[node name="Position" type="Node2D" parent="BetterMovingPlatform"]
-position = Vector2(-592, -152)
-script = ExtResource("2_48807")
-
-[node name="Position2" type="Node2D" parent="BetterMovingPlatform"]
-position = Vector2(240, -152)
-script = ExtResource("2_48807")
-
-[node name="2" type="Node2D" parent="BetterMovingPlatform"]
-position = Vector2(-592, 40)
-script = ExtResource("2_48807")
-
-[node name="3" type="Node2D" parent="BetterMovingPlatform"]
-position = Vector2(240, 40)
-script = ExtResource("2_48807")
-
-[node name="Grim" parent="." instance=ExtResource("4_7ns8k")]
-position = Vector2(912, 902)
-
-[node name="Mushroom" parent="." instance=ExtResource("6_4ofdp")]
-position = Vector2(552, 872)
+position = Vector2(288, 552)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAcAAAADAAcAAAABAAcAAAAFAAcAAAACAAcAAAAFAAcAAAADAAcAAAAFAAcAAAAEAAcAAAAFAAcAAAAFAAcAAAAFAAcAAAAGAAcAAAAFAAcAAAAHAAcAAAAFAAcAAAAIAAcAAAAFAAcAAAAJAAcAAAAFAAcAAAAKAAcAAAAFAAcAAAALAAcAAAAFAAcAAAAMAAcAAAAFAAcAAAANAAcAAAAFAAcAAAAOAAcAAAADAAcAAAAOAAYAAAADAAgAAAAOAAUAAAADAAgAAAAOAAQAAAADAAgAAAAOAAMAAAADAAgAAAAOAAIAAAADAAgAAAAOAAEAAAADAAgAAAAOAAAAAAADAAgAAAAOAP//AAADAAgAAAAOAP7/AAADAAgAAAAAAAYAAAACAAgAAAAAAAUAAAACAAgAAAAAAAQAAAACAAgAAAAAAAMAAAACAAgAAAAAAAIAAAACAAgAAAAAAAEAAAACAAgAAAAAAAAAAAACAAgAAAAAAP//AAACAAgAAAAAAP7/AAACAAgAAAAAAAgAAAADAAcAAAABAAgAAAADAAcAAAACAAgAAAADAAcAAAADAAgAAAADAAcAAAAEAAgAAAADAAcAAAAFAAgAAAADAAcAAAAGAAgAAAADAAcAAAAHAAgAAAADAAcAAAAIAAgAAAADAAcAAAAJAAgAAAADAAcAAAAKAAgAAAADAAcAAAALAAgAAAADAAcAAAAMAAgAAAADAAcAAAANAAgAAAADAAcAAAAOAAgAAAADAAcAAAA=")
 tile_set = SubResource("TileSet_xo5gi")
 
-[editable path="BetterMovingPlatform"]
+[node name="BridgeContienr" type="Node2D" parent="."]
+position = Vector2(7.99997, 1480)
+rotation = -1.56919
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BridgeContienr"]
+z_index = 5
+position = Vector2(808.449, 278.701)
+scale = Vector2(1, 2.96032)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BridgeContienr/StaticBody2D"]
+shape = SubResource("RectangleShape2D_3jowu")
+
+[node name="ColorRect" type="ColorRect" parent="BridgeContienr/StaticBody2D"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="BridgeContienr"]
+position = Vector2(838.603, 374.653)
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../Bridge")
+bias = 0.791
+softness = 1.0
+angular_limit_lower = -3.14159
+angular_limit_upper = 3.14159
+motor_enabled = true
+motor_target_velocity = 3.49066
+
+[node name="Bridge" parent="BridgeContienr" instance=ExtResource("3_3wy51")]
+position = Vector2(816.68, 438.688)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="BridgeContienr"]
+position = Vector2(816.809, 502.688)
+node_a = NodePath("../Bridge")
+node_b = NodePath("../Bridge2")
+softness = 1.0
+motor_enabled = true
+motor_target_velocity = 2.50978
+
+[node name="Bridge2" parent="BridgeContienr" instance=ExtResource("3_3wy51")]
+position = Vector2(816.914, 567.688)
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="BridgeContienr"]
+position = Vector2(817.018, 632.688)
+node_a = NodePath("../Bridge2")
+node_b = NodePath("../Bridge3")
+bias = 0.9
+softness = 1.0
+
+[node name="Bridge3" parent="BridgeContienr" instance=ExtResource("3_3wy51")]
+position = Vector2(817.122, 697.687)
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="BridgeContienr"]
+position = Vector2(817.23, 764.687)
+node_a = NodePath("../Bridge3")
+node_b = NodePath("../Bridge4")
+bias = 0.9
+softness = 1.0
+
+[node name="Bridge4" parent="BridgeContienr" instance=ExtResource("3_3wy51")]
+position = Vector2(817.336, 830.687)
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="BridgeContienr"]
+position = Vector2(817.45, 901.687)
+node_a = NodePath("../Bridge4")
+node_b = NodePath("../Bridge5")
+bias = 0.9
+softness = 1.0
+
+[node name="Bridge5" parent="BridgeContienr" instance=ExtResource("3_3wy51")]
+position = Vector2(817.563, 971.687)
+
+[node name="PinJoint2D6" type="PinJoint2D" parent="BridgeContienr"]
+position = Vector2(840.67, 1037.65)
+node_a = NodePath("../Bridge5")
+node_b = NodePath("../StaticBody2D2")
+bias = 0.9
+softness = 1.0
+angular_limit_enabled = true
+angular_limit_lower = -3.14159
+angular_limit_upper = 3.14159
+motor_enabled = true
+motor_target_velocity = -3.49066
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="BridgeContienr"]
+z_index = 5
+position = Vector2(809.962, 1196.55)
+scale = Vector2(1, 4.96103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BridgeContienr/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_3jowu")
+
+[node name="ColorRect" type="ColorRect" parent="BridgeContienr/StaticBody2D2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0

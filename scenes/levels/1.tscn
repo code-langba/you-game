@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=14 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_t4h0w"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
 [ext_resource type="PackedScene" uid="uid://4psc66kvofb8" path="res://scenes/levels/2.tscn" id="4_l0x5u"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_8yscw"]
+[ext_resource type="TileSet" uid="uid://dm6ewfwi7047e" path="res://resources/tilemap/decor2.tres" id="5_tf2fe"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="6_25abd"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="7_gmib8"]
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="9_7pnl8"]
@@ -19,15 +20,29 @@ bgm = ExtResource("10_65fjq")
 
 [node name="bg" type="Node2D" parent="." index="0"]
 
-[node name="Bg1" type="Sprite2D" parent="bg" index="0"]
+[node name="Parallax2D" type="Parallax2D" parent="bg" index="0"]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(3140, 0)
+
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D" index="0"]
 position = Vector2(1441, 257)
 scale = Vector2(1.63681, 1.63681)
 texture = ExtResource("12_h5r71")
 
-[node name="Bg2" type="Sprite2D" parent="bg" index="1"]
-position = Vector2(4583, 257)
-scale = Vector2(1.63681, 1.63681)
-texture = ExtResource("12_h5r71")
+[node name="Parallax2D2" type="Parallax2D" parent="bg" index="1"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(2500, 0)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="bg/Parallax2D2" index="0"]
+tile_map_data = PackedByteArray("AAAXAA0AAAAAAAAAAABhABQAAAADAAAAAAAUAAsAAAAAAAEAAABTAAAAAAAAAAEAAAA=")
+tile_set = ExtResource("5_tf2fe")
+
+[node name="Parallax2D3" type="Parallax2D" parent="bg" index="2"]
+scroll_scale = Vector2(0.9, 0.9)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="bg/Parallax2D3" index="0"]
+tile_map_data = PackedByteArray("AAAKACwAAAAAAAUAAABXACwAAAAAAAUAAABYACwAAAADAAUAAAC8ACwAAAADAAUAAAA=")
+tile_set = ExtResource("5_tf2fe")
 
 [node name="Player" parent="." index="1"]
 position = Vector2(104, 840)
