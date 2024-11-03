@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/witch.gd" id="1_r18j7"]
 [ext_resource type="PackedScene" uid="uid://7m34gm3hg474" path="res://components/scenes/movement.tscn" id="2_beml7"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w48nh"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jy2df"]
 radius = 32.0
 height = 128.0
 
@@ -20,8 +20,8 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qw28"]
-size = Vector2(970, 320)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns8y3"]
+size = Vector2(944, 320)
 
 [node name="Witch" type="CharacterBody2D"]
 collision_layer = 4
@@ -30,7 +30,7 @@ script = ExtResource("1_r18j7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource("CapsuleShape2D_w48nh")
+shape = SubResource("CapsuleShape2D_jy2df")
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = -40.0
@@ -58,8 +58,8 @@ collision_layer = 8
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-475, -96)
-shape = SubResource("RectangleShape2D_0qw28")
+position = Vector2(-488, -96)
+shape = SubResource("RectangleShape2D_ns8y3")
 
 [node name="AttackDelayTimer" type="Timer" parent="."]
 

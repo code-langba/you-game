@@ -450,6 +450,7 @@ animations = [{
 z_index = 1
 collision_layer = 2
 collision_mask = 9
+platform_on_leave = 2
 script = ExtResource("1_w05b1")
 default_gravity = 6000
 fall_gravity = 6500

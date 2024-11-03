@@ -61,6 +61,12 @@ jump={
 2d_physics/layer_4="player-collideables"
 2d_physics/layer_5="enemy-collideables"
 
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
+2d/solver/solver_iterations=24
+2d/solver/default_constraint_bias=0.15
+
 [rendering]
 
 renderer/rendering_method="mobile"

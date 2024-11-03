@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var is_fake: bool = false
 @export var speed: float = 200
 @export var gravity: float = 2300
 
@@ -18,6 +19,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func play_attack(_body: Node) -> void:
+	if is_fake: return
 	movement_comp.pause_movement = true
 	animation_player.play("attack")
 	await animation_player.animation_finished

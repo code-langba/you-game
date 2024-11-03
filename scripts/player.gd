@@ -9,6 +9,10 @@ extends CharacterBody2D
 @export var jump_velocity := 800.0
 @export var game_over_scene: PackedScene
 
+@export_group("Collision with RigidBody2D")
+@export var push_force := 0.1
+
+
 @onready var player: AnimatedSprite2D = $Knight
 #@onready var killzone: Area2D = get_parent().get_node("killzone")
 @onready var gravity = default_gravity
@@ -60,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall() or is_on_floor():
 		force = Vector2.ZERO
 	move_and_slide()
-
+	handle_collision_with_rigidbody()
 
 func handle_jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_dead:
@@ -108,3 +112,11 @@ func load_game_over() -> void:
 
 func add_impulse(force_vector: Vector2) -> void:
 	force = force_vector
+
+func handle_collision_with_rigidbody() -> void:
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		if collider is RigidBody2D:
+			(collider as RigidBody2D).apply_central_impulse(-collision.get_normal() * push_force)
+		

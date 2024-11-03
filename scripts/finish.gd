@@ -14,4 +14,3 @@ func on_level_complete(_body: Node2D) -> void:
 
 func load_next_level():
 	get_tree().change_scene_to_packed(next_level)
-
