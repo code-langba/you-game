@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://3fjs7dyoqykf"]
+
+[ext_resource type="Script" path="res://components/scripts/bounce.gd" id="1_7ak0o"]
+[ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="2_q1g6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ix6m"]
+size = Vector2(384, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqr8f"]
+size = Vector2(384, 64)
+
+[node name="cloud" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_7ak0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_8ix6m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_eqr8f")
+debug_color = Color(0.357924, 0.819257, 0.606085, 0.42)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+visible = false
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-2, -46)
+scale = Vector2(1.14063, 1.16797)
+texture = ExtResource("2_q1g6e")
+region_enabled = true
+region_rect = Rect2(0, 128, 384, 128)

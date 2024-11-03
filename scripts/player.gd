@@ -22,6 +22,15 @@ var is_ascend = false
 var is_dead := false
 var force: Vector2
 
+var is_knockback = false:
+	set(f):
+		is_knockback = f
+		if is_knockback:
+			await get_tree().create_timer(1).timeout
+			is_knockback = false
+
+var knockback_force = 2000
+
 func _ready() -> void:
 	is_dead = false
 	timer.timeout.connect(reload)
@@ -63,6 +72,11 @@ func _physics_process(delta: float) -> void:
 		velocity += force
 	if is_on_wall() or is_on_floor():
 		force = Vector2.ZERO
+
+	if is_knockback: 
+		velocity = Vector2(-1 , -0.3) * knockback_force
+		# await get_tree().create_timer(2).timeout
+	print(velocity)
 	move_and_slide()
 	handle_collision_with_rigidbody()
 
@@ -120,3 +134,5 @@ func handle_collision_with_rigidbody() -> void:
 		if collider is RigidBody2D:
 			(collider as RigidBody2D).apply_central_impulse(-collision.get_normal() * push_force)
 		
+func knockback():
+	is_knockback = true

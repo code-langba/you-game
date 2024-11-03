@@ -314,7 +314,11 @@ autowrap_mode = 2
 position = Vector2(3400, -3366)
 next_level = ExtResource("9_1ag0o")
 
+[node name="Sprite2D" parent="finish2" index="0"]
+visible = false
+
 [node name="heart" parent="." index="17" instance=ExtResource("2_oijpp")]
 position = Vector2(8156, 30)
 
 [editable path="Player"]
+[editable path="finish2"]
