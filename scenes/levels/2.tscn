@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://d0at21nh2bbon" path="res://asset/sprites/bg/lvl2/8.PNG" id="5_45axh"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
 [ext_resource type="Texture2D" uid="uid://dssyfpvknpchk" path="res://asset/sprites/bg/lvl2/1.PNG" id="5_qlp1q"]
-[ext_resource type="Texture2D" uid="uid://clisb0hahwt84" path="res://asset/sprites/bg/lvl2/7.PNG" id="6_yp0v5"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
+[ext_resource type="Texture2D" uid="uid://hplxd3h3cl87" path="res://asset/sprites/bg/lvl2/4.PNG" id="7_ed05v"]
 [ext_resource type="Texture2D" uid="uid://c55pe7t6j8f56" path="res://asset/sprites/bg/lvl2/2.PNG" id="7_kv7ix"]
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
 [ext_resource type="Texture2D" uid="uid://dkbw7gfqc6gti" path="res://asset/sprites/bg/lvl2/5.PNG" id="8_acnjh"]
@@ -66,49 +66,48 @@ scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="bg/Parallax2D5" index="0"]
-position = Vector2(958, 639)
+position = Vector2(958, 507)
 texture = ExtResource("5_45axh")
 
-[node name="Parallax2D6" type="Parallax2D" parent="bg" index="2"]
-scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(1920, 0)
-
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D6" index="0"]
-position = Vector2(958, 681)
-texture = ExtResource("6_yp0v5")
-
-[node name="Parallax2D7" type="Parallax2D" parent="bg" index="3"]
+[node name="Parallax2D7" type="Parallax2D" parent="bg" index="2"]
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="bg/Parallax2D7" index="0"]
-position = Vector2(958, 625)
+position = Vector2(958, 605)
 texture = ExtResource("8_acnjh")
 
-[node name="Parallax2D10" type="Parallax2D" parent="bg" index="4"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(148, -8)
+[node name="Parallax2D11" type="Parallax2D" parent="bg" index="3"]
+scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D10" index="0"]
-position = Vector2(958, 670)
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D11" index="0"]
+position = Vector2(958, 605)
+texture = ExtResource("7_ed05v")
+
+[node name="Parallax2D12" type="Parallax2D" parent="bg" index="4"]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(1920, 0)
+
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D12" index="0"]
+position = Vector2(958, 605)
 texture = ExtResource("7_kv7ix")
 
 [node name="Parallax2D8" type="Parallax2D" parent="bg" index="5"]
-scroll_scale = Vector2(0.3, 0.3)
+scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="bg/Parallax2D8" index="0"]
-position = Vector2(958, 588)
+position = Vector2(958, 558)
 texture = ExtResource("9_w6lm2")
 
 [node name="Parallax2D9" type="Parallax2D" parent="bg" index="6"]
-scroll_scale = Vector2(0.5, 0.5)
+scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(-179, 0)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="bg/Parallax2D9" index="0"]
-position = Vector2(958, 776)
+position = Vector2(1141, 608)
 texture = ExtResource("5_qlp1q")
 
 [node name="Sprite2D" type="Sprite2D" parent="bg" index="7"]

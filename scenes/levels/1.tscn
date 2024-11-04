@@ -46,7 +46,7 @@ repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="bg/Parallax2D" index="0"]
 position = Vector2(930, 446)
-texture = ExtResource("5_3vw1e")
+texture = ExtResource("7_he5ci")
 
 [node name="Parallax2D2" type="Parallax2D" parent="bg" index="3"]
 scroll_scale = Vector2(0.4, 0.5)
@@ -63,7 +63,7 @@ repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="bg/Parallax2D3" index="0"]
 position = Vector2(930, 495)
-texture = ExtResource("7_he5ci")
+texture = ExtResource("5_3vw1e")
 
 [node name="Sprite2D" type="Sprite2D" parent="bg" index="5"]
 position = Vector2(48, 858)
