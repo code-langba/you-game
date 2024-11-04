@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=18 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_t4h0w"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://csgiyuj5mjttl" path="res://asset/sprites/bg/lvl1/3.png" id="7_he5ci"]
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="9_7pnl8"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="9_ftwoo"]
+[ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="9_vyah7"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
 [ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
 
@@ -64,8 +65,14 @@ repeat_size = Vector2(1920, 0)
 position = Vector2(930, 495)
 texture = ExtResource("7_he5ci")
 
+[node name="Sprite2D" type="Sprite2D" parent="bg" index="5"]
+position = Vector2(48, 858)
+texture = ExtResource("9_vyah7")
+region_enabled = true
+region_rect = Rect2(128, 384, 128, 128)
+
 [node name="Player" parent="." index="1"]
-position = Vector2(104, 825)
+position = Vector2(120, 825)
 
 [node name="Camera2D" parent="Player" index="2"]
 limit_right = 4700
