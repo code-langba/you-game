@@ -63,9 +63,8 @@ jump={
 
 [physics]
 
-2d/physics_engine="GodotPhysics2D"
-2d/solver/solver_iterations=24
-2d/solver/default_constraint_bias=0.15
+2d/physics_engine="Rapier2D"
+2d/solver/default_constraint_bias=0.1
 
 [rendering]
 

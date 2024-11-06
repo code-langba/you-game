@@ -11,4 +11,3 @@ func _ready() -> void:
 	lifetime = particle_lifetime
 	amount = particle_amount
 	emitting = true
-	

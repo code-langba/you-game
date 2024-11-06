@@ -1,5 +1,5 @@
-class_name Player
 extends CharacterBody2D
+class_name Player
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -45,7 +45,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if is_ascend:
-		print('ascending')
 		velocity = Vector2.UP * delta * 8000
 		var tween = create_tween()
 		tween.tween_property(self, "position:x", 3400, 2)
@@ -76,7 +75,6 @@ func _physics_process(delta: float) -> void:
 	if is_knockback: 
 		velocity = Vector2(-1 , -0.3) * knockback_force
 		# await get_tree().create_timer(2).timeout
-	print(velocity)
 	move_and_slide()
 	handle_collision_with_rigidbody()
 

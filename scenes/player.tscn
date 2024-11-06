@@ -457,6 +457,7 @@ fall_gravity = 6500
 speed = 600.0
 jump_velocity = 1800.0
 game_over_scene = ExtResource("2_gu8rq")
+push_force = 0.01
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 5)

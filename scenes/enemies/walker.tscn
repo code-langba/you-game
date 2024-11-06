@@ -122,6 +122,8 @@ animations = [{
 size = Vector2(45, 92)
 
 [node name="walker" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 17
 script = ExtResource("1_n7rpm")
 SPEED = 200.0
 
@@ -131,6 +133,7 @@ animation = &"walk"
 frame_progress = 0.285017
 
 [node name="killzone" parent="." instance=ExtResource("2_2reh2")]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(3.5, 1)

@@ -249,9 +249,9 @@ region_enabled = true
 region_rect = Rect2(128, 512, 128, 128)
 
 [node name="Player" parent="." index="1"]
-position = Vector2(6142, -1323)
+position = Vector2(6984, -1627)
 fall_gravity = 5000
-push_force = 0.05
+push_force = 0.001
 
 [node name="killzone" parent="." index="2"]
 collision_layer = 0
@@ -580,6 +580,7 @@ position = Vector2(3635, 178)
 
 [node name="Witch" parent="Enemy" index="5" instance=ExtResource("20_jxm45")]
 position = Vector2(10965, -1229)
+throw_force = 50.0
 
 [node name="Extra" type="Node" parent="." index="9"]
 
@@ -631,12 +632,11 @@ position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_ooih2")
 
 [node name="RainParticles" parent="Extra" index="1" instance=ExtResource("21_0rca8")]
-position = Vector2(9337, -1532)
-scale = Vector2(4.72001, 1)
-particle_lifetime = 1.6
-particle_amount = 2000
-sound_distance = 3500.0
+position = Vector2(8694, -1321)
+particle_amount = 4000
+sound_distance = 3000.0
 
 [editable path="finish"]
 [editable path="World/platforms/BetterMovingPlatform"]
 [editable path="World/platforms/BetterMovingPlatform2"]
+[editable path="Extra/RainParticles"]
