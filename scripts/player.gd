@@ -21,6 +21,7 @@ class_name Player
 var is_ascend = false
 var is_dead := false
 var force: Vector2
+var is_grounded: bool 
 
 var is_knockback = false:
 	set(f):
@@ -43,6 +44,7 @@ func _ready() -> void:
 	EventBus.ascend.connect(func(): is_ascend = true)
 
 func _physics_process(delta: float) -> void:
+	is_grounded = is_on_floor()
 	# Add the gravity.
 	if is_ascend:
 		velocity = Vector2.UP * delta * 8000
@@ -76,6 +78,9 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2(-1 , -0.3) * knockback_force
 		# await get_tree().create_timer(2).timeout
 	move_and_slide()
+	if(!is_grounded and is_on_floor()):
+		$DustParticle.emitting = true
+		
 	handle_collision_with_rigidbody()
 
 func handle_jump():

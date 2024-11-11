@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dcsgncsfn3jqn"]
+[gd_scene load_steps=70 format=3 uid="uid://dcsgncsfn3jqn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_w05b1"]
 [ext_resource type="Texture2D" uid="uid://cygjq7ywybue0" path="res://asset/sprites/player.png" id="2_1eyd4"]
@@ -446,6 +446,36 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_3xjdp"]
+offsets = PackedFloat32Array(0, 0.421801, 1)
+colors = PackedColorArray(0.864675, 0.864675, 0.864675, 1, 0.84, 0.84, 0.84, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cj7cc"]
+gradient = SubResource("Gradient_3xjdp")
+
+[sub_resource type="Curve" id="Curve_6462w"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_y2ep7"]
+curve = SubResource("Curve_6462w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xexul"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(24, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 175.213
+initial_velocity_min = -50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, -100, 0)
+damping_min = 2.449
+damping_max = 20.232
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_y2ep7")
+color_ramp = SubResource("GradientTexture1D_cj7cc")
+turbulence_enabled = true
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -477,5 +507,16 @@ limit_smoothed = true
 [node name="SceneResetTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="DustParticle" type="GPUParticles2D" parent="."]
+position = Vector2(-8, 56)
+emitting = false
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_xexul")
+lifetime = 0.4
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.52
+randomness = 0.56
 
 [connection signal="timeout" from="SceneResetTimer" to="." method="_on_timer_timeout"]
