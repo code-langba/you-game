@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func attack(_body: CharacterBody2D) -> void:
+	$witch_sfx.play()
 	attack_delay_timer.start(attack_delay)
 	is_attacking = true
 	

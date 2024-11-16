@@ -8,4 +8,5 @@ func _ready() -> void:
 
 func trigger_spike(_body: Node2D) -> void:
 	var killzone:Area2D = $killzone
+	$spike_sfx.play()
 	create_tween().tween_property(killzone, "position:y", -128, 0.15)

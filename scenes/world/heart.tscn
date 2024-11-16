@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciwfk8x8so5td"]
 
 [ext_resource type="Script" path="res://scripts/world/heart.gd" id="1_svn65"]
-[ext_resource type="Texture2D" uid="uid://c3c4hi162dpbg" path="res://asset/sprites/fx.png" id="1_u106l"]
+[ext_resource type="Texture2D" uid="uid://cd14yy2t562c4" path="res://asset/sprites/ui/heart.png" id="2_i7vk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgnrl"]
-size = Vector2(98, 72)
+size = Vector2(68, 72)
 
 [node name="heart" type="Area2D"]
 collision_mask = 2
@@ -14,4 +14,6 @@ script = ExtResource("1_svn65")
 shape = SubResource("RectangleShape2D_vgnrl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_u106l")
+position = Vector2(1, -4)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_i7vk7")

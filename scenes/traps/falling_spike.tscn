@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4hnmq3wab6ci"]
+[gd_scene load_steps=8 format=3 uid="uid://d4hnmq3wab6ci"]
 
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="1_83jej"]
 [ext_resource type="Script" path="res://scripts/traps/falling_spike.gd" id="1_tuool"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_uw7w1"]
+[ext_resource type="AudioStream" uid="uid://t15dk6rp5boi" path="res://asset/sounds/fx/falling-143024.mp3" id="4_2mgel"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eka5f"]
 size = Vector2(128, 128)
@@ -15,7 +16,6 @@ size = Vector2(112, 32)
 
 [node name="falling_spike" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 0
 script = ExtResource("1_tuool")
 gravity = 6000.0
 
@@ -43,3 +43,8 @@ debug_color = Color(0.992612, 0, 0.249584, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_tgwqr")
+
+[node name="fall_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2mgel")
+volume_db = -22.533
+pitch_scale = 1.37

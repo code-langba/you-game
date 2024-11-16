@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtx63a6evsdh2"]
+[gd_scene load_steps=15 format=3 uid="uid://dtx63a6evsdh2"]
 
 [ext_resource type="Script" path="res://scripts/world/live_grass.gd" id="1_6l2np"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="1_lkxdj"]
+[ext_resource type="AudioStream" uid="uid://dyskgnjka4gjs" path="res://asset/sounds/fx/rustling-bushes-dried-leaves-4-230203.mp3" id="3_186bm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwi0f"]
 size = Vector2(74, 73)
@@ -92,3 +93,7 @@ sprite_frames = SubResource("SpriteFrames_ohjlb")
 animation = &"wiggle"
 frame = 8
 frame_progress = 1.0
+
+[node name="grass_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_186bm")
+volume_db = -23.401

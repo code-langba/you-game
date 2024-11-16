@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func in_area(_body) -> void:
 	is_triggered = true
+	$fall_sfx.play()
 	sensor.queue_free()
 
 func _physics_process(delta: float) -> void:

@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3w8opvylbqii"]
+[gd_scene load_steps=14 format=3 uid="uid://d3w8opvylbqii"]
 
 [ext_resource type="Script" path="res://scripts/enemies/grim.gd" id="1_mxr6g"]
 [ext_resource type="Texture2D" uid="uid://ce4gdqh4v1ie2" path="res://asset/sprites/grim.png" id="1_vvlpm"]
 [ext_resource type="Texture2D" uid="uid://c3c4hi162dpbg" path="res://asset/sprites/fx.png" id="2_u1ltt"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="4_nsnae"]
 [ext_resource type="PackedScene" uid="uid://7m34gm3hg474" path="res://components/scenes/movement.tscn" id="5_7cc8r"]
+[ext_resource type="AudioStream" uid="uid://cm5cl5xagmnm0" path="res://asset/sounds/fx/swordSlash.mp3" id="6_4xd6x"]
 
 [sub_resource type="Animation" id="Animation_i22xc"]
 length = 0.001
@@ -535,3 +536,8 @@ raycast = NodePath("../RayCast2D")
 position = Vector2(0, -64)
 target_position = Vector2(64, 0)
 collision_mask = 17
+
+[node name="slice_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4xd6x")
+volume_db = -8.667
+pitch_scale = 1.3

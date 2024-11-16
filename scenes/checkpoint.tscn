@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cg1e3l3u7egyk"]
+[gd_scene load_steps=16 format=3 uid="uid://cg1e3l3u7egyk"]
 
 [ext_resource type="Script" path="res://scripts/checkpoint.gd" id="1_j5wj0"]
 [ext_resource type="Texture2D" uid="uid://dncllr4p125jf" path="res://asset/sprites/resources2.png" id="2_82kkg"]
+[ext_resource type="AudioStream" uid="uid://3qht0yybpbdi" path="res://asset/sounds/fx/ting.mp3" id="3_pc2a6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3kfkf"]
 atlas = ExtResource("2_82kkg")
@@ -145,3 +146,8 @@ self_modulate = Color(1, 1, 1, 0)
 position = Vector2(-25, -43)
 scale = Vector2(1e-05, 1e-05)
 texture = SubResource("GradientTexture2D_qk0pv")
+
+[node name="ting" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pc2a6")
+volume_db = -1.228
+pitch_scale = 1.7

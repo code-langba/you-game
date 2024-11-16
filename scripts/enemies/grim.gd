@@ -22,6 +22,7 @@ func play_attack(_body: Node) -> void:
 	if is_fake: return
 	movement_comp.pause_movement = true
 	animation_player.play("attack")
+	$slice_sfx.play()
 	await animation_player.animation_finished
 	movement_comp.pause_movement = false
 

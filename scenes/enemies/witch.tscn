@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbrv4g35mhn1c"]
+[gd_scene load_steps=8 format=3 uid="uid://bbrv4g35mhn1c"]
 
 [ext_resource type="Script" path="res://scripts/enemies/witch.gd" id="1_r18j7"]
 [ext_resource type="PackedScene" uid="uid://7m34gm3hg474" path="res://components/scenes/movement.tscn" id="2_beml7"]
+[ext_resource type="AudioStream" uid="uid://bgfe2oj1ejs6v" path="res://asset/sounds/fx/witch-cackle-250272.mp3" id="3_0kfkt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jy2df"]
 radius = 32.0
@@ -67,3 +68,7 @@ shape = SubResource("RectangleShape2D_ns8y3")
 position = Vector2(-24, -40)
 
 [node name="Movement" parent="." instance=ExtResource("2_beml7")]
+
+[node name="witch_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0kfkt")
+volume_db = -13.867

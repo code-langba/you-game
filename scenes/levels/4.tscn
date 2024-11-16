@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dmwhkhcbfhwfi"]
+[gd_scene load_steps=22 format=4 uid="uid://dmwhkhcbfhwfi"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
@@ -6,8 +6,11 @@
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_ss6r6"]
 [ext_resource type="AudioStream" uid="uid://drrm716sc47tm" path="res://asset/music/bgm/4.ogg" id="3_etc5n"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="4_0m3ev"]
+[ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="4_vmclo"]
+[ext_resource type="Texture2D" uid="uid://b0jnb7aclfok1" path="res://asset/sprites/bg/lvl3/9.png" id="5_gwe7i"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="5_r51gs"]
 [ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
+[ext_resource type="Texture2D" uid="uid://c1qb11hpmmilx" path="res://asset/sprites/bg/lvl3/8.png" id="6_bxjxi"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="7_cngk8"]
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="8_knafx"]
@@ -135,7 +138,35 @@ position = Vector2(6, 435)
 script = ExtResource("2_ss6r6")
 bgm = ExtResource("3_etc5n")
 
-[node name="Player" parent="." index="0"]
+[node name="bg" type="Node2D" parent="." index="0"]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="bg" index="0"]
+position = Vector2(5957, -1200)
+texture = ExtResource("4_vmclo")
+region_enabled = true
+region_rect = Rect2(128, 512, 128, 128)
+
+[node name="Parallax2D4" type="Parallax2D" parent="bg" index="1"]
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(-121, -12)
+repeat_size = Vector2(3840, 0)
+repeat_times = 9
+
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D4" index="0"]
+position = Vector2(1920, -500)
+scale = Vector2(1, 1.5)
+texture = ExtResource("5_gwe7i")
+
+[node name="Parallax2D5" type="Parallax2D" parent="bg" index="2"]
+scroll_scale = Vector2(0.1, 0.1)
+scroll_offset = Vector2(-121, -12)
+
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D5" index="0"]
+position = Vector2(1700, 250)
+texture = ExtResource("6_bxjxi")
+
+[node name="Player" parent="." index="1"]
 position = Vector2(9498, -665)
 
 [node name="Knight" parent="Player" index="1"]
@@ -146,7 +177,7 @@ flip_h = true
 offset = Vector2(0, -100)
 limit_right = 10000
 
-[node name="Tilemap" parent="." index="4"]
+[node name="Tilemap" parent="." index="5"]
 position = Vector2(0, -616)
 
 [node name="blocks" type="TileMapLayer" parent="Tilemap" index="0"]
@@ -160,34 +191,34 @@ use_parent_material = true
 position = Vector2(0, 10)
 tile_set = SubResource("TileSet_syavs")
 
-[node name="invisible_box" parent="." index="5" instance=ExtResource("4_0m3ev")]
+[node name="invisible_box" parent="." index="6" instance=ExtResource("4_0m3ev")]
 position = Vector2(8372, -238)
 
-[node name="walker" parent="." index="6" instance=ExtResource("5_r51gs")]
+[node name="walker" parent="." index="7" instance=ExtResource("5_r51gs")]
 position = Vector2(5655, -106)
 is_friendly = true
 
-[node name="walker5" parent="." index="7" instance=ExtResource("5_r51gs")]
+[node name="walker5" parent="." index="8" instance=ExtResource("5_r51gs")]
 position = Vector2(5796, -106)
 is_friendly = true
 
-[node name="walker6" parent="." index="8" instance=ExtResource("5_r51gs")]
+[node name="walker6" parent="." index="9" instance=ExtResource("5_r51gs")]
 position = Vector2(6211, -106)
 is_friendly = true
 
-[node name="walker2" parent="." index="9" instance=ExtResource("5_r51gs")]
+[node name="walker2" parent="." index="10" instance=ExtResource("5_r51gs")]
 position = Vector2(5967, -106)
 is_friendly = true
 
-[node name="walker3" parent="." index="10" instance=ExtResource("5_r51gs")]
+[node name="walker3" parent="." index="11" instance=ExtResource("5_r51gs")]
 position = Vector2(6458, -106)
 is_friendly = true
 
-[node name="walker4" parent="." index="11" instance=ExtResource("5_r51gs")]
+[node name="walker4" parent="." index="12" instance=ExtResource("5_r51gs")]
 position = Vector2(6642, -106)
 is_friendly = true
 
-[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="12"]
+[node name="Change Process > Mode to Inherit to enable" type="StaticBody2D" parent="." index="13"]
 position = Vector2(6847, 96)
 collision_layer = 16
 collision_mask = 0
@@ -196,7 +227,7 @@ collision_mask = 0
 position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_au0k1")
 
-[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="13"]
+[node name="Change Process > Mode to Inherit to enable2" type="StaticBody2D" parent="." index="14"]
 position = Vector2(5449, 87)
 collision_layer = 16
 collision_mask = 0
@@ -205,7 +236,7 @@ collision_mask = 0
 position = Vector2(-27, -415)
 shape = SubResource("RectangleShape2D_au0k1")
 
-[node name="ascend" type="Area2D" parent="." index="14"]
+[node name="ascend" type="Area2D" parent="." index="15"]
 collision_mask = 2
 script = ExtResource("6_55bqg")
 ascend_bgm = ExtResource("8_cyhvv")
@@ -222,7 +253,7 @@ offset_bottom = 4.0
 color = Color(0.0313726, 0.0313726, 0.0313726, 0.431373)
 metadata/_edit_lock_ = true
 
-[node name="credits" type="Node2D" parent="." index="15"]
+[node name="credits" type="Node2D" parent="." index="16"]
 
 [node name="Label" type="Label" parent="credits" index="0"]
 offset_left = 2660.0
@@ -310,14 +341,14 @@ text = "Our next project will be BIG.
 Spoiler alert: I love vampires and zombies"
 autowrap_mode = 2
 
-[node name="finish2" parent="." index="16" instance=ExtResource("8_knafx")]
+[node name="finish2" parent="." index="17" instance=ExtResource("8_knafx")]
 position = Vector2(3400, -3366)
 next_level = ExtResource("9_1ag0o")
 
 [node name="Sprite2D" parent="finish2" index="0"]
 visible = false
 
-[node name="heart" parent="." index="17" instance=ExtResource("2_oijpp")]
+[node name="heart" parent="." index="18" instance=ExtResource("2_oijpp")]
 position = Vector2(8156, 30)
 
 [editable path="Player"]

@@ -11,5 +11,6 @@ func trigger_checkpoint(_body: Node2D):
 	if is_active:
 		return
 	$AnimationPlayer.play("blink")
+	$ting.play()
 	PlayerManager.current_checkpoint = global_position
 	is_active = true

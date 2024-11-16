@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh7cb3a37dl7i"]
+[gd_scene load_steps=7 format=3 uid="uid://dh7cb3a37dl7i"]
 
 [ext_resource type="Script" path="res://scripts/traps/spike.gd" id="1_p8sb6"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_s34rh"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="3_6wchu"]
+[ext_resource type="AudioStream" uid="uid://dek5bi54gty0a" path="res://asset/sounds/fx/bush_cut.mp3" id="4_0kj6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hmak"]
 size = Vector2(128, 135)
@@ -36,3 +37,8 @@ region_rect = Rect2(128, 896, 128, 128)
 position = Vector2(0, 56)
 shape = SubResource("RectangleShape2D_x4akf")
 debug_color = Color(0.990638, 0.0693023, 0.154554, 0.42)
+
+[node name="spike_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0kj6t")
+volume_db = -0.867
+pitch_scale = 1.43

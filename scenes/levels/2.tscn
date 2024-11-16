@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dssyfpvknpchk" path="res://asset/sprites/bg/lvl2/1.png" id="5_qlp1q"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
 [ext_resource type="Texture2D" uid="uid://hplxd3h3cl87" path="res://asset/sprites/bg/lvl2/4.PNG" id="7_ed05v"]
-[ext_resource type="Texture2D" uid="uid://c55pe7t6j8f56" path="res://asset/sprites/bg/lvl2/2.PNG" id="7_kv7ix"]
+[ext_resource type="Texture2D" uid="uid://c55pe7t6j8f56" path="res://asset/sprites/bg/lvl2/2.png" id="7_kv7ix"]
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
 [ext_resource type="Texture2D" uid="uid://dkbw7gfqc6gti" path="res://asset/sprites/bg/lvl2/5.PNG" id="8_acnjh"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="8_au5e5"]
