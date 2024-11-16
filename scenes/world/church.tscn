@@ -11,9 +11,10 @@ size = Vector2(1416.16, 263.642)
 z_index = -1
 position = Vector2(-5.99951, -0.999996)
 scale = Vector2(1.91927, 1.91927)
+collision_mask = 2
 script = ExtResource("1_bky7b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="box" type="CollisionShape2D" parent="."]
 position = Vector2(26.5726, 24.4885)
 shape = SubResource("RectangleShape2D_yy8jk")
 

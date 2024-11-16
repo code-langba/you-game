@@ -166,7 +166,7 @@ position = Vector2(1700, 250)
 texture = ExtResource("6_bxjxi")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(6489, -189)
+position = Vector2(9508, -339)
 
 [node name="Knight" parent="Player" index="1"]
 animation = &"idle"
