@@ -10,8 +10,8 @@
 [ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="7_cngk8"]
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
-[ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/finish.tscn" id="8_knafx"]
-[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/main.tscn" id="9_1ag0o"]
+[ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
+[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2n8f"]
 texture = ExtResource("2_27drq")

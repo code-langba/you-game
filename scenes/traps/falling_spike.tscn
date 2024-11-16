@@ -2,7 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="1_83jej"]
 [ext_resource type="Script" path="res://scripts/traps/falling_spike.gd" id="1_tuool"]
-[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_uw7w1"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="2_uw7w1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgwqr"]
+size = Vector2(112, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eka5f"]
 size = Vector2(128, 128)
@@ -10,12 +13,8 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc0vi"]
 size = Vector2(304, 1152)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgwqr"]
-size = Vector2(112, 32)
-
 [node name="falling_spike" type="CharacterBody2D"]
 collision_layer = 8
-collision_mask = 0
 script = ExtResource("1_tuool")
 gravity = 6000.0
 
@@ -23,6 +22,10 @@ gravity = 6000.0
 texture = ExtResource("1_83jej")
 region_enabled = true
 region_rect = Rect2(128, 896, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_tgwqr")
 
 [node name="killzone" parent="." instance=ExtResource("2_uw7w1")]
 collision_layer = 8
@@ -32,14 +35,10 @@ shape = SubResource("RectangleShape2D_eka5f")
 
 [node name="sensor" type="Area2D" parent="."]
 position = Vector2(-152, 0)
-collision_layer = 8
-collision_mask = 0
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sensor"]
 position = Vector2(152, 512)
 shape = SubResource("RectangleShape2D_dc0vi")
 debug_color = Color(0.992612, 0, 0.249584, 0.42)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -40)
-shape = SubResource("RectangleShape2D_tgwqr")

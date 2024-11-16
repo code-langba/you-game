@@ -12,6 +12,7 @@ func _ready() -> void:
 	sensor.body_entered.connect(in_area)
 
 func in_area(_body) -> void:
+	print("Yes")
 	is_triggered = true
 	sensor.queue_free()
 

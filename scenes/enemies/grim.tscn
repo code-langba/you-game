@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/grim.gd" id="1_mxr6g"]
 [ext_resource type="Texture2D" uid="uid://ce4gdqh4v1ie2" path="res://asset/sprites/grim.png" id="1_vvlpm"]
 [ext_resource type="Texture2D" uid="uid://c3c4hi162dpbg" path="res://asset/sprites/fx.png" id="2_u1ltt"]
-[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="4_nsnae"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="4_nsnae"]
 [ext_resource type="PackedScene" uid="uid://7m34gm3hg474" path="res://components/scenes/movement.tscn" id="5_7cc8r"]
 
 [sub_resource type="Animation" id="Animation_i22xc"]
