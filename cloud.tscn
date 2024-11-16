@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3fjs7dyoqykf"]
+[gd_scene load_steps=6 format=3 uid="uid://3fjs7dyoqykf"]
 
 [ext_resource type="Script" path="res://components/scripts/bounce.gd" id="1_7ak0o"]
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="2_q1g6e"]
+[ext_resource type="AudioStream" uid="uid://dmmqyckjk8y1x" path="res://asset/sounds/fx/fabric-flap-80054.mp3" id="3_qrgfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ix6m"]
 size = Vector2(384, 24)
@@ -40,3 +41,7 @@ scale = Vector2(1.14063, 1.16797)
 texture = ExtResource("2_q1g6e")
 region_enabled = true
 region_rect = Rect2(0, 128, 384, 128)
+
+[node name="boing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qrgfp")
+volume_db = -9.534

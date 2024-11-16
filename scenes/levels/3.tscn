@@ -377,7 +377,7 @@ position = Vector2(0, 200)
 texture = ExtResource("17_k7fdo")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(16195, -878)
+position = Vector2(3910, -131)
 fall_gravity = 5000
 push_force = 0.001
 

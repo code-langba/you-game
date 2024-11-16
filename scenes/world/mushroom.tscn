@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm826kvfjn2fc"]
+[gd_scene load_steps=6 format=3 uid="uid://cm826kvfjn2fc"]
 
 [ext_resource type="Script" path="res://components/scripts/bounce.gd" id="1_b71tr"]
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="2_dpkgj"]
+[ext_resource type="AudioStream" uid="uid://dnndvewadoq8r" path="res://asset/sounds/fx/squishFx.mp3" id="3_5ia1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afdb6"]
 size = Vector2(98, 24)
@@ -39,3 +40,8 @@ position = Vector2(0, -26)
 texture = ExtResource("2_dpkgj")
 region_enabled = true
 region_rect = Rect2(128, 256, 128, 128)
+
+[node name="boing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5ia1y")
+volume_db = -7.8
+pitch_scale = 1.2

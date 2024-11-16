@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
 [ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="2_oijpp"]
-[ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_ss6r6"]
 [ext_resource type="AudioStream" uid="uid://drrm716sc47tm" path="res://asset/music/bgm/4.ogg" id="3_etc5n"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="4_0m3ev"]
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="4_vmclo"]
@@ -15,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
+[ext_resource type="PackedScene" uid="uid://c5vxmsxnfocmd" path="res://scenes/world/church.tscn" id="15_gy7vk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2n8f"]
 texture = ExtResource("2_27drq")
@@ -135,7 +135,6 @@ size = Vector2(541, 94)
 
 [node name="level" instance=ExtResource("1_edo13")]
 position = Vector2(6, 435)
-script = ExtResource("2_ss6r6")
 bgm = ExtResource("3_etc5n")
 
 [node name="bg" type="Node2D" parent="." index="0"]
@@ -167,7 +166,7 @@ position = Vector2(1700, 250)
 texture = ExtResource("6_bxjxi")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(9498, -665)
+position = Vector2(6489, -189)
 
 [node name="Knight" parent="Player" index="1"]
 animation = &"idle"
@@ -350,6 +349,9 @@ visible = false
 
 [node name="heart" parent="." index="18" instance=ExtResource("2_oijpp")]
 position = Vector2(8156, 30)
+
+[node name="chruch" parent="." index="19" instance=ExtResource("15_gy7vk")]
+position = Vector2(4578, 51)
 
 [editable path="Player"]
 [editable path="finish2"]

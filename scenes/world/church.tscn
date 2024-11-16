@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5vxmsxnfocmd"]
+
+[ext_resource type="Script" path="res://scripts/world/church.gd" id="1_bky7b"]
+[ext_resource type="Texture2D" uid="uid://cdn45luf11grv" path="res://asset/sprites/bg/lvl4/1.png" id="1_w4vml"]
+[ext_resource type="AudioStream" uid="uid://bqda28mqaod7j" path="res://asset/sounds/fx/church_bells.mp3" id="2_m04di"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy8jk"]
+size = Vector2(1416.16, 263.642)
+
+[node name="chruch" type="Area2D"]
+z_index = -1
+position = Vector2(-5.99951, -0.999996)
+scale = Vector2(1.91927, 1.91927)
+script = ExtResource("1_bky7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26.5726, 24.4885)
+shape = SubResource("RectangleShape2D_yy8jk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_w4vml")
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 384)
+
+[node name="bells" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_m04di")
+volume_db = -11.266
