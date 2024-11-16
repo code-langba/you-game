@@ -28,15 +28,14 @@ offset_bottom = 363.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7vlfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_35ctv")
 debug_color = Color(0.716215, 0.375512, 0.41471, 0.42)
 
 [node name="Area2D" parent="." instance=ExtResource("2_kd7ma")]
 collision_layer = 8
-collision_mask = 0
 script = null
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-visible = false
 shape = SubResource("CircleShape2D_lx4gh")
 debug_color = Color(0, 0.0183077, 0.025747, 0.42)

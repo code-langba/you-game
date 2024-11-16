@@ -582,7 +582,7 @@ position = Vector2(10965, -1229)
 [node name="EnemyCollideables" type="Node2D" parent="Extra" index="0"]
 
 [node name="EnemyCollideable" parent="Extra/EnemyCollideables" index="0" instance=ExtResource("22_jmuhr")]
-position = Vector2(1402, 286)
+position = Vector2(1387, 286)
 
 [node name="EnemyCollideable2" parent="Extra/EnemyCollideables" index="1" instance=ExtResource("22_jmuhr")]
 position = Vector2(2754, -207)
