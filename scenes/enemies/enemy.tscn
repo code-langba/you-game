@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://de65jyu6j15q3"]
 
-[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="3_6h3ry"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="3_6h3ry"]
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 0

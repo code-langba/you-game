@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WitchResource" load_steps=2 format=3 uid="uid://dbmuec6b1l34j"]
+
+[ext_resource type="Script" path="res://resources/enemies/witch.gd" id="1_3en5y"]
+
+[resource]
+script = ExtResource("1_3en5y")
+gravity = 1000.0
+throw_direction = -1
+attack_delay = 1.0
+throw_trajectory_y = 0.12
+throw_force = 1800.0

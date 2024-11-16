@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://bdkcva20j8ym"]
 
 [ext_resource type="Script" path="res://scripts/enemies/walker.gd" id="1_n7rpm"]
-[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://scenes/killzone.tscn" id="2_2reh2"]
+[ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="2_2reh2"]
 [ext_resource type="Texture2D" uid="uid://d1enuou01k5qq" path="res://asset/sprites/walker.png" id="2_pnxdr"]
 [ext_resource type="PackedScene" uid="uid://cnn2elrbt0elo" path="res://components/scenes/walking.tscn" id="4_uefvm"]
 

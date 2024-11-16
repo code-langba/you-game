@@ -1,14 +1,6 @@
 extends CharacterBody2D
 
-@export var gravity: float = 1000
-
-@export_group("Attack")
-@export_enum("LEFT:-1", "RIGHT:1") var throw_direction: int = -1
-## This is the delay between attacks. The higher the slower.
-@export_range(0, 5, 0.1, "or_greater", "suffix: secs") var attack_delay: float = 1
-## Positive aims up while negative aims down.
-@export_range(-1, 1, 0.1) var throw_trajectory_y: float = 0.2
-@export var throw_force: float = 1000
+@export var witch: WitchResource  
 
 @onready var projectileScene: PackedScene = preload("res://scenes/enemies/projectile1.tscn")
 @onready var attack_delay_timer: Timer = $AttackDelayTimer
@@ -24,12 +16,12 @@ func _ready() -> void:
 	attack_delay_timer.timeout.connect(throw_projectile)
 
 func _physics_process(delta: float) -> void:
-	movement_comp.apply_gravity(self, delta, gravity)
+	movement_comp.apply_gravity(self, delta, witch.gravity)
 	move_and_slide()
 
 func attack(_body: CharacterBody2D) -> void:
 	$witch_sfx.play()
-	attack_delay_timer.start(attack_delay)
+	attack_delay_timer.start(witch.attack_delay)
 	is_attacking = true
 	
 func stop_attack(_body: CharacterBody2D) -> void:
@@ -43,4 +35,4 @@ func throw_projectile() -> void:
 	var projectile: RigidBody2D = projectileScene.instantiate()
 	add_child(projectile)
 	projectile.global_position = throw_pos.global_position
-	projectile.apply_impulse(Vector2(throw_direction, -throw_trajectory_y) * throw_force)
+	projectile.apply_impulse(Vector2(witch.throw_direction, -witch.throw_trajectory_y) * witch.throw_force)

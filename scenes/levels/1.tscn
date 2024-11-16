@@ -1,14 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=17 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
-[ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_t4h0w"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
 [ext_resource type="Texture2D" uid="uid://45qrkhg6kdmn" path="res://asset/sprites/bg/lvl1/sky.png" id="4_bl0mq"]
 [ext_resource type="PackedScene" uid="uid://4psc66kvofb8" path="res://scenes/levels/2.tscn" id="4_l0x5u"]
 [ext_resource type="Texture2D" uid="uid://c4qcogrb3yotd" path="res://asset/sprites/bg/lvl1/1.png" id="5_3vw1e"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_8yscw"]
 [ext_resource type="Texture2D" uid="uid://wdssro4517wv" path="res://asset/sprites/lvl1/moon.png" id="5_e637k"]
-[ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/checkpoint.tscn" id="6_25abd"]
+[ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/world/checkpoint.tscn" id="6_25abd"]
 [ext_resource type="Texture2D" uid="uid://cygck6g0h547i" path="res://asset/sprites/bg/lvl1/2.png" id="6_ofsii"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="7_gmib8"]
 [ext_resource type="Texture2D" uid="uid://csgiyuj5mjttl" path="res://asset/sprites/bg/lvl1/3.png" id="7_he5ci"]
@@ -19,7 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
 
 [node name="1" instance=ExtResource("1_1e0av")]
-script = ExtResource("2_t4h0w")
 bgm = ExtResource("10_65fjq")
 
 [node name="bg" type="Node2D" parent="." index="0"]

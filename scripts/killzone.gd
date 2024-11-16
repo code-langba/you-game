@@ -3,7 +3,7 @@ extends Area2D
 func _ready() -> void:
 	body_entered.connect(kill)
 	
-func kill(body: CharacterBody2D) -> void:
+func kill(body: PhysicsBody2D) -> void:
 	if body is Player: 
 		EventBus.player_died.emit()
 	else:
