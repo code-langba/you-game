@@ -7,5 +7,5 @@ script = ExtResource("1_3en5y")
 gravity = 1000.0
 throw_direction = -1
 attack_delay = 1.0
-throw_trajectory_y = 0.1
-throw_force = 80.0
+throw_trajectory_y = 0.12
+throw_force = 1800.0
