@@ -16,7 +16,7 @@ script = ExtResource("1_p8sb6")
 
 [node name="trigger" type="Area2D" parent="."]
 collision_layer = 8
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="trigger"]
 position = Vector2(0, -95.5)
@@ -24,7 +24,6 @@ shape = SubResource("RectangleShape2D_7hmak")
 
 [node name="killzone" parent="." instance=ExtResource("2_s34rh")]
 collision_layer = 8
-collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="killzone"]
 position = Vector2(0, 56)

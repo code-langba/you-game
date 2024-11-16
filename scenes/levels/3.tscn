@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=53 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
@@ -377,7 +377,7 @@ position = Vector2(0, 200)
 texture = ExtResource("17_k7fdo")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(9619, -1206)
+position = Vector2(16195, -878)
 fall_gravity = 5000
 push_force = 0.001
 
@@ -678,7 +678,7 @@ constant_force = Vector2(1000, 0)
 
 [node name="rolling_ball2" parent="Traps" index="3" instance=ExtResource("6_dbdtd")]
 unique_name_in_owner = true
-position = Vector2(18032, -1135)
+position = Vector2(18096, -1135)
 
 [node name="splike" parent="Traps" index="4" instance=ExtResource("10_11ghb")]
 position = Vector2(7340, -1109)
