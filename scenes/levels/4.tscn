@@ -161,7 +161,7 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("3_22cpu")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(4779, 166)
+position = Vector2(9553, -898)
 
 [node name="Camera2D" parent="Player" index="2"]
 offset = Vector2(0, -100)
@@ -355,10 +355,7 @@ autowrap_mode = 2
 position = Vector2(3400, -3814)
 next_level = ExtResource("9_1ag0o")
 
-[node name="Sprite2D" parent="finish2" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="finish2" index="1"]
+[node name="CollisionShape2D" parent="finish2" index="0"]
 position = Vector2(0, -1607)
 
 [node name="heart" parent="." index="18" instance=ExtResource("2_oijpp")]

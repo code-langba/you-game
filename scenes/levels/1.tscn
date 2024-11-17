@@ -104,7 +104,7 @@ region_enabled = true
 region_rect = Rect2(384, 896, 128, 128)
 
 [node name="finish" parent="." index="6"]
-position = Vector2(4528, 464)
+position = Vector2(4528, 402)
 next_level = ExtResource("4_l0x5u")
 
 [node name="grass" type="Node2D" parent="." index="7"]
@@ -158,5 +158,38 @@ tile_set = ExtResource("9_7pnl8")
 use_parent_material = true
 position = Vector2(0, 10)
 tile_set = ExtResource("9_7pnl8")
+
+[node name="Node2D" type="Node2D" parent="." index="12"]
+
+[node name="Label" type="Label" parent="Node2D" index="0"]
+offset_left = 255.0
+offset_top = 395.0
+offset_right = 847.0
+offset_bottom = 459.0
+theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "w,a      — move
+space  — jump"
+
+[node name="Label2" type="Label" parent="Node2D" index="1"]
+offset_left = 1936.0
+offset_top = 565.0
+offset_right = 2576.0
+offset_bottom = 648.0
+theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "make sure to ding!"
+
+[node name="Label3" type="Label" parent="Node2D" index="2"]
+offset_left = 4316.0
+offset_top = 301.0
+offset_right = 4956.0
+offset_bottom = 384.0
+theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "ascend!"
 
 [editable path="Player"]

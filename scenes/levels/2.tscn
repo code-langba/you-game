@@ -123,7 +123,7 @@ position = Vector2(198, 260)
 limit_right = 6400
 
 [node name="finish" parent="." index="4"]
-position = Vector2(6184, 728)
+position = Vector2(6185, 667)
 next_level = ExtResource("2_kghkq")
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="0"]

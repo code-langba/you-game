@@ -211,5 +211,4 @@ text = "I'm scared to jump."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-6.78788, 26.0148)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_a1b23")
