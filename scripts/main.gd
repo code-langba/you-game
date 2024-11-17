@@ -1,8 +1,7 @@
 extends Control
 
 @export var bgm: AudioStream
-@export var button_container: VBoxContainer
-
+@export var buttons: Array[Button]
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
@@ -13,7 +12,6 @@ func _ready() -> void:
 		manager.is_playing = false
 	
 	# buttons
-	var buttons = button_container.get_children() as Array[TextureButton]
 	buttons[0].grab_focus()
 	for button in buttons:
 		button.mouse_entered.connect(on_mouse_entered.bind(button))
@@ -29,14 +27,14 @@ func quit_game() -> void:
 func open_settings() -> void:
 	print_rich("[color=orange]Not Implemented[/color]")
 
-func on_button_pressed(button: TextureButton) -> void:
+func on_button_pressed(button: Button) -> void:
 	match button.get_meta("action"):
 		"start": start_game()
 		"quit": quit_game()
 		"settings": open_settings()
 
-func on_mouse_entered(button: TextureButton) -> void:
+func on_mouse_entered(button: Button) -> void:
 	button.grab_focus()
 
-func on_button_focus_entered(_button: TextureButton) -> void:
+func on_button_focus_entered(_button: Button) -> void:
 	audio.play()

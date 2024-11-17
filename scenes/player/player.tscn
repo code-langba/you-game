@@ -493,10 +493,10 @@ push_force = 0.01
 position = Vector2(-2, 5)
 shape = SubResource("CapsuleShape2D_mmg30")
 
-[node name="Knight" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9, -4)
 sprite_frames = SubResource("SpriteFrames_rbfq1")
-animation = &"ascending"
+animation = &"run"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]

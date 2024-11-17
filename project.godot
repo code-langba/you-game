@@ -42,6 +42,11 @@ folder_colors={
 "res://scenes/player/": "blue"
 }
 
+[gui]
+
+theme/custom="res://resources/ui/ui.tres"
+theme/custom_font="res://asset/fonts/PixelOperator8-Bold.ttf"
+
 [input]
 
 ui_up={

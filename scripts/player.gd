@@ -13,7 +13,7 @@ class_name Player
 @export var push_force := 0.1
 
 
-@onready var player: AnimatedSprite2D = $Knight
+@onready var player: AnimatedSprite2D = $Sprite
 #@onready var killzone: Area2D = get_parent().get_node("killzone")
 @onready var gravity = default_gravity
 @onready var timer: Timer = $SceneResetTimer
