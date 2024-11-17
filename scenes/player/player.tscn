@@ -485,7 +485,6 @@ default_gravity = 6000
 fall_gravity = 6500
 speed = 600.0
 jump_velocity = 1800.0
-lives = 1
 push_force = 0.01
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

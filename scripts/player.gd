@@ -6,7 +6,6 @@ class_name Player
 @export var fall_gravity := 3000
 @export var speed := 300.0
 @export var jump_velocity := 800.0
-@export var lives: int = 10
 
 @export_group("Collision with RigidBody2D")
 @export var push_force := 0.1
@@ -21,6 +20,7 @@ var is_ascend = false
 var is_dead := false
 var force: Vector2
 var is_grounded: bool 
+var movement_disabled: bool = false
 
 var is_knockback = false:
 	set(f):
@@ -32,7 +32,7 @@ var is_knockback = false:
 var knockback_force = 2000
 
 func _ready() -> void:
-	PlayerManager.lives = lives
+	movement_disabled = false
 	is_dead = false
 	timer.timeout.connect(reload)
 	# killzone.play_die.connect(play_die_anim)
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 
 	var direction = 0
 
-	if not is_dead:
+	if not is_dead and not movement_disabled:
 		direction = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * speed
 
@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 	handle_collision_with_rigidbody()
 
 func handle_jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_dead:
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_dead and not movement_disabled:
 		velocity.y = -jump_velocity
 
 func handle_flip(direction: float):
@@ -116,6 +116,7 @@ func on_dead() -> void:
 		# var anim = body
 		play_die_anim()
 		PlayerManager.reset()
+		queue_free()
 		return
 	timer.start()
 	# call_deferred("reload")
@@ -125,6 +126,7 @@ func reload():
 	get_tree().reload_current_scene()
 
 func game_over() -> void:
+	movement_disabled = true
 	EventBus.game_over.emit()
 
 func add_impulse(force_vector: Vector2) -> void:
