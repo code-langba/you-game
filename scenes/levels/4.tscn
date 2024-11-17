@@ -1,15 +1,14 @@
-[gd_scene load_steps=22 format=4 uid="uid://dmwhkhcbfhwfi"]
+[gd_scene load_steps=21 format=4 uid="uid://dmwhkhcbfhwfi"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
 [ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="2_oijpp"]
+[ext_resource type="Texture2D" uid="uid://bnq7e7dp2ri43" path="res://asset/sprites/bg/lvl4/galaxy.png" id="3_22cpu"]
 [ext_resource type="AudioStream" uid="uid://drrm716sc47tm" path="res://asset/music/bgm/4.ogg" id="3_etc5n"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="4_0m3ev"]
-[ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="4_vmclo"]
-[ext_resource type="Texture2D" uid="uid://b0jnb7aclfok1" path="res://asset/sprites/bg/lvl3/9.png" id="5_gwe7i"]
+[ext_resource type="Texture2D" uid="uid://dr5e5w0i674ko" path="res://asset/sprites/bg/lvl4/star.png" id="4_hlibq"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="5_r51gs"]
 [ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
-[ext_resource type="Texture2D" uid="uid://c1qb11hpmmilx" path="res://asset/sprites/bg/lvl3/8.png" id="6_bxjxi"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="7_cngk8"]
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
@@ -136,34 +135,29 @@ size = Vector2(541, 94)
 [node name="level" instance=ExtResource("1_edo13")]
 position = Vector2(6, 435)
 bgm = ExtResource("3_etc5n")
+bg_color = Color(0.129412, 0.180392, 0.227451, 1)
 
 [node name="bg" type="Node2D" parent="." index="0"]
 z_index = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="bg" index="0"]
-position = Vector2(5957, -1200)
-texture = ExtResource("4_vmclo")
-region_enabled = true
-region_rect = Rect2(128, 512, 128, 128)
-
-[node name="Parallax2D4" type="Parallax2D" parent="bg" index="1"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
+[node name="Parallax2D5" type="Parallax2D" parent="bg" index="0"]
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(-138, -12)
+repeat_size = Vector2(1920, 1080)
 repeat_times = 9
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D4" index="0"]
-position = Vector2(1920, -500)
-scale = Vector2(1, 1.5)
-texture = ExtResource("5_gwe7i")
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D5" index="0"]
+position = Vector2(1083, 0)
+texture = ExtResource("4_hlibq")
 
-[node name="Parallax2D5" type="Parallax2D" parent="bg" index="2"]
-scroll_scale = Vector2(0.1, 0.1)
+[node name="Parallax2D4" type="Parallax2D" parent="bg" index="1"]
+scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(-121, -12)
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D5" index="0"]
-position = Vector2(1700, 250)
-texture = ExtResource("6_bxjxi")
+[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D4" index="0"]
+position = Vector2(2634, -36)
+scale = Vector2(1, 1.5)
+texture = ExtResource("3_22cpu")
 
 [node name="Player" parent="." index="1"]
 position = Vector2(9508, -339)
@@ -292,7 +286,7 @@ offset_top = -1251.0
 offset_right = 4200.27
 offset_bottom = -759.0
 theme_override_font_sizes/font_size = 30
-text = "Congrats on winning the game."
+text = "Congrats, you won the game!"
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="credits" index="4"]
