@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dmwhkhcbfhwfi"]
+[gd_scene load_steps=22 format=4 uid="uid://dmwhkhcbfhwfi"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
+[ext_resource type="PackedScene" uid="uid://bdqhay37x1j4" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
 [ext_resource type="PackedScene" uid="uid://c5vxmsxnfocmd" path="res://scenes/world/church.tscn" id="15_gy7vk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2n8f"]
@@ -160,7 +161,7 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("3_22cpu")
 
 [node name="Player" parent="." index="1"]
-position = Vector2(9508, -339)
+position = Vector2(4779, 166)
 
 [node name="Camera2D" parent="Player" index="2"]
 offset = Vector2(0, -100)
@@ -235,12 +236,11 @@ position = Vector2(3553, 469)
 shape = SubResource("RectangleShape2D_mcci6")
 
 [node name="ColorRect" type="ColorRect" parent="ascend" index="1"]
-offset_left = 2495.0
-offset_top = -2102.0
-offset_right = 4287.0
-offset_bottom = 4.0
+offset_left = 2500.0
+offset_top = -3371.0
+offset_right = 4292.0
+offset_bottom = -573.0
 color = Color(0.0313726, 0.0313726, 0.0313726, 0.431373)
-metadata/_edit_lock_ = true
 
 [node name="credits" type="Node2D" parent="." index="16"]
 
@@ -256,11 +256,23 @@ theme_override_fonts/font = ExtResource("7_cngk8")
 theme_override_font_sizes/font_size = 70
 text = "THANK YOU FOR PLAYING!!"
 
-[node name="Label5" type="Label" parent="credits" index="1"]
+[node name="Label10" type="Label" parent="credits" index="1"]
+offset_left = 2660.0
+offset_top = -1825.0
+offset_right = 4735.0
+offset_bottom = -1688.0
+theme_override_colors/font_color = Color(0.882353, 0.709804, 0.45098, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cngk8")
+theme_override_font_sizes/font_size = 70
+text = "A few words from us..."
+
+[node name="Label5" type="Label" parent="credits" index="2"]
 offset_left = 2645.0
-offset_top = -2247.0
+offset_top = -2999.0
 offset_right = 4720.0
-offset_bottom = -2110.0
+offset_bottom = -2862.0
 theme_override_colors/font_color = Color(0.882353, 0.709804, 0.45098, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -268,11 +280,11 @@ theme_override_fonts/font = ExtResource("7_cngk8")
 theme_override_font_sizes/font_size = 70
 text = "CREDITS"
 
-[node name="Label8" type="Label" parent="credits" index="2"]
+[node name="Label8" type="Label" parent="credits" index="3"]
 offset_left = 2946.0
-offset_top = -3091.0
+offset_top = -3576.0
 offset_right = 5021.0
-offset_bottom = -2954.0
+offset_bottom = -3439.0
 theme_override_colors/font_color = Color(0.882353, 0.709804, 0.45098, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -280,20 +292,29 @@ theme_override_fonts/font = ExtResource("7_cngk8")
 theme_override_font_sizes/font_size = 70
 text = "TO BE CONTINUED..."
 
-[node name="Label2" type="Label" parent="credits" index="3"]
-offset_left = 3689.0
-offset_top = -1251.0
-offset_right = 4200.27
-offset_bottom = -759.0
+[node name="Label2" type="Label" parent="credits" index="4"]
+offset_left = 3679.0
+offset_top = -1529.0
+offset_right = 4214.0
+offset_bottom = -1037.0
 theme_override_font_sizes/font_size = 30
-text = "Congrats, you won the game!"
+text = "You helped Mr. Boan ascend"
 autowrap_mode = 2
 
-[node name="Label6" type="Label" parent="credits" index="4"]
+[node name="Label9" type="Label" parent="credits" index="5"]
+offset_left = 2696.0
+offset_top = -1113.0
+offset_right = 3207.27
+offset_bottom = -621.0
+theme_override_font_sizes/font_size = 30
+text = "Congrats, you beat the game!"
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="credits" index="6"]
 offset_left = 2650.0
-offset_top = -2592.0
+offset_top = -3260.0
 offset_right = 3161.27
-offset_bottom = -2100.0
+offset_bottom = -2768.0
 theme_override_font_sizes/font_size = 30
 text = "Alixandre
 Shawn
@@ -302,46 +323,52 @@ Aiden
 Developed by:"
 autowrap_mode = 2
 
-[node name="Label7" type="Label" parent="credits" index="5"]
+[node name="Label7" type="Label" parent="credits" index="7"]
 offset_left = 3967.0
-offset_top = -3218.0
+offset_top = -3561.0
 offset_right = 4478.27
-offset_bottom = -2726.0
+offset_bottom = -3069.0
 theme_override_font_sizes/font_size = 30
 autowrap_mode = 2
 
-[node name="Label3" type="Label" parent="credits" index="6"]
+[node name="Label3" type="Label" parent="credits" index="8"]
 offset_left = 2639.0
-offset_top = -1595.0
-offset_right = 3239.0
-offset_bottom = -1463.0
+offset_top = -2191.0
+offset_right = 3345.0
+offset_bottom = -2024.0
 theme_override_font_sizes/font_size = 30
-text = "We had a lot of fun making this game.
-This is our first step toward becoming gamedev lords :P "
+text = "We had tons of fun making this game—onward to gamedev glory!  :P "
 autowrap_mode = 2
 
-[node name="Label4" type="Label" parent="credits" index="7"]
+[node name="Label4" type="Label" parent="credits" index="9"]
 offset_left = 3651.0
-offset_top = -2014.0
+offset_top = -2715.0
 offset_right = 4251.0
-offset_bottom = -1882.0
+offset_bottom = -2582.0
 theme_override_font_sizes/font_size = 30
 text = "Our next project will be BIG.
-Spoiler alert: I love vampires and zombies"
+
+Teaser: We love vampires and zombies "
 autowrap_mode = 2
 
 [node name="finish2" parent="." index="17" instance=ExtResource("8_knafx")]
-position = Vector2(3400, -3366)
+position = Vector2(3400, -3814)
 next_level = ExtResource("9_1ag0o")
 
 [node name="Sprite2D" parent="finish2" index="0"]
 visible = false
+
+[node name="CollisionShape2D" parent="finish2" index="1"]
+position = Vector2(0, -1607)
 
 [node name="heart" parent="." index="18" instance=ExtResource("2_oijpp")]
 position = Vector2(8156, 30)
 
 [node name="chruch" parent="." index="19" instance=ExtResource("15_gy7vk")]
 position = Vector2(4578, 51)
+
+[node name="AnimatedSprite2D" parent="." index="20" instance=ExtResource("15_3jhxm")]
+position = Vector2(4144, 246)
 
 [editable path="Player"]
 [editable path="finish2"]

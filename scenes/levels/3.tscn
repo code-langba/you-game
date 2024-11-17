@@ -366,7 +366,7 @@ region_enabled = true
 region_rect = Rect2(128, 512, 128, 128)
 
 [node name="Player" parent="." index="2"]
-position = Vector2(7020, -1209)
+position = Vector2(128, 640)
 fall_gravity = 5000
 push_force = 0.001
 
