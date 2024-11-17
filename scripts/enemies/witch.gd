@@ -21,15 +21,16 @@ func _physics_process(delta: float) -> void:
 
 func attack(_body: CharacterBody2D) -> void:
 	$witch_sfx.play()
-	attack_delay_timer.start(witch.attack_delay)
-	is_attacking = true
+	$anim.play("atk")
+	# attack_delay_timer.start(witch.attack_delay)
 	
 func stop_attack(_body: CharacterBody2D) -> void:
-	if is_attacking:
-		await attack_delay_timer.timeout
-		attack_delay_timer.stop()
-	attack_delay_timer.stop()
-	is_attacking = false
+	# if is_attacking:
+	# 	await attack_delay_timer.timeout
+	# 	attack_delay_timer.stop()
+	$anim.play("idle")
+	# attack_delay_timer.stop()
+	# is_attacking = false
 
 func throw_projectile() -> void:
 	var projectile: RigidBody2D = projectileScene.instantiate()

@@ -89,12 +89,6 @@ jump={
 2d_physics/layer_4="player-collideables"
 2d_physics/layer_5="enemy-collideables"
 
-[physics]
-
-2d/default_linear_damp=0.0
-2d/default_angular_damp=0.0
-2d/solver/contact_max_separation=10.0
-
 [rendering]
 
 renderer/rendering_method="mobile"

@@ -1,10 +1,102 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciwfk8x8so5td"]
+[gd_scene load_steps=17 format=3 uid="uid://ciwfk8x8so5td"]
 
 [ext_resource type="Script" path="res://scripts/world/heart.gd" id="1_svn65"]
-[ext_resource type="Texture2D" uid="uid://cd14yy2t562c4" path="res://asset/sprites/ui/heart.png" id="2_i7vk7"]
+[ext_resource type="Texture2D" uid="uid://d1fp2h0ssflla" path="res://asset/sprites/ui/heal.png" id="3_pqw20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgnrl"]
 size = Vector2(68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehyii"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04agk"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umbo6"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw7bk"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7bqm"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecln8"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q86c7"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p5mw"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nsss"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvtyy"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(2304, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q27er"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(2560, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui8bb"]
+atlas = ExtResource("3_pqw20")
+region = Rect2(2816, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w05pv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehyii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04agk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umbo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw7bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7bqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecln8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q86c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p5mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nsss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvtyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q27er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui8bb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="heart" type="Area2D"]
 collision_mask = 2
@@ -13,7 +105,9 @@ script = ExtResource("1_svn65")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vgnrl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -4)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_i7vk7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 7)
+scale = Vector2(0.363281, 0.363281)
+sprite_frames = SubResource("SpriteFrames_w05pv")
+autoplay = "default"
+frame_progress = 0.409713

@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://4psc66kvofb8"]
+[gd_scene load_steps=28 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
-[ext_resource type="Script" path="res://scenes/levels/1.gd" id="2_jmpdd"]
 [ext_resource type="PackedScene" uid="uid://bmk8onibxyk57" path="res://scenes/levels/3.tscn" id="2_kghkq"]
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="3_7lihg"]
 [ext_resource type="AudioStream" uid="uid://cp0rv4saf5bw5" path="res://asset/music/bgm/mystical.mp3" id="3_41qmk"]
@@ -29,7 +28,7 @@
 size = Vector2(206, 1152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kkqv2"]
-size = Vector2(128, 32)
+size = Vector2(180, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_700cd"]
 atlas = ExtResource("18_ldpk0")
@@ -47,7 +46,6 @@ animations = [{
 }]
 
 [node name="2" instance=ExtResource("1_vasr2")]
-script = ExtResource("2_jmpdd")
 bgm = ExtResource("3_41qmk")
 
 [node name="bg" type="Node2D" parent="." index="0"]
@@ -188,6 +186,7 @@ positions = [NodePath("../Position"), NodePath("../Position2")]
 animator = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="0"]
+position = Vector2(-26, 0)
 shape = SubResource("RectangleShape2D_kkqv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="platforms/BetterMovingPlatform/BetterMVBase" index="1"]
@@ -210,6 +209,7 @@ positions = [NodePath("../Position"), NodePath("../Position2")]
 animator = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="0"]
+position = Vector2(-18, 0)
 shape = SubResource("RectangleShape2D_kkqv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="platforms/BetterMovingPlatform2/BetterMVBase" index="1"]

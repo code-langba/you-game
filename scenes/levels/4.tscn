@@ -168,10 +168,6 @@ texture = ExtResource("6_bxjxi")
 [node name="Player" parent="." index="1"]
 position = Vector2(9508, -339)
 
-[node name="Knight" parent="Player" index="1"]
-animation = &"idle"
-flip_h = true
-
 [node name="Camera2D" parent="Player" index="2"]
 offset = Vector2(0, -100)
 limit_right = 10000
