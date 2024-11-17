@@ -1,13 +1,12 @@
 extends CharacterBody2D
 class_name Player
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 @export var default_gravity := 980
 @export var fall_gravity := 3000
 @export var speed := 300.0
 @export var jump_velocity := 800.0
-@export var game_over_scene: PackedScene
+@export var lives: int = 10
 
 @export_group("Collision with RigidBody2D")
 @export var push_force := 0.1
@@ -33,6 +32,7 @@ var is_knockback = false:
 var knockback_force = 2000
 
 func _ready() -> void:
+	PlayerManager.lives = lives
 	is_dead = false
 	timer.timeout.connect(reload)
 	# killzone.play_die.connect(play_die_anim)
@@ -105,7 +105,7 @@ func play_die_anim():
 	await player.animation_finished
 	await get_tree().create_timer(0.5).timeout
 	is_dead = false
-	call_deferred("load_game_over")
+	call_deferred("game_over")
 	
 
 func on_dead() -> void:
@@ -124,8 +124,8 @@ func reload():
 	# await get_tree().create_timer(0.5).timeout
 	get_tree().reload_current_scene()
 
-func load_game_over() -> void:
-	get_tree().change_scene_to_packed(game_over_scene)
+func game_over() -> void:
+	EventBus.game_over.emit()
 
 func add_impulse(force_vector: Vector2) -> void:
 	force = force_vector

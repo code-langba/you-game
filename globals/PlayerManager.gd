@@ -1,6 +1,5 @@
 extends Node
 
-
 var current_checkpoint: Vector2
 var lives := 10:
 	set(value):

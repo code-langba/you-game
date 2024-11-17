@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://7rndgha02643"]
+[gd_scene load_steps=3 format=3 uid="uid://7rndgha02643"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_f4hw0"]
+[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="2_o02el"]
 
-[node name="game_over" type="Control"]
+[node name="game_over" type="Control" node_paths=PackedStringArray("buttons")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f4hw0")
+main_menu_scene = ExtResource("2_o02el")
+buttons = [NodePath("CenterContainer/VBoxContainer/VBoxContainer/RestartLevel"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/ToMainMenu"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/Quit")]
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -19,7 +22,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 128
 text = "GAME OVER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="RestartLevel" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Restart Level"
+metadata/action = "restart_level"
+
+[node name="ToMainMenu" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Main Menu"
+metadata/action = "go_to_main_menu"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+text = "Quit"
+metadata/action = "quit"
