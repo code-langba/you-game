@@ -251,147 +251,170 @@ bgm = ExtResource("3_ai0cw")
 
 [node name="bg" type="Node2D" parent="." index="0"]
 z_index = -1
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="bg" index="0"]
-position = Vector2(5957, -1200)
-texture = ExtResource("12_1kriy")
-region_enabled = true
-region_rect = Rect2(128, 512, 128, 128)
-
-[node name="Parallax2D4" type="Parallax2D" parent="bg" index="1"]
+[node name="Sky" type="Parallax2D" parent="bg" index="0"]
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
 repeat_times = 9
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D4" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Sky" index="0"]
 position = Vector2(1920, -500)
 scale = Vector2(1, 1.5)
 texture = ExtResource("5_1n0na")
 
-[node name="Parallax2D5" type="Parallax2D" parent="bg" index="2"]
+[node name="Sun" type="Parallax2D" parent="bg" index="1"]
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-121, -12)
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D5" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Sun" index="0"]
 position = Vector2(1700, 250)
 texture = ExtResource("6_3wcof")
 
-[node name="Parallax2D6" type="Parallax2D" parent="bg" index="3"]
+[node name="Hill" type="Parallax2D" parent="bg" index="2"]
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D6" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Hill" index="0"]
 position = Vector2(0, 300)
 texture = ExtResource("7_02efb")
 
-[node name="Parallax2D7" type="Parallax2D" parent="bg" index="4"]
+[node name="Fog3" type="Parallax2D" parent="bg" index="3"]
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D7" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Fog3" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("8_ytqv5")
 
-[node name="c4" type="Parallax2D" parent="bg" index="5"]
+[node name="c4" type="Parallax2D" parent="bg" index="4"]
 scroll_scale = Vector2(0.21, 0.21)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(-10, 0)
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c4" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("9_xtwnw")
 
-[node name="Parallax2D8" type="Parallax2D" parent="bg" index="6"]
+[node name="Mt3" type="Parallax2D" parent="bg" index="5"]
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D8" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Mt3" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("9_kxlq3")
 
-[node name="c3" type="Parallax2D" parent="bg" index="7"]
+[node name="c3" type="Parallax2D" parent="bg" index="6"]
 scroll_scale = Vector2(0.23, 0.23)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(-30, 0)
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c3" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("11_ddn6h")
 
-[node name="mt2" type="Parallax2D" parent="bg" index="8"]
+[node name="mt2" type="Parallax2D" parent="bg" index="7"]
 scroll_scale = Vector2(0.35, 0.35)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/mt2" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("10_nimc3")
 
-[node name="c2" type="Parallax2D" parent="bg" index="9"]
+[node name="c2" type="Parallax2D" parent="bg" index="8"]
 scroll_scale = Vector2(0.4, 0.4)
-scroll_offset = Vector2(-121, -12)
+scroll_offset = Vector2(-328, -12)
 repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(-50, 0)
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c2" index="0"]
 position = Vector2(0, -50)
 texture = ExtResource("13_o7rd5")
 
-[node name="Parallax2D10" type="Parallax2D" parent="bg" index="10"]
+[node name="Fog2" type="Parallax2D" parent="bg" index="9"]
 scroll_scale = Vector2(0.35, 0.35)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D10" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Fog2" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("11_dg0q4")
 
-[node name="mt1" type="Parallax2D" parent="bg" index="11"]
+[node name="mt1" type="Parallax2D" parent="bg" index="10"]
 scroll_scale = Vector2(0.4, 0.4)
 scroll_offset = Vector2(794, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/mt1" index="0"]
 position = Vector2(0, 200)
 texture = ExtResource("12_i4wyc")
 
-[node name="Parallax2D12" type="Parallax2D" parent="bg" index="12"]
+[node name="Fog1" type="Parallax2D" parent="bg" index="11"]
 scroll_scale = Vector2(0.5, 0.5)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
+metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D12" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/Fog1" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("13_umjgj")
 
-[node name="c1" type="Parallax2D" parent="bg" index="13"]
+[node name="c1" type="Parallax2D" parent="bg" index="12"]
 scroll_scale = Vector2(0.7, 0.7)
-scroll_offset = Vector2(-121, -12)
+scroll_offset = Vector2(-201, -12)
 repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(-30, 0)
+metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c1" index="0"]
 position = Vector2(0, 200)
 texture = ExtResource("17_k7fdo")
 
-[node name="Player" parent="." index="1"]
-position = Vector2(3910, -131)
+[node name="Sign" type="Sprite2D" parent="." index="1"]
+position = Vector2(5957, -1200)
+texture = ExtResource("12_1kriy")
+region_enabled = true
+region_rect = Rect2(128, 512, 128, 128)
+
+[node name="Player" parent="." index="2"]
+position = Vector2(103, 654)
 fall_gravity = 5000
 push_force = 0.001
 
-[node name="killzone" parent="." index="2"]
+[node name="killzone" parent="." index="3"]
 collision_layer = 0
 collision_mask = 6
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="killzone" index="0"]
 position = Vector2(0, 1280)
 shape = SubResource("WorldBoundaryShape2D_oo4c3")
 
-[node name="finish" parent="." index="4"]
+[node name="MarginContainer" parent="Ui" index="0"]
+metadata/_edit_lock_ = true
+
+[node name="finish" parent="." index="5"]
 position = Vector2(18606, -189)
 next_level = ExtResource("4_mk0ff")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" parent="finish" index="0"]
 visible = false
@@ -400,6 +423,9 @@ position = Vector2(-54, 0)
 [node name="CollisionShape2D" parent="finish" index="1"]
 position = Vector2(-51.5, 0)
 shape = SubResource("RectangleShape2D_ljyos")
+
+[node name="Tilemap" parent="." index="6"]
+metadata/_edit_lock_ = true
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true
@@ -412,13 +438,15 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAYAAAAFAAcAAAABAAYAAAAFAAcAAAACAAYAAAAFAAcAAAADAAYAAAAFAAcAAAAEAAYAAAAFAAcAAAAFAAYAAAAFAAcAAAAGAAYAAAAFAAcAAAAHAAYAAAAFAAcAAAAIAAYAAAAFAAcAAAAJAAYAAAAFAAcAAAAKAAYAAAACAAgAAAD9/wYAAAAFAAcAAAD+/wYAAAAFAAcAAAD//wYAAAAFAAcAAAD3/wYAAAAFAAcAAAD4/wYAAAAFAAcAAAD5/wYAAAAFAAcAAAD6/wYAAAAFAAcAAAD7/wYAAAAFAAcAAAD8/wYAAAAFAAcAAAD2/wYAAAAFAAcAAAAtAPf/AAABAAgAAAAuAPf/AAAFAAcAAAAvAPf/AAAFAAcAAAAwAPf/AAAFAAcAAAAxAPf/AAAFAAcAAAAyAPf/AAAFAAcAAAAzAPf/AAAFAAcAAAA0APf/AAAFAAcAAAA1APf/AAAFAAcAAAA2APf/AAAFAAcAAAA3APf/AAAFAAcAAAA4APf/AAAFAAcAAAA5APf/AAAAAAgAAAAuAPj/AAADAAcAAAAvAPj/AAADAAcAAAAvAPn/AAADAAcAAAAwAPj/AAADAAcAAAAwAPn/AAADAAcAAAAxAPj/AAADAAcAAAAxAPn/AAADAAcAAAAxAPr/AAADAAcAAAAyAPj/AAADAAcAAAAyAPn/AAADAAcAAAAyAPr/AAADAAcAAAAzAPj/AAADAAcAAAAzAPn/AAADAAcAAAAzAPr/AAADAAcAAAA0APj/AAADAAcAAAA0APn/AAADAAcAAAA0APr/AAADAAcAAAA1APj/AAADAAcAAAA1APn/AAADAAcAAAA1APr/AAADAAcAAAA2APj/AAADAAcAAAA2APn/AAADAAcAAAA2APr/AAADAAcAAAA3APj/AAADAAcAAAA3APn/AAADAAcAAAA3APr/AAADAAcAAAA4APj/AAADAAcAAAA4APn/AAADAAcAAAA4APr/AAADAAcAAAA5APj/AAADAAcAAAA5APn/AAADAAcAAAA5APr/AAADAAcAAAA6APj/AAAAAAgAAAA6APn/AAADAAcAAAA6APr/AAADAAcAAAA7APn/AAAAAAgAAAA7APr/AAADAAcAAAA8APr/AAAFAAcAAAA9APr/AAAFAAcAAAA+APr/AAAFAAcAAAA/APr/AAAFAAcAAABAAPr/AAAFAAcAAABBAPr/AAAFAAcAAABCAPr/AAAFAAcAAABDAPr/AAAFAAcAAABEAPr/AAAFAAcAAABFAPr/AAAFAAcAAABGAPr/AAAFAAcAAAAAAAcAAAAEAAgAAAABAAcAAAAEAAgAAAACAAcAAAAEAAgAAAADAAcAAAAEAAgAAAAEAAcAAAAEAAgAAAAFAAcAAAAEAAgAAAAGAAcAAAAAAAkAAAAHAAcAAAAEAAgAAAAIAAcAAAAEAAgAAAAJAAcAAAAEAAgAAAAKAAcAAAAEAAgAAAD2/wcAAAAEAAgAAAD3/wcAAAAEAAgAAAD4/wcAAAAEAAgAAAD5/wcAAAAEAAgAAAD6/wcAAAAEAAgAAAD7/wcAAAAEAAgAAAD8/wcAAAAEAAgAAAD9/wcAAAAEAAgAAAD+/wcAAAAEAAgAAAD//wcAAAAEAAgAAABoAPn/AAADAAgAAABpAPn/AAADAAcAAABqAPn/AAAFAAcAAABrAPn/AAAFAAcAAABsAPn/AAAFAAcAAABxAPn/AAAFAAcAAAByAPn/AAAAAAgAAABxAPr/AAADAAgAAABxAPv/AAADAAcAAAByAPr/AAACAAgAAAByAPv/AAADAAcAAAByAPz/AAADAAcAAACCAPr/AAAFAAcAAACDAPr/AAAFAAcAAACEAPr/AAAFAAcAAACFAPr/AAAFAAcAAACIAPr/AAABAAgAAACGAPr/AAAAAAgAAACCAPv/AAADAAcAAACJAPr/AAAFAAcAAACKAPr/AAAFAAcAAACLAPr/AAAFAAcAAACMAPr/AAAFAAcAAACNAPr/AAAFAAcAAACOAPr/AAAAAAgAAACDAPv/AAADAAcAAACEAPv/AAADAAcAAACFAPv/AAADAAcAAACGAPv/AAADAAcAAACHAPv/AAAFAAcAAACIAPv/AAADAAcAAACJAPv/AAADAAcAAACKAPv/AAADAAcAAACLAPv/AAADAAcAAACMAPv/AAADAAcAAACNAPv/AAADAAcAAACOAPv/AAACAAgAAACEAPz/AAAEAAgAAACFAPz/AAAEAAgAAACGAPz/AAAEAAgAAACHAPz/AAAFAAgAAACIAPz/AAAEAAgAAACJAPz/AAAEAAgAAACKAPz/AAAEAAgAAACLAPz/AAAEAAgAAACMAPz/AAAEAAgAAACNAPz/AAAEAAgAAACTAPf/AAADAAgAAACTAPj/AAADAAgAAACTAPn/AAADAAgAAACTAPr/AAADAAgAAACTAPv/AAADAAgAAACTAPz/AAADAAgAAACTAP3/AAADAAgAAACTAP7/AAADAAgAAACTAP//AAADAAgAAACTAAAAAAADAAgAAACTAAEAAAADAAgAAACUAPf/AAADAAcAAACUAPj/AAADAAcAAACUAPn/AAADAAcAAACUAPr/AAADAAcAAACUAPv/AAADAAcAAACUAPz/AAADAAcAAACUAP3/AAADAAcAAACUAP7/AAADAAcAAACUAP//AAADAAcAAACUAAAAAAADAAcAAACUAAEAAAADAAcAAACVAPf/AAADAAcAAACVAPj/AAADAAcAAACVAPn/AAADAAcAAACVAPr/AAADAAcAAACVAPv/AAADAAcAAACVAPz/AAADAAcAAACVAP3/AAADAAcAAACVAP7/AAADAAcAAACVAP//AAADAAcAAACVAAAAAAADAAcAAACVAAEAAAADAAcAAACWAPf/AAADAAcAAACWAPj/AAADAAcAAACWAPn/AAADAAcAAACWAPr/AAADAAcAAACWAPv/AAADAAcAAACWAPz/AAADAAcAAACWAP3/AAADAAcAAACWAP7/AAADAAcAAACWAP//AAADAAcAAACWAAAAAAADAAcAAACWAAEAAAADAAcAAACXAPf/AAADAAcAAACXAPj/AAADAAcAAACXAPn/AAADAAcAAACXAPr/AAADAAcAAACXAPv/AAADAAcAAACXAPz/AAADAAcAAACXAP3/AAADAAcAAACXAP7/AAADAAcAAACXAP//AAADAAcAAACXAAAAAAADAAcAAACXAAEAAAADAAcAAACTAPX/AAADAAgAAACTAPb/AAADAAgAAACUAPX/AAADAAcAAACUAPb/AAADAAcAAACVAPX/AAADAAcAAACVAPb/AAADAAcAAACWAPX/AAADAAcAAACWAPb/AAADAAcAAACXAPX/AAADAAcAAACXAPb/AAADAAcAAACOAPz/AAAEAAgAAACUAPH/AAADAAcAAACUAPL/AAADAAcAAACUAPP/AAADAAcAAACUAPT/AAADAAcAAACVAPH/AAADAAcAAACVAPL/AAADAAcAAACVAPP/AAADAAcAAACVAPT/AAADAAcAAACWAPH/AAADAAcAAACWAPL/AAADAAcAAACWAPP/AAADAAcAAACWAPT/AAADAAcAAACXAPH/AAADAAcAAACXAPL/AAADAAcAAACXAPP/AAADAAcAAACXAPT/AAADAAcAAACTAPH/AAADAAgAAACTAPL/AAADAAgAAACTAPP/AAADAAgAAACTAPT/AAADAAgAAABLAPf/AAABAAgAAABnAPf/AAAFAAcAAABoAPj/AAADAAgAAABoAPf/AAAAAAgAAABpAPj/AAAAAAgAAABxAPz/AAADAAcAAADz/wYAAAAFAAcAAAD0/wYAAAAFAAcAAAD1/wYAAAAFAAcAAAAKAAUAAAAAAAUAAAAVAAIAAAAFAAcAAAAWAAIAAAAFAAcAAAAXAAIAAAAFAAcAAAAYAAIAAAAFAAcAAAAZAAIAAAAFAAcAAAAaAAIAAAAFAAcAAAAbAAIAAAAFAAcAAAAcAAIAAAAFAAcAAAAdAAIAAAAFAAcAAAAeAAIAAAAFAAcAAAB0AP3/AAADAAcAAAB0AP7/AAADAAcAAAB0AP//AAADAAcAAAB0AAAAAAADAAcAAAB0AAEAAAADAAcAAAB0AAIAAAADAAcAAAB1AP3/AAADAAcAAAB1AP7/AAADAAcAAAB1AP//AAADAAcAAAB1AAAAAAADAAcAAAB1AAEAAAADAAcAAAB1AAIAAAADAAcAAAB2AP3/AAADAAcAAAB2AP7/AAADAAcAAAB2AP//AAADAAcAAAB2AAAAAAADAAcAAAB2AAEAAAADAAcAAAB2AAIAAAADAAcAAAB3AP3/AAADAAcAAAB3AP7/AAADAAcAAAB3AP//AAADAAcAAAB3AAAAAAADAAcAAAB3AAEAAAADAAcAAAB3AAIAAAADAAcAAAB4AP3/AAADAAcAAAB4AP7/AAADAAcAAAB4AP//AAADAAcAAAB4AAAAAAADAAcAAAB4AAEAAAADAAcAAAB4AAIAAAADAAcAAAB5AP3/AAADAAcAAAB5AP7/AAADAAcAAAB5AP//AAADAAcAAAB5AAAAAAADAAcAAAB5AAEAAAADAAcAAAB5AAIAAAADAAcAAAB6AP3/AAADAAcAAAB6AP7/AAADAAcAAAB6AP//AAADAAcAAAB6AAAAAAADAAcAAAB6AAEAAAADAAcAAAB6AAIAAAADAAcAAAB7AP3/AAADAAcAAAB7AP7/AAADAAcAAAB7AP//AAADAAcAAAB7AAAAAAADAAcAAAB7AAEAAAADAAcAAAB7AAIAAAADAAcAAAB8AP3/AAADAAcAAAB8AP7/AAADAAcAAAB8AP//AAADAAcAAAB8AAAAAAADAAcAAAB8AAEAAAADAAcAAAB8AAIAAAADAAcAAAB9AP3/AAADAAcAAAB9AP7/AAADAAcAAAB9AP//AAADAAcAAAB9AAAAAAADAAcAAAB9AAEAAAADAAcAAAB9AAIAAAADAAcAAAB+AP3/AAADAAcAAAB+AP7/AAADAAcAAAB+AP//AAADAAcAAAB+AAAAAAADAAcAAAB+AAEAAAADAAcAAAB+AAIAAAADAAcAAABzAP3/AAADAAcAAABzAP7/AAADAAcAAABzAP//AAADAAcAAABzAAAAAAADAAcAAABzAAEAAAADAAcAAABzAAIAAAADAAcAAABzAAMAAAADAAcAAABzAAQAAAADAAcAAABzAAUAAAADAAcAAABzAAYAAAADAAcAAAB0AAMAAAADAAcAAAB0AAQAAAADAAcAAAB0AAUAAAADAAcAAAB0AAYAAAADAAcAAAB1AAMAAAADAAcAAAB1AAQAAAADAAcAAAB1AAUAAAADAAcAAAB1AAYAAAADAAcAAAB2AAMAAAADAAcAAAB2AAQAAAADAAcAAAB2AAUAAAADAAcAAAB2AAYAAAADAAcAAAB3AAMAAAADAAcAAAB3AAQAAAADAAcAAAB3AAUAAAADAAcAAAB3AAYAAAADAAcAAAB4AAMAAAADAAcAAAB4AAQAAAADAAcAAAB4AAUAAAADAAcAAAB4AAYAAAADAAcAAAB5AAMAAAADAAcAAAB5AAQAAAADAAcAAAB5AAUAAAADAAcAAAB5AAYAAAADAAcAAAB6AAMAAAADAAcAAAB6AAQAAAADAAcAAAB6AAUAAAADAAcAAAB6AAYAAAADAAcAAAB7AAMAAAADAAcAAAB7AAQAAAADAAcAAAB7AAUAAAADAAcAAAB7AAYAAAADAAcAAAB8AAMAAAADAAcAAAB8AAQAAAADAAcAAAB8AAUAAAADAAcAAAB8AAYAAAADAAcAAAB9AAMAAAADAAcAAAB9AAQAAAADAAcAAAB9AAUAAAADAAcAAAB9AAYAAAADAAcAAAB+AAMAAAADAAcAAAB+AAQAAAADAAcAAAB+AAUAAAADAAcAAAB+AAYAAAADAAcAAABzAPv/AAADAAcAAABzAPz/AAADAAcAAAB0APv/AAADAAcAAAB0APz/AAADAAcAAAB1APv/AAADAAcAAAB1APz/AAADAAcAAAB2APv/AAADAAcAAAB2APz/AAADAAcAAAB3APv/AAADAAcAAAB3APz/AAADAAcAAAB4APv/AAADAAcAAAB4APz/AAADAAcAAAB5APv/AAADAAcAAAB5APz/AAADAAcAAAB6APv/AAADAAcAAAB6APz/AAADAAcAAAB7APv/AAADAAcAAAB7APz/AAADAAcAAAB8APv/AAADAAcAAAB8APz/AAADAAcAAAB9APv/AAADAAcAAAB9APz/AAADAAcAAAB+APv/AAADAAcAAAB+APz/AAADAAcAAAB/APv/AAADAAcAAACAAPv/AAADAAcAAACBAPv/AAADAAcAAAB/APz/AAADAAcAAAB/AP3/AAADAAcAAAB/AP7/AAADAAcAAAB/AP//AAADAAcAAAB/AAAAAAADAAcAAAB/AAEAAAADAAcAAAB/AAIAAAADAAcAAAB/AAMAAAADAAcAAAB/AAQAAAADAAcAAAB/AAUAAAADAAcAAAB/AAYAAAADAAcAAACAAPz/AAADAAcAAACAAP3/AAADAAcAAACAAP7/AAADAAcAAACAAP//AAADAAcAAACAAAAAAAADAAcAAACAAAEAAAADAAcAAACAAAIAAAADAAcAAACAAAMAAAADAAcAAACAAAQAAAADAAcAAACAAAUAAAADAAcAAACAAAYAAAADAAcAAACBAPz/AAADAAcAAACBAP3/AAADAAcAAACBAP7/AAADAAcAAACBAP//AAADAAcAAACBAAAAAAADAAcAAACBAAEAAAADAAcAAACBAAIAAAADAAcAAACBAAMAAAADAAcAAACBAAQAAAADAAcAAACBAAUAAAADAAcAAACBAAYAAAADAAcAAACCAPz/AAAEAAgAAACDAPz/AAAEAAgAAAB/APr/AAAFAAcAAACAAPr/AAAFAAcAAACBAPr/AAAFAAcAAAB+APr/AAABAAgAAABHAPr/AAAFAAcAAABIAPr/AAAFAAcAAABLAPn/AAADAAgAAABMAPn/AAADAAcAAABLAPj/AAADAAgAAABMAPj/AAADAAcAAABNAPj/AAADAAcAAABJAPr/AAAFAAcAAABKAPr/AAAFAAcAAAAxAPv/AAAEAAgAAAAyAPv/AAAEAAgAAAAzAPv/AAAEAAgAAAA0APv/AAAEAAgAAAA1APv/AAAEAAgAAAA2APv/AAAEAAgAAAA3APv/AAAEAAgAAAA4APv/AAAEAAgAAAA5APv/AAAFAAgAAAA6APv/AAAEAAgAAAA7APv/AAAEAAgAAAA8APv/AAAEAAgAAAA9APv/AAAEAAgAAAA+APv/AAAEAAgAAAA/APv/AAAEAAgAAABAAPv/AAAEAAgAAABBAPv/AAAEAAgAAABCAPv/AAAEAAgAAABDAPv/AAAEAAgAAABEAPv/AAAEAAgAAABFAPv/AAAEAAgAAABGAPv/AAAEAAgAAABHAPv/AAAEAAgAAABIAPv/AAAEAAgAAABJAPv/AAAEAAgAAABKAPv/AAAEAAgAAAAvAPr/AAAEAAgAAAAwAPr/AAAEAAgAAAAuAPn/AAAEAAgAAAAtAPj/AAAEAAgAAABLAPr/AAADAAcAAABMAPr/AAAEAAgAAABNAPn/AAAEAAgAAABMAPf/AAAFAAcAAABNAPf/AAAFAAcAAABOAPf/AAAFAAcAAABPAPf/AAAFAAcAAABQAPf/AAAFAAcAAABRAPf/AAAFAAcAAABSAPf/AAAFAAcAAABTAPf/AAAFAAcAAABUAPf/AAAFAAcAAABVAPf/AAAFAAcAAABWAPf/AAAFAAcAAABXAPf/AAAFAAcAAABLAPv/AAAEAAgAAAA=")
 tile_set = SubResource("TileSet_52plv")
 
-[node name="World" type="Node" parent="." index="6"]
+[node name="World" type="Node" parent="." index="7"]
 
 [node name="checkpoint" parent="World" index="0" instance=ExtResource("7_vcymw")]
 position = Vector2(6065, -1272)
+metadata/_edit_lock_ = true
 
 [node name="bouncy" type="Node2D" parent="World" index="1"]
 z_index = 1
+metadata/_edit_lock_ = true
 
 [node name="cloud" parent="World/bouncy" index="0" instance=ExtResource("7_fn0er")]
 position = Vector2(4514, 28)
@@ -442,6 +470,7 @@ z_index = -2
 position = Vector2(9540, -789)
 
 [node name="platforms" type="Node2D" parent="World" index="2"]
+metadata/_edit_lock_ = true
 
 [node name="left_right" type="Node2D" parent="World/platforms" index="0"]
 
@@ -496,6 +525,7 @@ position = Vector2(-16, -729)
 script = ExtResource("5_itdtf")
 
 [node name="Hippo" type="Node2D" parent="World" index="3"]
+metadata/_edit_lock_ = true
 
 [node name="hippo" parent="World/Hippo" index="0" instance=ExtResource("16_hivsn")]
 position = Vector2(15107, -661)
@@ -519,6 +549,7 @@ shape = SubResource("RectangleShape2D_obrgx")
 
 [node name="Bridge" type="Node2D" parent="World" index="4"]
 position = Vector2(16, 0)
+metadata/_edit_lock_ = true
 
 [node name="Start" type="StaticBody2D" parent="World/Bridge" index="0"]
 position = Vector2(11237, -1104)
@@ -657,13 +688,14 @@ position = Vector2(13180, -1104)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Bridge/End" index="0"]
 shape = SubResource("RectangleShape2D_5qqd8")
 
-[node name="Traps" type="Node" parent="." index="7"]
+[node name="Traps" type="Node" parent="." index="8"]
 
 [node name="Area2D" type="Area2D" parent="Traps" index="0" node_paths=PackedStringArray("ball")]
 position = Vector2(16878, -884)
 collision_mask = 2
 script = ExtResource("13_3cehg")
 ball = NodePath("../rolling_ball2")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Traps/Area2D" index="0"]
 position = Vector2(-111, -49)
@@ -671,67 +703,86 @@ shape = SubResource("RectangleShape2D_8uasd")
 
 [node name="invisible_box" parent="Traps" index="1" instance=ExtResource("11_hu3rx")]
 position = Vector2(14264, -832)
+metadata/_edit_lock_ = true
 
 [node name="rolling_ball" parent="Traps" index="2" instance=ExtResource("6_dbdtd")]
 position = Vector2(-1141, 404)
 constant_force = Vector2(1000, 0)
+metadata/_edit_lock_ = true
 
 [node name="rolling_ball2" parent="Traps" index="3" instance=ExtResource("6_dbdtd")]
 unique_name_in_owner = true
 position = Vector2(18096, -1135)
+metadata/_edit_lock_ = true
 
 [node name="splike" parent="Traps" index="4" instance=ExtResource("10_11ghb")]
 position = Vector2(7340, -1109)
+metadata/_edit_lock_ = true
 
 [node name="splike2" parent="Traps" index="5" instance=ExtResource("10_11ghb")]
 position = Vector2(9416, -730)
+metadata/_edit_lock_ = true
 
 [node name="falling_spike" parent="Traps" index="6" instance=ExtResource("8_ifwkw")]
 position = Vector2(2404, -811)
+metadata/_edit_lock_ = true
 
-[node name="Enemy" type="Node" parent="." index="8"]
+[node name="Enemy" type="Node" parent="." index="9"]
 
 [node name="Grim" parent="Enemy" index="0" instance=ExtResource("5_jleem")]
 position = Vector2(7790, -777)
+metadata/_edit_lock_ = true
 
 [node name="walker" parent="Enemy" index="1" instance=ExtResource("12_1a0ao")]
 position = Vector2(12919, -1247)
+metadata/_edit_lock_ = true
 
 [node name="walker4" parent="Enemy" index="2" instance=ExtResource("12_1a0ao")]
 position = Vector2(9448, -828)
+metadata/_edit_lock_ = true
 
 [node name="walker2" parent="Enemy" index="3" instance=ExtResource("12_1a0ao")]
 position = Vector2(1220, 697)
+metadata/_edit_lock_ = true
 
 [node name="walker3" parent="Enemy" index="4" instance=ExtResource("12_1a0ao")]
 position = Vector2(3635, 178)
+metadata/_edit_lock_ = true
 
 [node name="Witch" parent="Enemy" index="5" instance=ExtResource("20_jxm45")]
 position = Vector2(10965, -1229)
+metadata/_edit_lock_ = true
 
-[node name="Extra" type="Node" parent="." index="9"]
+[node name="Extra" type="Node" parent="." index="10"]
 
 [node name="EnemyCollideables" type="Node2D" parent="Extra" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="EnemyCollideable" parent="Extra/EnemyCollideables" index="0" instance=ExtResource("22_jmuhr")]
 position = Vector2(1387, 286)
+metadata/_edit_lock_ = true
 
 [node name="EnemyCollideable2" parent="Extra/EnemyCollideables" index="1" instance=ExtResource("22_jmuhr")]
 position = Vector2(2754, -207)
+metadata/_edit_lock_ = true
 
 [node name="EnemyCollideable3" parent="Extra/EnemyCollideables" index="2" instance=ExtResource("22_jmuhr")]
 position = Vector2(3908, -207)
+metadata/_edit_lock_ = true
 
 [node name="EnemyCollideable4" parent="Extra/EnemyCollideables" index="3" instance=ExtResource("22_jmuhr")]
 position = Vector2(11307, -1460)
+metadata/_edit_lock_ = true
 
 [node name="EnemyCollideable5" parent="Extra/EnemyCollideables" index="4" instance=ExtResource("22_jmuhr")]
 position = Vector2(13141, -1460)
+metadata/_edit_lock_ = true
 
 [node name="RainParticles" parent="Extra" index="1" instance=ExtResource("21_0rca8")]
 position = Vector2(8694, -1321)
 particle_amount = 4000
 sound_distance = 3000.0
+metadata/_edit_lock_ = true
 
 [editable path="finish"]
 [editable path="World/platforms/BetterMovingPlatform"]
