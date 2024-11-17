@@ -117,7 +117,7 @@ region_enabled = true
 region_rect = Rect2(896, 896, 128, 128)
 
 [node name="Player" parent="." index="1"]
-position = Vector2(670, 714)
+position = Vector2(198, 260)
 
 [node name="Camera2D" parent="Player" index="2"]
 limit_right = 6400

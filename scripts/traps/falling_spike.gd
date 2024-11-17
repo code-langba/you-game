@@ -9,11 +9,12 @@ extends CharacterBody2D
 var is_triggered := false
 
 func _ready() -> void:
+	visible = false
 	sensor.body_entered.connect(in_area)
 
 func in_area(_body) -> void:
-	print("Yes")
 	is_triggered = true
+	visible = true
 	$fall_sfx.play()
 	sensor.queue_free()
 

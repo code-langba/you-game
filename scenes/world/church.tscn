@@ -25,4 +25,3 @@ region_rect = Rect2(0, 0, 512, 384)
 
 [node name="bells" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_m04di")
-volume_db = -11.266
