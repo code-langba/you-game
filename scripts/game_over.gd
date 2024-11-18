@@ -20,5 +20,5 @@ func on_button_pressed(button: Button) -> void:
 func on_mouse_entered(button: Button) -> void:
 	button.grab_focus()
 	
-func on_button_focus_entered(button: Button) -> void:
+func on_button_focus_entered(_button: Button) -> void:
 	audio.play()
