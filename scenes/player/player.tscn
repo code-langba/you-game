@@ -475,7 +475,7 @@ scale_curve = SubResource("CurveTexture_y2ep7")
 color_ramp = SubResource("GradientTexture1D_cj7cc")
 turbulence_enabled = true
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 1
 collision_layer = 2
 collision_mask = 9

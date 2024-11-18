@@ -8,9 +8,9 @@ extends Node2D
 @onready var ui: CanvasLayer = $Ui
 
 func _ready() -> void:
+	set_mouse_mode()
 	if bg_color: 
 		RenderingServer.set_default_clear_color(bg_color)
-	Input.mouse_mode = mouse_mode
 	if not AudioManager.is_playing:
 		AudioManager.play(bgm)
 	EventBus.game_over.connect(on_game_over)
@@ -18,3 +18,6 @@ func _ready() -> void:
 func on_game_over() -> void:
 	var game_over_node = game_over_scene.instantiate()
 	ui.add_child(game_over_node)
+
+func set_mouse_mode() -> void:
+	Input.mouse_mode = mouse_mode

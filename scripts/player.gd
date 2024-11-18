@@ -107,7 +107,6 @@ func play_die_anim():
 	is_dead = false
 	call_deferred("game_over")
 	
-
 func on_dead() -> void:
 	is_dead = true
 	player.play("die")
@@ -116,7 +115,6 @@ func on_dead() -> void:
 		# var anim = body
 		play_die_anim()
 		PlayerManager.reset()
-		queue_free()
 		return
 	timer.start()
 	# call_deferred("reload")

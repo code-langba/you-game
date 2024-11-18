@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg4ff45rgas6s"]
+
+[ext_resource type="Script" path="res://globals/scene_manager.gd" id="1_euf3t"]
+[ext_resource type="Shader" path="res://components/scripts/dissolve.gdshader" id="1_gx27d"]
+[ext_resource type="Texture2D" uid="uid://cym44fvho7jpm" path="res://asset/ui/screen_change_patterns/fade6.png" id="2_mj1td"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fu1lj"]
+shader = ExtResource("1_gx27d")
+shader_parameter/dissolve_value = -0.3
+shader_parameter/color = Color(0.760619, 0.554547, 0.476525, 1)
+shader_parameter/dissolve_texture = ExtResource("2_mj1td")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_euf3t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fu1lj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

@@ -21,6 +21,7 @@ PlayerManager="*res://globals/PlayerManager.gd"
 EventBus="*res://globals/EventBus.gd"
 AudioManager="*res://globals/audio_manager.tscn"
 Enums="*res://globals/enums.gd"
+SceneManager="*res://globals/scene_manager.tscn"
 
 [display]
 
@@ -30,7 +31,7 @@ window/size/resizable=false
 window/size/always_on_top=true
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [editor]
@@ -43,6 +44,10 @@ movie_writer/movie_file="D:/projects/game/godot/movie/movie.avi"
 folder_colors={
 "res://scenes/player/": "blue"
 }
+
+[global_group]
+
+Player="This is the player"
 
 [gui]
 
@@ -90,7 +95,3 @@ jump={
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="player-collideables"
 2d_physics/layer_5="enemy-collideables"
-
-[rendering]
-
-renderer/rendering_method="mobile"

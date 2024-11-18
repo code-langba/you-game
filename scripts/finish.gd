@@ -13,4 +13,4 @@ func on_level_complete(_body: Node2D) -> void:
 	call_deferred("load_next_level")
 
 func load_next_level():
-	get_tree().change_scene_to_packed(next_level)
+	SceneManager.change_scene_to_packed(next_level)
