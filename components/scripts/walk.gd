@@ -2,6 +2,7 @@ extends Node
 class_name MovementComponent
 
 @export var pause_movement: bool = false
+@export var disable_gravity: bool = false
 
 enum DIRECTIONS  {
 	LEFT = -1,
@@ -23,6 +24,6 @@ func walk(body: CharacterBody2D, speed: float, _delta: float = 1) -> void:
 	
 
 func apply_gravity(body: CharacterBody2D, _delta: float = 1, gravity: float = 300) -> void:
-	if not body.is_on_floor():
+	if not body.is_on_floor() and not disable_gravity:
 		body.velocity.y += gravity * _delta
 	

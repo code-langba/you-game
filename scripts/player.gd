@@ -6,10 +6,10 @@ class_name Player
 @export var fall_gravity := 3000
 @export var speed := 300.0
 @export var jump_velocity := 800.0
+@export var camera_container: Node
 
 @export_group("Collision with RigidBody2D")
 @export var push_force := 0.1
-
 
 @onready var player: AnimatedSprite2D = $Sprite
 #@onready var killzone: Area2D = get_parent().get_node("killzone")
@@ -42,6 +42,13 @@ func _ready() -> void:
 	EventBus.player_died.connect(on_dead)
 	EventBus.add_impulse.connect(add_impulse)
 	EventBus.ascend.connect(func(): is_ascend = true)
+	
+	var cameras = camera_container.get_children() as Array[PhantomCamera2D]
+	for camera in cameras:
+		camera.priority = 0
+	var follow_camera = cameras[1]
+	follow_camera.priority = 1
+		
 
 func _physics_process(delta: float) -> void:
 	is_grounded = is_on_floor()
