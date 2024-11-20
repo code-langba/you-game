@@ -82,16 +82,15 @@ position = Vector2(120, 825)
 [node name="Camera2D" parent="Player" index="2"]
 position = Vector2(480, -41)
 zoom = Vector2(1.4, 1.4)
-process_callback = 0
 limit_top = 0
 editor_draw_limits = true
 
 [node name="InitialCamera" parent="Camera" index="0"]
 tween_resource = SubResource("Resource_b2ka7")
-draw_limits = true
+draw_limits = false
 
 [node name="FollowCamera" parent="Camera" index="1"]
-draw_limits = true
+draw_limits = false
 
 [node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)

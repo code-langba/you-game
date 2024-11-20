@@ -134,11 +134,13 @@ limit_top = 0
 position = Vector2(960, 540)
 zoom = Vector2(1, 1)
 tween_resource = SubResource("Resource_4xy0a")
+draw_limits = false
 
 [node name="FollowCamera" parent="Camera" index="1"]
 priority = 1
 frame_preview = false
 tween_on_load = false
+draw_limits = false
 
 [node name="finish" parent="." index="5"]
 position = Vector2(6185, 667)

@@ -177,9 +177,11 @@ limit_top = 0
 
 [node name="InitialCamera" parent="Camera" index="0"]
 tween_resource = SubResource("Resource_fqquq")
+draw_limits = false
 
 [node name="FollowCamera" parent="Camera" index="1"]
 position = Vector2(9559, 540)
+draw_limits = false
 
 [node name="invisible_box" parent="." index="6" instance=ExtResource("4_0m3ev")]
 position = Vector2(8372, -238)

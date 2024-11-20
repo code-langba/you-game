@@ -240,7 +240,7 @@ sources/0 = SubResource("TileSetAtlasSource_1ubif")
 
 [node name="level" instance=ExtResource("1_rq4wt")]
 bgm = ExtResource("3_ai0cw")
-metadata/_edit_horizontal_guides_ = [380.0, -596.0, -596.0]
+metadata/_edit_horizontal_guides_ = [380.0, -596.0]
 
 [node name="bg" type="Node2D" parent="." index="0"]
 z_index = -1
@@ -388,7 +388,7 @@ region_enabled = true
 region_rect = Rect2(128, 512, 128, 128)
 
 [node name="Player" parent="." index="2"]
-position = Vector2(14538, -987)
+position = Vector2(104, 704)
 fall_gravity = 5000
 push_force = 0.001
 
@@ -438,32 +438,36 @@ shape = SubResource("RectangleShape2D_pau4v")
 position = Vector2(960, 540)
 zoom = Vector2(1, 1)
 tween_resource = SubResource("Resource_67y14")
+draw_limits = false
 limit_top = -2000
+metadata/_edit_lock_ = true
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(14538, -987)
 priority = 1
 tween_on_load = false
 follow_damping_value = Vector2(0.2, 0.5)
+draw_limits = false
 limit_top = -2000
+metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="Camera" index="2" node_paths=PackedStringArray("follow_target")]
-position = Vector2(4033, -335)
+position = Vector2(3897, -298)
 script = ExtResource("18_668mf")
 follow_mode = 2
 follow_target = NodePath("../../Player")
 zoom = Vector2(0.8, 0.8)
+frame_preview = false
 tween_resource = SubResource("Resource_qtt2j")
 inactive_update_mode = 1
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.1, 0.04)
-draw_limits = true
 limit_left = 2697
 limit_bottom = 377
+metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D2" type="Node2D" parent="Camera" index="3" node_paths=PackedStringArray("follow_target")]
-position = Vector2(14538, -1136)
+position = Vector2(104, -1136)
 script = ExtResource("18_668mf")
 follow_mode = 1
 follow_target = NodePath("../../Player")
@@ -471,29 +475,31 @@ tween_resource = SubResource("Resource_qtt2j")
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
 limit_top = -2000
 limit_bottom = -596
+metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D3" type="Node2D" parent="Camera" index="4"]
 position = Vector2(15575, -992)
 script = ExtResource("18_668mf")
+frame_preview = false
 tween_resource = SubResource("Resource_qtt2j")
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
+metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D4" type="Node2D" parent="Camera" index="5" node_paths=PackedStringArray("follow_target")]
-position = Vector2(14538, -987)
+position = Vector2(104, 704)
 script = ExtResource("18_668mf")
 follow_mode = 1
 follow_target = NodePath("../../Player")
+frame_preview = false
 tween_resource = SubResource("Resource_qtt2j")
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
+metadata/_edit_lock_ = true
 
 [node name="killzone" parent="." index="5"]
 collision_layer = 0
