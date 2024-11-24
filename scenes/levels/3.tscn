@@ -438,7 +438,6 @@ shape = SubResource("RectangleShape2D_pau4v")
 position = Vector2(960, 540)
 zoom = Vector2(1, 1)
 tween_resource = SubResource("Resource_67y14")
-draw_limits = false
 limit_top = -2000
 metadata/_edit_lock_ = true
 
@@ -446,7 +445,6 @@ metadata/_edit_lock_ = true
 priority = 1
 tween_on_load = false
 follow_damping_value = Vector2(0.2, 0.5)
-draw_limits = false
 limit_top = -2000
 metadata/_edit_lock_ = true
 

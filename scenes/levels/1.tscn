@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=20 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="9_vyah7"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
 [ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
+[ext_resource type="PackedScene" uid="uid://bg13n3gpgxdks" path="res://components/scenes/input_prompt.tscn" id="17_utkyl"]
 
 [sub_resource type="Resource" id="Resource_b2ka7"]
 script = ExtResource("9_e5x4g")
@@ -26,6 +27,7 @@ ease = 2
 
 [node name="1" instance=ExtResource("1_1e0av")]
 bgm = ExtResource("10_65fjq")
+metadata/_edit_vertical_guides_ = [556.0]
 
 [node name="bg" type="Node2D" parent="." index="0"]
 
@@ -87,10 +89,6 @@ editor_draw_limits = true
 
 [node name="InitialCamera" parent="Camera" index="0"]
 tween_resource = SubResource("Resource_b2ka7")
-draw_limits = false
-
-[node name="FollowCamera" parent="Camera" index="1"]
-draw_limits = false
 
 [node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)
@@ -166,20 +164,101 @@ region_rect = Rect2(640, 768, 128, 128)
 position = Vector2(4528, 402)
 next_level = ExtResource("4_l0x5u")
 
-[node name="Node2D" type="Node2D" parent="." index="12"]
+[node name="Tutorial" type="Control" parent="." index="12"]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Label" type="Label" parent="Node2D" index="0"]
-offset_left = 255.0
-offset_top = 395.0
-offset_right = 847.0
-offset_bottom = 459.0
+[node name="Move" type="Node2D" parent="Tutorial" index="0"]
+position = Vector2(248, -16)
+
+[node name="InputPrompt" parent="Tutorial/Move" index="0" instance=ExtResource("17_utkyl")]
+offset_left = 344.0
+offset_top = 400.0
+offset_right = 389.0
+offset_bottom = 442.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial/Move/InputPrompt" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label2" type="Label" parent="Tutorial/Move/InputPrompt/MarginContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.247059, 0.247059, 1)
+theme_override_font_sizes/font_size = 40
+text = "a"
+
+[node name="InputPrompt2" parent="Tutorial/Move" index="1" instance=ExtResource("17_utkyl")]
+offset_left = 416.0
+offset_top = 400.0
+offset_right = 461.0
+offset_bottom = 442.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial/Move/InputPrompt2" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label2" type="Label" parent="Tutorial/Move/InputPrompt2/MarginContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.247059, 0.247059, 1)
+theme_override_font_sizes/font_size = 40
+text = "d"
+
+[node name="Label" type="Label" parent="Tutorial/Move" index="2"]
+texture_filter = 1
+offset_left = 144.0
+offset_top = 408.0
+offset_right = 309.0
+offset_bottom = 448.0
 theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "w,a      — move
-space  — jump"
+text = "Move"
 
-[node name="Label2" type="Label" parent="Node2D" index="1"]
+[node name="Jump" type="Node2D" parent="Tutorial" index="1"]
+position = Vector2(248, 8)
+
+[node name="InputPrompt3" parent="Tutorial/Jump" index="0" instance=ExtResource("17_utkyl")]
+offset_left = 344.0
+offset_top = 448.0
+offset_right = 544.0
+offset_bottom = 490.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial/Jump/InputPrompt3" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label3" type="Label" parent="Tutorial/Jump/InputPrompt3/MarginContainer" index="0"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.247059, 0.247059, 0.247059, 1)
+theme_override_font_sizes/font_size = 40
+text = "space"
+
+[node name="Label4" type="Label" parent="Tutorial/Jump" index="1"]
+texture_filter = 1
+offset_left = 144.0
+offset_top = 456.0
+offset_right = 309.0
+offset_bottom = 496.0
+theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Jump"
+
+[node name="Label2" type="Label" parent="Tutorial" index="2"]
+texture_filter = 1
+layout_mode = 0
 offset_left = 1936.0
 offset_top = 565.0
 offset_right = 2576.0
@@ -187,9 +266,11 @@ offset_bottom = 648.0
 theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "make sure to ding!"
+text = "Make sure to ding!"
 
-[node name="Label3" type="Label" parent="Node2D" index="2"]
+[node name="Label3" type="Label" parent="Tutorial" index="3"]
+texture_filter = 1
+layout_mode = 0
 offset_left = 4316.0
 offset_top = 301.0
 offset_right = 4956.0
@@ -197,7 +278,7 @@ offset_bottom = 384.0
 theme_override_colors/font_color = Color(0.462, 0.5115, 0.66, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
-text = "ascend!"
+text = "Ascend!"
 
 [node name="blocks" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true

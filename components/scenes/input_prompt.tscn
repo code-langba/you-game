@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg13n3gpgxdks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60rtv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_right = 4
+border_width_bottom = 6
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="InputPrompt" type="PanelContainer"]
+offset_right = 45.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_60rtv")
