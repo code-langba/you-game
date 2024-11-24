@@ -388,7 +388,7 @@ region_enabled = true
 region_rect = Rect2(128, 512, 128, 128)
 
 [node name="Player" parent="." index="2"]
-position = Vector2(104, 704)
+position = Vector2(5818, -1315)
 fall_gravity = 5000
 push_force = 0.001
 
@@ -442,6 +442,7 @@ limit_top = -2000
 metadata/_edit_lock_ = true
 
 [node name="FollowCamera" parent="Camera" index="1"]
+position = Vector2(5818, -1315)
 priority = 1
 tween_on_load = false
 follow_damping_value = Vector2(0.2, 0.5)
@@ -456,6 +457,7 @@ follow_target = NodePath("../../Player")
 zoom = Vector2(0.8, 0.8)
 frame_preview = false
 tween_resource = SubResource("Resource_qtt2j")
+tween_on_load = false
 inactive_update_mode = 1
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
@@ -465,15 +467,15 @@ limit_bottom = 377
 metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D2" type="Node2D" parent="Camera" index="3" node_paths=PackedStringArray("follow_target")]
-position = Vector2(104, -1136)
+position = Vector2(5818, -1465)
 script = ExtResource("18_668mf")
-follow_mode = 1
+follow_mode = 2
 follow_target = NodePath("../../Player")
 tween_resource = SubResource("Resource_qtt2j")
-follow_offset = Vector2(0.2, 3)
+tween_on_load = false
+follow_offset = Vector2(0, -150)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-limit_top = -2000
 limit_bottom = -596
 metadata/_edit_lock_ = true
 
@@ -482,19 +484,20 @@ position = Vector2(15575, -992)
 script = ExtResource("18_668mf")
 frame_preview = false
 tween_resource = SubResource("Resource_qtt2j")
+tween_on_load = false
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
 metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D4" type="Node2D" parent="Camera" index="5" node_paths=PackedStringArray("follow_target")]
-position = Vector2(104, 704)
+position = Vector2(5818, -1315)
 script = ExtResource("18_668mf")
-follow_mode = 1
+follow_mode = 2
 follow_target = NodePath("../../Player")
 frame_preview = false
 tween_resource = SubResource("Resource_qtt2j")
-follow_offset = Vector2(0.2, 3)
+tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
 metadata/_edit_lock_ = true
