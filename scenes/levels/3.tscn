@@ -388,7 +388,7 @@ region_enabled = true
 region_rect = Rect2(128, 512, 128, 128)
 
 [node name="Player" parent="." index="2"]
-position = Vector2(5818, -1315)
+position = Vector2(91, 695)
 fall_gravity = 5000
 push_force = 0.001
 
@@ -442,7 +442,6 @@ limit_top = -2000
 metadata/_edit_lock_ = true
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(5818, -1315)
 priority = 1
 tween_on_load = false
 follow_damping_value = Vector2(0.2, 0.5)
@@ -467,7 +466,7 @@ limit_bottom = 377
 metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D2" type="Node2D" parent="Camera" index="3" node_paths=PackedStringArray("follow_target")]
-position = Vector2(5818, -1465)
+position = Vector2(91, -1136)
 script = ExtResource("18_668mf")
 follow_mode = 2
 follow_target = NodePath("../../Player")
@@ -491,7 +490,7 @@ follow_damping_value = Vector2(0.2, 0.2)
 metadata/_edit_lock_ = true
 
 [node name="PhantomCamera2D4" type="Node2D" parent="Camera" index="5" node_paths=PackedStringArray("follow_target")]
-position = Vector2(5818, -1315)
+position = Vector2(91, 695)
 script = ExtResource("18_668mf")
 follow_mode = 2
 follow_target = NodePath("../../Player")
