@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func start_game() -> void:
 	PlayerManager.reset()
-	AudioManager.is_playing = false
+	AudioManager.stop()
 	SceneManager.change_scene_to_file("res://scenes/levels/1.tscn")
 	
 func quit_game() -> void:

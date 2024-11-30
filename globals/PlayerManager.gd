@@ -1,7 +1,7 @@
 extends Node
 
 var current_checkpoint: Vector2
-var lives := 1:
+var lives := 10:
 	set(value):
 		lives = clamp(value, 0, 20)
 		EventBus.lives_changed.emit(lives)

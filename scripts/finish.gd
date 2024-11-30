@@ -9,7 +9,6 @@ func _ready() -> void:
 func on_level_complete(_body: Node2D) -> void:
 	PlayerManager.reset_checkpoint()
 	AudioManager.stop()
-	AudioManager.is_playing = false
 	call_deferred("load_next_level")
 
 func load_next_level():
