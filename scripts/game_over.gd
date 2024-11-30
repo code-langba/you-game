@@ -4,6 +4,7 @@ extends Control
 @export var buttons: Array[Button]
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+
 func _ready() -> void:
 	buttons[0].grab_focus()
 	for button in buttons:
@@ -13,7 +14,6 @@ func _ready() -> void:
 
 func on_button_pressed(button: Button) -> void:
 	match (button.get_meta("action")):
-		"restart_level": get_tree().reload_current_scene()
 		"go_to_main_menu": get_tree().change_scene_to_packed(main_menu_scene)
 		"quit": get_tree().quit()
 		

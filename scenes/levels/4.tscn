@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
-[ext_resource type="PackedScene" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
+[ext_resource type="PackedScene" uid="uid://bdqhay37x1j4" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
 [ext_resource type="PackedScene" uid="uid://c5vxmsxnfocmd" path="res://scenes/world/church.tscn" id="15_gy7vk"]
 
 [sub_resource type="Resource" id="Resource_fqquq"]

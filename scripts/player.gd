@@ -111,7 +111,7 @@ func play_die_anim():
 	player.play("die")
 	await player.animation_finished
 	await get_tree().create_timer(0.5).timeout
-	is_dead = false
+	set_collision_layer_value(2,false)
 	call_deferred("game_over")
 	
 func on_dead() -> void:
@@ -121,7 +121,7 @@ func on_dead() -> void:
 	if PlayerManager.lives < 1:
 		# var anim = body
 		play_die_anim()
-		PlayerManager.reset()
+		#PlayerManager.reset()
 		return
 	timer.start()
 	# call_deferred("reload")

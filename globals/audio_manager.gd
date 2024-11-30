@@ -15,4 +15,3 @@ func play(song:AudioStream):
 
 func stop():
 	audio.stop()
-

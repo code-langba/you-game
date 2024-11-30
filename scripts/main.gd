@@ -8,9 +8,7 @@ func _ready() -> void:
 	SceneManager.set_param(-0.1)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	var manager = AudioManager
-	if not manager.is_playing:
-		manager.play(bgm)
-		manager.is_playing = false
+	manager.play(bgm)
 	
 	# buttons
 	buttons[0].grab_focus()
@@ -20,6 +18,8 @@ func _ready() -> void:
 		button.pressed.connect(on_button_pressed.bind(button))
 
 func start_game() -> void:
+	PlayerManager.reset()
+	AudioManager.is_playing = false
 	SceneManager.change_scene_to_file("res://scenes/levels/1.tscn")
 	
 func quit_game() -> void:
