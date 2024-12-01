@@ -25,6 +25,10 @@ Enums="*res://globals/enums.gd"
 SceneManager="*res://globals/scene_manager.tscn"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
+[debug]
+
+shader_language/stdout/print_fps=false
+
 [display]
 
 window/size/viewport_width=1920

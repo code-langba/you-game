@@ -7,6 +7,8 @@ class_name Player
 @export var speed := 300.0
 @export var jump_velocity := 800.0
 @export var camera_container: Node
+@export var initial_camera: PhantomCamera2D
+@export var follow_camera: PhantomCamera2D
 
 @export_group("Collision with RigidBody2D")
 @export var push_force := 0.1
@@ -43,12 +45,11 @@ func _ready() -> void:
 	EventBus.add_impulse.connect(add_impulse)
 	EventBus.ascend.connect(func(): is_ascend = true)
 	
-	var cameras = camera_container.get_children() as Array[PhantomCamera2D]
-	for camera in cameras:
-		camera.priority = 0
-	var follow_camera = cameras[1]
-	follow_camera.priority = 1
-		
+	follow_camera.set_priority(1)
+	if not PlayerManager.current_checkpoint == Vector2.ZERO:
+		follow_camera.global_position = PlayerManager.current_checkpoint
+	await get_tree().create_timer(1).timeout
+	follow_camera.set_tween_duration(1)
 
 func _physics_process(delta: float) -> void:
 	is_grounded = is_on_floor()
@@ -115,6 +116,7 @@ func play_die_anim():
 	call_deferred("game_over")
 	
 func on_dead() -> void:
+	PlayerManager.follow_camera_pos = global_position
 	is_dead = true
 	player.play("die")
 	PlayerManager.lives -= 1

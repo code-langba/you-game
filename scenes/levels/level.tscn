@@ -31,20 +31,16 @@ game_over_scene = ExtResource("2_ynbd7")
 mouse_mode = 0
 metadata/_edit_pinned_properties_ = [&"mouse_mode"]
 
-[node name="Player" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("1_tqbsa")]
-position = Vector2(180, 646)
-camera_container = NodePath("../Camera")
-
 [node name="Camera" type="Node" parent="."]
 
 [node name="InitialCamera" type="Node2D" parent="Camera"]
 position = Vector2(600, 784)
 script = ExtResource("4_s3amj")
-zoom = Vector2(1.4, 1.4)
 tween_resource = SubResource("Resource_5iw5l")
 tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
+draw_limits = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 1080
@@ -58,9 +54,14 @@ frame_preview = false
 tween_resource = SubResource("Resource_nlwf1")
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
+draw_limits = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 1080
+
+[node name="Player" parent="." node_paths=PackedStringArray("camera_container") instance=ExtResource("1_tqbsa")]
+position = Vector2(180, 646)
+camera_container = NodePath("../Camera")
 
 [node name="killzone" parent="." instance=ExtResource("2_s2iwy")]
 

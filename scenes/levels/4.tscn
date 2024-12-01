@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
-[ext_resource type="PackedScene" uid="uid://bdqhay37x1j4" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
+[ext_resource type="PackedScene" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
 [ext_resource type="PackedScene" uid="uid://c5vxmsxnfocmd" path="res://scenes/world/church.tscn" id="15_gy7vk"]
 
 [sub_resource type="Resource" id="Resource_fqquq"]
@@ -144,6 +144,8 @@ sources/0 = SubResource("TileSetAtlasSource_uh47u")
 position = Vector2(6, 435)
 bgm = ExtResource("3_etc5n")
 bg_color = Color(0.129412, 0.180392, 0.227451, 1)
+metadata/_edit_vertical_guides_ = [4745.0]
+metadata/_edit_horizontal_guides_ = [1090.0, 924.0]
 
 [node name="bg" type="Node2D" parent="." index="0"]
 z_index = -1
@@ -167,19 +169,25 @@ position = Vector2(2634, -36)
 scale = Vector2(1, 1.5)
 texture = ExtResource("3_22cpu")
 
-[node name="Player" parent="." index="1"]
-position = Vector2(9553, -898)
-
-[node name="Camera2D" parent="Player" index="2"]
-position = Vector2(-8959, 1247)
-zoom = Vector2(1.4, 1.4)
-limit_top = 0
-
 [node name="InitialCamera" parent="Camera" index="0"]
+position = Vector2(9450, 892)
 tween_resource = SubResource("Resource_fqquq")
+limit_top = -10000000
+limit_bottom = 924
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(9559, 540)
+position = Vector2(9559, -463)
+limit_top = -10000000
+limit_bottom = 924
+
+[node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
+position = Vector2(9553, -898)
+initial_camera = NodePath("../Camera/InitialCamera")
+follow_camera = NodePath("../Camera/FollowCamera")
+
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2(-109, 1355)
+limit_bottom = 924
 
 [node name="invisible_box" parent="." index="6" instance=ExtResource("4_0m3ev")]
 position = Vector2(8372, -238)
@@ -354,9 +362,6 @@ autowrap_mode = 2
 [node name="finish2" parent="." index="17" instance=ExtResource("8_knafx")]
 position = Vector2(3400, -3814)
 next_level = ExtResource("9_1ag0o")
-
-[node name="CollisionShape2D" parent="finish2" index="0"]
-position = Vector2(0, -1607)
 
 [node name="heart" parent="." index="18" instance=ExtResource("2_oijpp")]
 position = Vector2(8156, 30)

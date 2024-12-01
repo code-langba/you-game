@@ -6,6 +6,7 @@ extends Node2D
 @export var mouse_mode: Input.MouseMode = Input.MOUSE_MODE_VISIBLE
 @export var bg_color: Color
 @onready var ui: CanvasLayer = $Ui
+@onready var initial_camera: PhantomCamera2D = $Camera/InitialCamera
 
 func _ready() -> void:
 	set_mouse_mode()

@@ -123,21 +123,22 @@ texture = ExtResource("18_ldpk0")
 region_enabled = true
 region_rect = Rect2(896, 896, 128, 128)
 
-[node name="Player" parent="." index="1"]
-position = Vector2(198, 260)
-
-[node name="Camera2D" parent="Player" index="2"]
-position = Vector2(762, 280)
-limit_top = 0
-
 [node name="InitialCamera" parent="Camera" index="0"]
 position = Vector2(960, 540)
-zoom = Vector2(1, 1)
 tween_resource = SubResource("Resource_4xy0a")
 
 [node name="FollowCamera" parent="Camera" index="1"]
 priority = 1
 tween_on_load = false
+
+[node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
+position = Vector2(198, 260)
+initial_camera = NodePath("../Camera/InitialCamera")
+follow_camera = NodePath("../Camera/FollowCamera")
+
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2(762, 280)
+limit_top = 0
 
 [node name="finish" parent="." index="5"]
 position = Vector2(6185, 667)

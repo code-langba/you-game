@@ -11,6 +11,7 @@ shader_parameter/color = Color(0.760619, 0.554547, 0.476525, 1)
 shader_parameter/dissolve_texture = ExtResource("2_mj1td")
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_euf3t")
 
 [node name="ColorRect" type="ColorRect" parent="."]

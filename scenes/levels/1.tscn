@@ -19,10 +19,10 @@
 [ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
 [ext_resource type="PackedScene" uid="uid://bg13n3gpgxdks" path="res://components/scenes/input_prompt.tscn" id="17_utkyl"]
 
-[sub_resource type="Resource" id="Resource_b2ka7"]
+[sub_resource type="Resource" id="Resource_kbiut"]
 script = ExtResource("9_e5x4g")
 duration = 1.0
-transition = 0
+transition = 1
 ease = 2
 
 [node name="1" instance=ExtResource("1_1e0av")]
@@ -78,17 +78,23 @@ texture = ExtResource("9_vyah7")
 region_enabled = true
 region_rect = Rect2(128, 384, 128, 128)
 
-[node name="Player" parent="." index="1"]
+[node name="InitialCamera" parent="Camera" index="0"]
+position = Vector2(687, 694.286)
+zoom = Vector2(1.4, 1.4)
+
+[node name="FollowCamera" parent="Camera" index="1"]
+tween_resource = SubResource("Resource_kbiut")
+
+[node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
 position = Vector2(120, 825)
+initial_camera = NodePath("../Camera/InitialCamera")
+follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
-position = Vector2(480, -41)
+position = Vector2(567, -130.714)
 zoom = Vector2(1.4, 1.4)
 limit_top = 0
 editor_draw_limits = true
-
-[node name="InitialCamera" parent="Camera" index="0"]
-tween_resource = SubResource("Resource_b2ka7")
 
 [node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)

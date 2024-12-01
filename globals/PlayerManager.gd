@@ -1,5 +1,6 @@
 extends Node
 
+var follow_camera_pos: Vector2
 var current_checkpoint: Vector2
 var lives := 10:
 	set(value):

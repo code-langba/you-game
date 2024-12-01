@@ -1,53 +1,31 @@
-extends Area2D
+extends Node
 
-@export var disabled: bool = false
-@export var camera_container: Node
-@export var prev_camera: PhantomCamera2D
-@export var next_camera: PhantomCamera2D
+@export var follow_camera: PhantomCamera2D
+@onready var area_2d: Area2D = $Area2D
+@onready var area_2d_2: Area2D = $Area2D2
 
-var current_camera: PhantomCamera2D
-
-var cameras: Array
+var default_bottom_limit: int = 1080
 
 func _ready() -> void:
-	body_entered.connect(change_camera_on_entered)
-	body_exited.connect(change_camera_on_exit)
-	if disabled: return
-	cameras = camera_container.get_children()
+	area_2d.body_exited.connect(set_follow_camera_bounds.bind(area_2d, -475))
+	area_2d_2.body_exited.connect(set_follow_camera_bounds.bind(area_2d_2, -475))
 	
-func change_camera_on_entered(body: Player) -> void:
-	if disabled: return
-	
-	var direction =  body.global_position - global_position 
-	var came_from = "left" if direction.normalized().x < 0 else "right"
-	if came_from == "left":
-		if current_camera and current_camera.get_instance_id() == next_camera.get_instance_id(): return
-		reset_camera_priority()
-		current_camera = next_camera
-		next_camera.priority = 1
-	if came_from == "right":
-		if current_camera and current_camera.get_instance_id() == prev_camera.get_instance_id(): return
-		reset_camera_priority()
-		current_camera = prev_camera
-		prev_camera.priority = 1
+func set_follow_camera_bounds(body: Player, detector: Area2D, value: int) -> void:
+	match detector:
+		area_2d:
+			if came_from(body, detector.global_position) == "right":
+				follow_camera.limit_bottom = value
+			else:
+				follow_camera.limit_bottom = default_bottom_limit
+		area_2d_2:
+			if came_from(body, detector.global_position) == "right":
+				follow_camera.limit_bottom = default_bottom_limit
+			else:
+				follow_camera.limit_bottom = value
+				
 
-func change_camera_on_exit(body: Player) -> void:
-	if disabled: return
-	
-	var direction = global_position - body.global_position 
-	var came_from = "left" if direction.normalized().x < 0 else "right"
-	if came_from == "left":
-		if current_camera and current_camera.get_instance_id() == next_camera.get_instance_id(): return
-		reset_camera_priority()
-		current_camera = next_camera
-		next_camera.priority = 1
-	if came_from == "right":
-		if current_camera and current_camera.get_instance_id() == prev_camera.get_instance_id(): return
-		reset_camera_priority()
-		current_camera = prev_camera
-		prev_camera.priority = 1
-		
-func reset_camera_priority() -> void:
-	if not cameras: return
-	for camera in (cameras as Array[PhantomCamera2D]):
-		camera.priority = 0
+
+func came_from(player: Player, detector_pos: Vector2) -> String:
+	var direction =  player.global_position - detector_pos
+	var _came_from = "left" if direction.normalized().x < 0 else "right"
+	return _came_from
