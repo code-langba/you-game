@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7ethfy8v7636"]
+[gd_scene load_steps=7 format=3 uid="uid://7ethfy8v7636"]
 
 [ext_resource type="Script" path="res://scripts/traps/rolling_ball.gd" id="1_tr5im"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="2_kd7ma"]
 [ext_resource type="Texture2D" uid="uid://bg5sm4ue0ussy" path="res://asset/sprites/wheel.png" id="3_x3e6x"]
+[ext_resource type="AudioStream" uid="uid://hnurxljf1tgc" path="res://asset/sounds/rumble.wav" id="4_0lc1h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_35ctv"]
 radius = 354.114
@@ -31,3 +32,8 @@ debug_color = Color(0, 0.0183077, 0.025747, 0.42)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3.6875, 3.6875)
 texture = ExtResource("3_x3e6x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0lc1h")
+volume_db = 6.0
+panning_strength = 0.5

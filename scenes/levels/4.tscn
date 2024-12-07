@@ -14,13 +14,13 @@
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
-[ext_resource type="PackedScene" uid="uid://bdqhay37x1j4" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
+[ext_resource type="PackedScene" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
 [ext_resource type="PackedScene" uid="uid://c5vxmsxnfocmd" path="res://scenes/world/church.tscn" id="15_gy7vk"]
 [ext_resource type="Texture2D" uid="uid://bkfpantgb4n0" path="res://asset/sprites/LittleBeekDesigns-Creepy-Branch.png" id="17_i54bu"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="17_mvqsq"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="18_fl0o4"]
 [ext_resource type="Texture2D" uid="uid://byyy3uyovm1w6" path="res://asset/sprites/e25a653f85619d4b842c8b79af965359.png" id="18_wum3w"]
-[ext_resource type="PackedScene" uid="uid://f7iws2hu56b7" path="res://scenes/world/bat.tscn" id="19_rhrj4"]
+[ext_resource type="PackedScene" path="res://scenes/world/bat.tscn" id="19_rhrj4"]
 
 [sub_resource type="Resource" id="Resource_fqquq"]
 script = ExtResource("5_fwwd7")
