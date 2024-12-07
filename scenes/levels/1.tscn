@@ -27,7 +27,7 @@ ease = 2
 
 [node name="1" instance=ExtResource("1_1e0av")]
 bgm = ExtResource("10_65fjq")
-metadata/_edit_vertical_guides_ = [556.0]
+metadata/_edit_vertical_guides_ = [556.0, 5104.0]
 
 [node name="bg" type="Node2D" parent="." index="0"]
 
@@ -84,6 +84,8 @@ zoom = Vector2(1.4, 1.4)
 
 [node name="FollowCamera" parent="Camera" index="1"]
 tween_resource = SubResource("Resource_kbiut")
+follow_damping_value = Vector2(0.2, 0.1)
+limit_right = 5100
 
 [node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
 position = Vector2(120, 825)

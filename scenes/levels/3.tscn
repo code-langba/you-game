@@ -53,7 +53,7 @@ ease = 2
 script = ExtResource("17_h16t6")
 duration = 0.0
 transition = 0
-ease = 1
+ease = 2
 
 [sub_resource type="Resource" id="Resource_qtt2j"]
 script = ExtResource("17_h16t6")
@@ -297,7 +297,7 @@ fill_to = Vector2(0, 1)
 
 [node name="level" instance=ExtResource("1_rq4wt")]
 bgm = ExtResource("3_ai0cw")
-metadata/_edit_horizontal_guides_ = [380.0, -596.0, -475.0]
+metadata/_edit_horizontal_guides_ = [380.0, -596.0, -475.0, -2016.0]
 metadata/_edit_vertical_guides_ = [6529.0]
 
 [node name="bg" type="Node2D" parent="." index="0"]
@@ -449,14 +449,19 @@ region_rect = Rect2(128, 512, 128, 128)
 position = Vector2(960, 540)
 tween_resource = SubResource("Resource_7wlrl")
 inactive_update_mode = 1
+draw_limits = false
 limit_top = -2000
+_preview_noise = false
 metadata/_edit_lock_ = true
 
 [node name="FollowCamera" parent="Camera" index="1"]
 priority = 2
+follow_mode = 2
+snap_to_pixel = true
 tween_resource = SubResource("Resource_qhcf4")
 tween_on_load = false
-follow_damping_value = Vector2(0.2, 0.5)
+follow_damping_value = Vector2(0.2, 0.3)
+draw_limits = false
 limit_top = -2000
 metadata/_edit_lock_ = true
 
@@ -473,7 +478,6 @@ inactive_update_mode = 1
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.1, 0.04)
-draw_limits = true
 limit_left = 2697
 limit_bottom = 377
 metadata/_edit_lock_ = true
@@ -486,7 +490,6 @@ tween_on_load = false
 follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
 
 [node name="ZoneDetectors" type="Node" parent="." index="3"]
 
