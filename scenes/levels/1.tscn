@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=22 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
@@ -18,12 +18,18 @@
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="10_2ctgp"]
 [ext_resource type="AudioStream" uid="uid://clgsyrgu7r54w" path="res://asset/music/bgm/1.mp3" id="10_65fjq"]
 [ext_resource type="PackedScene" uid="uid://bg13n3gpgxdks" path="res://components/scenes/input_prompt.tscn" id="17_utkyl"]
+[ext_resource type="Texture2D" uid="uid://cnwa7yaobchl2" path="res://asset/sprites/pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image_6116630.png" id="19_rasjj"]
 
 [sub_resource type="Resource" id="Resource_kbiut"]
 script = ExtResource("9_e5x4g")
 duration = 1.0
 transition = 1
 ease = 2
+
+[sub_resource type="TileSet" id="TileSet_v8vwo"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 0
+physics_layer_0/collision_mask = 0
 
 [node name="1" instance=ExtResource("1_1e0av")]
 bgm = ExtResource("10_65fjq")
@@ -173,6 +179,7 @@ position = Vector2(4528, 402)
 next_level = ExtResource("4_l0x5u")
 
 [node name="Tutorial" type="Control" parent="." index="12"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 
@@ -297,5 +304,13 @@ tile_set = ExtResource("9_7pnl8")
 use_parent_material = true
 position = Vector2(0, 10)
 tile_set = ExtResource("9_7pnl8")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemap" index="2"]
+tile_set = SubResource("TileSet_v8vwo")
+
+[node name="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" type="Sprite2D" parent="Tilemap" index="3"]
+position = Vector2(354, 619)
+scale = Vector2(1.67222, 1.67222)
+texture = ExtResource("19_rasjj")
 
 [editable path="Player"]

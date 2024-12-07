@@ -207,7 +207,7 @@ offset_top = -87.6796
 offset_right = 191.879
 offset_bottom = -67.6796
 theme_override_font_sizes/font_size = 19
-text = "I'm scared to jump."
+text = "I'm afraid to jump."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-6.78788, 26.0148)

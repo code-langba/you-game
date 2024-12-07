@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0n5he88lfxle"]
+
+[ext_resource type="Texture2D" uid="uid://b1nlwwi2fiqoh" path="res://asset/sprites/water.png" id="1_ia48e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6nyc"]
+atlas = ExtResource("1_ia48e")
+region = Rect2(0, 0, 1000, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osa6m"]
+atlas = ExtResource("1_ia48e")
+region = Rect2(1000, 0, 1000, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjnd8"]
+atlas = ExtResource("1_ia48e")
+region = Rect2(2000, 0, 1000, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kj2b"]
+atlas = ExtResource("1_ia48e")
+region = Rect2(3000, 0, 1000, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqgdi"]
+atlas = ExtResource("1_ia48e")
+region = Rect2(4000, 0, 1000, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l20q"]
+atlas = ExtResource("1_ia48e")
+region = Rect2(5000, 0, 1000, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4j8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6nyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osa6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjnd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kj2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqgdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l20q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l20q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqgdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kj2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjnd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osa6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6nyc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_f4j8v")
+autoplay = "default"
+frame = 8
+frame_progress = 0.86348
