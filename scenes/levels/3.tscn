@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=102 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
@@ -277,23 +277,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.905983, 0.0982906)
 
-[sub_resource type="Animation" id="Animation_5yaiv"]
-resource_name = "blink"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PointLight2D2:energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(2, 0.5),
-"update": 0,
-"values": [0.5, 4.0]
-}
-
 [sub_resource type="Animation" id="Animation_no6md"]
 length = 0.001
 tracks/0/type = "value"
@@ -319,6 +302,23 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.6]
+}
+
+[sub_resource type="Animation" id="Animation_5yaiv"]
+resource_name = "blink"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D2:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2, 0.5),
+"update": 0,
+"values": [0.5, 4.0]
 }
 
 [sub_resource type="Animation" id="Animation_wngmm"]
@@ -471,6 +471,19 @@ gradient = SubResource("Gradient_q2tki")
 width = 1
 height = 32
 fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_bwhii"]
+offsets = PackedFloat32Array(0.0707547, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0bdhr"]
+gradient = SubResource("Gradient_bwhii")
+
+[sub_resource type="Environment" id="Environment_3jw8r"]
+background_mode = 3
+glow_blend_mode = 0
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_0bdhr")
 
 [node name="level" instance=ExtResource("1_rq4wt")]
 bgm = ExtResource("3_ai0cw")
@@ -769,7 +782,7 @@ bounce_strength = 3000.0
 
 [node name="cloud3" parent="World/bouncy" index="2" instance=ExtResource("7_fn0er")]
 position = Vector2(4519, -1044)
-bounce_strength = 0.0
+no_bounce = true
 
 [node name="Mushroom2" parent="World/bouncy" index="3" instance=ExtResource("9_nrhoi")]
 z_index = -2
@@ -1108,6 +1121,7 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" parent="Traps/rolling_ball" index="3"]
 autoplay = true
+max_distance = 3000.0
 
 [node name="rolling_ball2" parent="Traps" index="3" instance=ExtResource("6_dbdtd")]
 unique_name_in_owner = true
@@ -1302,6 +1316,9 @@ pitch_scale = 1.2
 autoplay = true
 max_distance = 3000.0
 attenuation = 2.46229
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="16"]
+environment = SubResource("Environment_3jw8r")
 
 [editable path="finish"]
 [editable path="World/platforms/BetterMovingPlatform"]

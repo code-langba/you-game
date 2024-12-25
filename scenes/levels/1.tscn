@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=23 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
@@ -30,6 +30,9 @@ ease = 2
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 0
+
+[sub_resource type="Environment" id="Environment_v8ss1"]
+background_mode = 3
 
 [node name="1" instance=ExtResource("1_1e0av")]
 bgm = ExtResource("10_65fjq")
@@ -312,5 +315,8 @@ tile_set = SubResource("TileSet_v8vwo")
 position = Vector2(354, 619)
 scale = Vector2(1.67222, 1.67222)
 texture = ExtResource("19_rasjj")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="14"]
+environment = SubResource("Environment_v8ss1")
 
 [editable path="Player"]

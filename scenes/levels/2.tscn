@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://4psc66kvofb8"]
+[gd_scene load_steps=41 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
 [ext_resource type="PackedScene" uid="uid://bmk8onibxyk57" path="res://scenes/levels/3.tscn" id="2_kghkq"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b4h3wjpe6k1j3" path="res://asset/sprites/bg/lvl2/3.PNG" id="9_w6lm2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_g2idk"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="11_p3ad4"]
+[ext_resource type="Texture2D" uid="uid://b0b4a2vfxwf42" path="res://asset/textures/soot.png" id="12_upp4y"]
 [ext_resource type="PackedScene" uid="uid://ciwfk8x8so5td" path="res://scenes/world/heart.tscn" id="16_fa570"]
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="18_ldpk0"]
 [ext_resource type="Texture2D" uid="uid://2vs6xgjk5sh5" path="res://asset/sprites/Creeping_Vines_outside.png" id="24_tkmea"]
@@ -50,14 +51,18 @@ lifetime_randomness = 0.34
 particle_flag_disable_z = true
 emission_shape = 3
 emission_box_extents = Vector3(500, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 104.7
 gravity = Vector3(-100, 300, 0)
 linear_accel_min = 34.55
 linear_accel_max = 100.0
+radial_accel_min = -1.0
+radial_accel_max = 0.999998
 damping_min = 12.727
 damping_max = 23.636
 attractor_interaction_enabled = false
-scale_min = 3.0
-scale_max = 10.0
+scale_min = 0.03
+scale_max = 0.25
 color = Color(0, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_aeolj")
 turbulence_enabled = true
@@ -175,11 +180,12 @@ limit_top = 0
 limit_right = 6400
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="4"]
-position = Vector2(3152, 72)
+position = Vector2(3152, -16)
 scale = Vector2(32.48, 1)
 amount = 300
 process_material = SubResource("ParticleProcessMaterial_0vwx6")
-lifetime = 8.0
+texture = ExtResource("12_upp4y")
+lifetime = 9.0
 randomness = 0.84
 
 [node name="finish" parent="." index="6"]
