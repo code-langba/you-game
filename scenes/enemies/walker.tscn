@@ -115,7 +115,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 10.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2fsb"]
@@ -130,7 +130,8 @@ SPEED = 200.0
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_adqmr")
 animation = &"walk"
-frame_progress = 0.285017
+autoplay = "walk"
+frame_progress = 0.811244
 
 [node name="killzone" parent="." instance=ExtResource("2_2reh2")]
 collision_layer = 4
