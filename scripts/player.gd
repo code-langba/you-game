@@ -17,7 +17,6 @@ class_name Player
 #@onready var killzone: Area2D = get_parent().get_node("killzone")
 @onready var gravity = default_gravity
 @onready var timer: Timer = $SceneResetTimer
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var is_ascend = false
 var is_dead := false
@@ -88,7 +87,6 @@ func _physics_process(delta: float) -> void:
 		# await get_tree().create_timer(2).timeout
 	move_and_slide()
 	if(!is_grounded and is_on_floor()):
-		audio_stream_player.play()
 		$DustParticle.emitting = true
 		
 	handle_collision_with_rigidbody()
