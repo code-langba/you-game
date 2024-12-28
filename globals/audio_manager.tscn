@@ -7,3 +7,4 @@ script = ExtResource("1_ioiqs")
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 max_distance = 99999.0
+bus = &"Music"

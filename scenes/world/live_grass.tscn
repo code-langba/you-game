@@ -97,3 +97,4 @@ frame_progress = 1.0
 [node name="grass_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_186bm")
 volume_db = -23.401
+bus = &"Sfx"

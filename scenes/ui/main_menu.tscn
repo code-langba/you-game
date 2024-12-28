@@ -113,3 +113,4 @@ metadata/action = "quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7pfv6")
+bus = &"Sfx"

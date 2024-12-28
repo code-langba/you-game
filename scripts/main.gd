@@ -3,6 +3,7 @@ extends Control
 @export var bgm: AudioStream
 @export var buttons: Array[Button]
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var settings_packed_scene = preload("res://scenes/ui/settings.tscn")
 
 func _ready() -> void:
 	SceneManager.set_param(-0.1)
@@ -26,7 +27,9 @@ func quit_game() -> void:
 	get_tree().quit()
 
 func open_settings() -> void:
-	print_rich("[color=orange]Not Implemented[/color]")
+	#print_rich("[color=orange]Not Implemented[/color]")
+	var settings_scene = settings_packed_scene.instantiate()
+	add_child(settings_scene)
 
 func on_button_pressed(button: Button) -> void:
 	match button.get_meta("action"):

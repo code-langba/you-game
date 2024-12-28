@@ -41,3 +41,4 @@ debug_color = Color(0.990638, 0.0693023, 0.154554, 0.42)
 stream = ExtResource("4_0kj6t")
 volume_db = -0.867
 pitch_scale = 1.43
+bus = &"Sfx"

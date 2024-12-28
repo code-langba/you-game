@@ -151,3 +151,4 @@ texture = SubResource("GradientTexture2D_qk0pv")
 stream = ExtResource("3_pc2a6")
 volume_db = -1.228
 pitch_scale = 1.7
+bus = &"Sfx"
