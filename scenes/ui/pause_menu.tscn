@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://7rndgha02643"]
+[gd_scene load_steps=4 format=3 uid="uid://cv0djo2s60sxq"]
 
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_f4hw0"]
-[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="2_o02el"]
-[ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="3_gy6de"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_uf2ie"]
+[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="2_7wcvm"]
+[ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="3_ggwwv"]
 
-[node name="game_over" type="Control" node_paths=PackedStringArray("buttons")]
+[node name="pause_menu" type="Control" node_paths=PackedStringArray("buttons")]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -12,9 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_f4hw0")
-main_menu_scene = ExtResource("2_o02el")
-buttons = [NodePath("CenterContainer/VBoxContainer/VBoxContainer/RestartLevel"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/ToMainMenu"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/Quit")]
+script = ExtResource("1_uf2ie")
+main_menu_scene = ExtResource("2_7wcvm")
+buttons = [NodePath("CenterContainer/VBoxContainer/VBoxContainer/Resume"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/Settings"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/ToMainMenu")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,32 +48,35 @@ theme_override_constants/separation = 80
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 128
-text = "GAME OVER"
+text = "Pause"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="RestartLevel" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
-visible = false
+[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-text = "Restart Level"
-metadata/action = "restart_level"
+text = "Resume"
+metadata/action = "resume"
+metadata/quit = ""
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "Settings"
+metadata/action = "settings"
+metadata/settings = ""
 
 [node name="ToMainMenu" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 text = "Main Menu"
-metadata/action = "go_to_main_menu"
-
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
-visible = false
-texture_filter = 1
-layout_mode = 2
-text = "Quit"
-metadata/action = "quit"
+metadata/action = "main_menu"
+metadata/main_menu = ""
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gy6de")
+stream = ExtResource("3_ggwwv")
+volume_db = -8.0
+bus = &"Sfx"

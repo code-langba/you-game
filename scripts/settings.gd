@@ -7,6 +7,7 @@ extends Control
 @onready var sfx_bus_idx = AudioServer.get_bus_index("Sfx")
 @onready var back_btn: Button = %BackBtn
 @onready var h_slider_main: HSlider = %HSliderMain
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	back_btn.pressed.connect(func(): queue_free())
@@ -34,3 +35,4 @@ func change_bus_volume(bus_id: int, value: float) -> void:
 		
 	AudioServer.set_bus_mute(bus_id, false)
 	AudioServer.set_bus_volume_db(bus_id, value)
+	audio_stream_player.play()

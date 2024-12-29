@@ -2,8 +2,8 @@ extends Control
 
 @export var bgm: AudioStream
 @export var buttons: Array[Button]
-@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var settings_packed_scene = preload("res://scenes/ui/settings.tscn")
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	SceneManager.set_param(-0.1)

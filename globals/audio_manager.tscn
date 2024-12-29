@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://globals/audio_manager.gd" id="1_ioiqs"]
 
 [node name="audio_manager" type="Node"]
+process_mode = 3
 script = ExtResource("1_ioiqs")
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]

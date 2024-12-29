@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcigv8k7xprr"]
+[gd_scene load_steps=9 format=3 uid="uid://dcigv8k7xprr"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_81j71"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="2_7w38j"]
+[ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="3_wtpqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7lil"]
 bg_color = Color(0.3477, 0.4218, 0.57, 0.654902)
@@ -164,3 +165,8 @@ size_flags_horizontal = 8
 size_flags_vertical = 10
 theme = SubResource("Theme_dmlsj")
 text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wtpqd")
+volume_db = -8.0
+bus = &"Sfx"

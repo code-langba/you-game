@@ -28,7 +28,7 @@ distance = -1584.0
 [node name="level" type="Node2D"]
 script = ExtResource("1_dohl8")
 game_over_scene = ExtResource("2_ynbd7")
-mouse_mode = 0
+mouse_mode = 4
 metadata/_edit_pinned_properties_ = [&"mouse_mode"]
 
 [node name="Camera" type="Node" parent="."]
