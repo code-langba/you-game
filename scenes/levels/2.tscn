@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bkfpantgb4n0" path="res://asset/sprites/LittleBeekDesigns-Creepy-Branch.png" id="28_bp2w5"]
 [ext_resource type="Texture2D" uid="uid://c0c3uw3hb4q88" path="res://asset/sprites/35-356197_branch-clipart-jungle-tree-branch-jungle-png-transparent.png" id="29_j1l8l"]
 [ext_resource type="Texture2D" uid="uid://btd53ulv5ha3j" path="res://asset/sprites/animated-chain-3d-model-max-obj-3ds.png" id="30_ecdil"]
-[ext_resource type="PackedScene" uid="uid://f7iws2hu56b7" path="res://scenes/world/bat.tscn" id="31_xcx1j"]
+[ext_resource type="PackedScene" path="res://scenes/world/bat.tscn" id="31_xcx1j"]
 
 [sub_resource type="Resource" id="Resource_4xy0a"]
 script = ExtResource("11_g2idk")
@@ -175,7 +175,6 @@ initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
-physics_interpolation_mode = 1
 position = Vector2(650, 265)
 limit_top = 0
 limit_right = 6400

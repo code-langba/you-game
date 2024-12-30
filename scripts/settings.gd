@@ -10,7 +10,10 @@ extends Control
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
-	back_btn.pressed.connect(func(): queue_free())
+	back_btn.grab_focus()
+	back_btn.pressed.connect(func(): 
+		EventBus.setting_close.emit()
+		queue_free())
 	h_slider_music.value_changed.connect(on_value_changed.bind("music"))
 	h_slider_sfx.value_changed.connect(on_value_changed.bind("sfx"))
 	h_slider_main.value_changed.connect(on_value_changed.bind("master"))

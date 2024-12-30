@@ -36,7 +36,6 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_pwl3f")
-Button/styles/disabled = null
 Button/styles/focus = SubResource("StyleBoxFlat_b2euq")
 Button/styles/hover = SubResource("StyleBoxEmpty_v7vko")
 Button/styles/normal = SubResource("StyleBoxEmpty_hgpt7")
