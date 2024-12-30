@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="3_i4blj"]
 [ext_resource type="Texture2D" uid="uid://cei7vawvccxe7" path="res://asset/sprites/bg/lvl2/Background.PNG" id="4_12a7c"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="4_fuv7a"]
-[ext_resource type="Texture2D" uid="uid://d0at21nh2bbon" path="res://asset/sprites/bg/lvl2/8.PNG" id="5_45axh"]
+[ext_resource type="Texture2D" uid="uid://dti0yiv7fnudn" path="res://asset/sprites/bg/lvl2/6.PNG" id="5_45axh"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
 [ext_resource type="Texture2D" uid="uid://dssyfpvknpchk" path="res://asset/sprites/bg/lvl2/1.png" id="5_qlp1q"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bkfpantgb4n0" path="res://asset/sprites/LittleBeekDesigns-Creepy-Branch.png" id="28_bp2w5"]
 [ext_resource type="Texture2D" uid="uid://c0c3uw3hb4q88" path="res://asset/sprites/35-356197_branch-clipart-jungle-tree-branch-jungle-png-transparent.png" id="29_j1l8l"]
 [ext_resource type="Texture2D" uid="uid://btd53ulv5ha3j" path="res://asset/sprites/animated-chain-3d-model-max-obj-3ds.png" id="30_ecdil"]
-[ext_resource type="PackedScene" uid="uid://f7iws2hu56b7" path="res://scenes/world/bat.tscn" id="31_xcx1j"]
+[ext_resource type="PackedScene" path="res://scenes/world/bat.tscn" id="31_xcx1j"]
 
 [sub_resource type="Resource" id="Resource_4xy0a"]
 script = ExtResource("11_g2idk")
@@ -175,6 +175,7 @@ initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
+physics_interpolation_mode = 1
 position = Vector2(650, 265)
 limit_top = 0
 limit_right = 6400
