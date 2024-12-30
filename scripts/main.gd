@@ -6,6 +6,7 @@ extends Control
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
+	get_tree().paused = false
 	SceneManager.set_param(-0.1)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	var manager = AudioManager

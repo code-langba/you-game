@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bihp426oyl1um"
-path="res://.godot/imported/platforms_128.png-9b65fac6b730a17625d333756c301c99.ctex"
+uid="uid://cc7wabnqp1jau"
+path="res://.godot/imported/asscend.png-b399a34173568a9c7c1746ac81c63a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/platforms_128.png"
-dest_files=["res://.godot/imported/platforms_128.png-9b65fac6b730a17625d333756c301c99.ctex"]
+source_file="res://asset/ui/asscend.png"
+dest_files=["res://.godot/imported/asscend.png-b399a34173568a9c7c1746ac81c63a07.ctex"]
 
 [params]
 

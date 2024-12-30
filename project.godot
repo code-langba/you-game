@@ -14,7 +14,7 @@ config/name="Ascend"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 run/max_fps=60
-config/icon="res://icon.svg"
+config/icon="res://asset/ui/asscend.png"
 
 [autoload]
 
