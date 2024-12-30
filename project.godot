@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="You Game"
+config/name="Ascend"
 run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 run/max_fps=60
@@ -33,6 +33,7 @@ shader_language/stdout/print_fps=false
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/size/resizable=false
 window/size/always_on_top=true
 window/size/window_width_override=1280
