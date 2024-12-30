@@ -279,7 +279,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_cngk8")
 theme_override_font_sizes/font_size = 70
-text = "A few words from us..."
+text = "A message for you..."
 
 [node name="Label5" type="Label" parent="credits" index="2"]
 offset_left = 2645.0
