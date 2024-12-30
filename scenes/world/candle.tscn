@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://uafq3xl0me7r"]
+[gd_scene load_steps=10 format=3 uid="uid://uafq3xl0me7r"]
 
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="1_vbpdy"]
 
@@ -45,9 +45,26 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_f8m0q"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6xn8s"]
+gradient = SubResource("Gradient_f8m0q")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.858974, 0.149573)
+
 [node name="candle" type="AnimatedSprite2D"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_s3qpt")
 animation = &"fire"
 autoplay = "fire"
 frame_progress = 0.299674
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(-2, -7)
+scale = Vector2(5.25, 5.25)
+color = Color(0.441536, 0.691338, 0.774886, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_6xn8s")

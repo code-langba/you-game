@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5vxmsxnfocmd"]
+[gd_scene load_steps=7 format=3 uid="uid://c5vxmsxnfocmd"]
 
 [ext_resource type="Script" path="res://scripts/world/church.gd" id="1_bky7b"]
 [ext_resource type="Texture2D" uid="uid://cdn45luf11grv" path="res://asset/sprites/bg/lvl4/1.png" id="1_w4vml"]
@@ -6,6 +6,16 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yy8jk"]
 size = Vector2(1416.16, 263.642)
+
+[sub_resource type="Gradient" id="Gradient_uca3d"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3xrvo"]
+gradient = SubResource("Gradient_uca3d")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.858974, 0.149573)
 
 [node name="chruch" type="Area2D"]
 z_index = -1
@@ -26,3 +36,17 @@ region_rect = Rect2(0, 0, 512, 384)
 
 [node name="bells" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_m04di")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(-47.9351, 80.7599)
+scale = Vector2(5.25, 5.25)
+color = Color(0.441536, 0.691338, 0.774886, 1)
+energy = 0.94
+texture = SubResource("GradientTexture2D_3xrvo")
+
+[node name="PointLight2D4" type="PointLight2D" parent="."]
+position = Vector2(42.7243, 103.685)
+scale = Vector2(27.5625, 27.5625)
+color = Color(0.441536, 0.691338, 0.774886, 1)
+energy = 0.68
+texture = SubResource("GradientTexture2D_3xrvo")

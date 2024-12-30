@@ -46,7 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="32_ro2n8"]
 [ext_resource type="Texture2D" uid="uid://byyy3uyovm1w6" path="res://asset/sprites/e25a653f85619d4b842c8b79af965359.png" id="35_kxb2v"]
 [ext_resource type="Texture2D" uid="uid://btd53ulv5ha3j" path="res://asset/sprites/animated-chain-3d-model-max-obj-3ds.png" id="37_48wbg"]
-[ext_resource type="PackedScene" path="res://scenes/world/water.tscn" id="38_wdwpf"]
+[ext_resource type="PackedScene" uid="uid://b0n5he88lfxle" path="res://scenes/world/water.tscn" id="38_wdwpf"]
 [ext_resource type="Texture2D" uid="uid://dh33kdxfltdfj" path="res://asset/sprites/vines-clipart-creepy-6.png" id="43_5pvdy"]
 [ext_resource type="Texture2D" uid="uid://cnwa7yaobchl2" path="res://asset/sprites/pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image_6116630.png" id="44_g2ivo"]
 [ext_resource type="Script" path="res://scripts/traps/area_2d_2.gd" id="44_qaee5"]
@@ -257,12 +257,12 @@ size = Vector2(164, 372)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtmwo"]
 size = Vector2(33.5, 507)
 
-[sub_resource type="Gradient" id="Gradient_024dv"]
+[sub_resource type="Gradient" id="Gradient_isxja"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ss87y"]
-gradient = SubResource("Gradient_024dv")
+gradient = SubResource("Gradient_isxja")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.858974, 0.149573)
@@ -480,6 +480,7 @@ gradient = SubResource("Gradient_bwhii")
 
 [sub_resource type="Environment" id="Environment_3jw8r"]
 background_mode = 3
+ambient_light_energy = 13.66
 glow_blend_mode = 0
 adjustment_enabled = true
 adjustment_contrast = 1.2
@@ -1258,6 +1259,7 @@ blend_mode = 1
 [node name="Node" type="Node" parent="Lights" index="4"]
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights/Node" index="0"]
+visible = false
 position = Vector2(9763, -1198.5)
 scale = Vector2(3.31251, 4.57813)
 energy = 0.6

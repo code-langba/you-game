@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bkrn3jpcmrwo0"]
+[gd_scene load_steps=25 format=4 uid="uid://bkrn3jpcmrwo0"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
@@ -33,6 +33,16 @@ physics_layer_0/collision_mask = 0
 
 [sub_resource type="Environment" id="Environment_v8ss1"]
 background_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_024dv"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0ewhn"]
+gradient = SubResource("Gradient_024dv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.858974, 0.149573)
 
 [node name="1" instance=ExtResource("1_1e0av")]
 bgm = ExtResource("10_65fjq")
@@ -318,5 +328,13 @@ texture = ExtResource("19_rasjj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="14"]
 environment = SubResource("Environment_v8ss1")
+
+[node name="Lights" type="Node2D" parent="." index="15"]
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights" index="0"]
+position = Vector2(417, 678)
+scale = Vector2(5.25, 5.25)
+color = Color(0.682353, 0.541176, 0.447059, 1)
+texture = SubResource("GradientTexture2D_0ewhn")
 
 [editable path="Player"]

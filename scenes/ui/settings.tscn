@@ -86,8 +86,21 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 theme_override_constants/separation = 20
 
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackBtn" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme = SubResource("Theme_dmlsj")
+text = "Back"
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_top = 34
 theme_override_constants/margin_bottom = 30
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
@@ -105,7 +118,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
-text = "Main"
+text = "Main menu music"
 
 [node name="HSliderMain" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
@@ -125,7 +138,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
-text = "Music"
+text = "Level music"
 
 [node name="HSliderMusic" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -156,15 +169,6 @@ max_value = 6.0
 step = 2.0
 rounded = true
 tick_count = 7
-
-[node name="BackBtn" type="Button" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-texture_filter = 1
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 10
-theme = SubResource("Theme_dmlsj")
-text = "Back"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_wtpqd")
