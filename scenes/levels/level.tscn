@@ -1,14 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://8twc8hxar5ua"]
+[gd_scene load_steps=18 format=3 uid="uid://8twc8hxar5ua"]
 
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="1_dohl8"]
 [ext_resource type="PackedScene" uid="uid://dcsgncsfn3jqn" path="res://scenes/player/player.tscn" id="1_tqbsa"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="2_s2iwy"]
 [ext_resource type="PackedScene" uid="uid://7rndgha02643" path="res://scenes/ui/game_over.tscn" id="2_ynbd7"]
+[ext_resource type="PackedScene" uid="uid://cv0djo2s60sxq" path="res://scenes/ui/pause_menu.tscn" id="3_bfmu6"]
 [ext_resource type="Texture2D" uid="uid://cd14yy2t562c4" path="res://asset/sprites/ui/heart.png" id="3_pk0u1"]
 [ext_resource type="Script" path="res://scripts/lives.gd" id="4_clsq8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_s3amj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_v515h"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="6_gykwq"]
+[ext_resource type="Texture2D" uid="uid://c64thxqmmb54f" path="res://asset/sprites/ui/Pause.png" id="10_6v0ia"]
+[ext_resource type="Texture2D" uid="uid://c4jegw3k674y4" path="res://asset/sprites/ui/Left_Arrow.png" id="11_u8d7b"]
+[ext_resource type="Texture2D" uid="uid://w0ex7b0fx33f" path="res://asset/sprites/ui/Right_Arrow.png" id="12_xnwwy"]
+[ext_resource type="Texture2D" uid="uid://cs2x7yekso6ha" path="res://asset/sprites/ui/Up_Arrow.png" id="13_5d8qa"]
 
 [sub_resource type="Resource" id="Resource_5iw5l"]
 script = ExtResource("5_v515h")
@@ -28,8 +33,7 @@ distance = -1584.0
 [node name="level" type="Node2D"]
 script = ExtResource("1_dohl8")
 game_over_scene = ExtResource("2_ynbd7")
-mouse_mode = 4
-metadata/_edit_pinned_properties_ = [&"mouse_mode"]
+pause_menu_scene = ExtResource("3_bfmu6")
 
 [node name="Camera" type="Node" parent="."]
 
@@ -40,13 +44,12 @@ tween_resource = SubResource("Resource_5iw5l")
 tween_on_load = false
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 1080
 
 [node name="FollowCamera" type="Node2D" parent="Camera" node_paths=PackedStringArray("follow_target")]
-position = Vector2(960, 540)
+position = Vector2(1200, 540)
 script = ExtResource("4_s3amj")
 follow_mode = 1
 follow_target = NodePath("../../Player")
@@ -54,7 +57,6 @@ frame_preview = false
 tween_resource = SubResource("Resource_nlwf1")
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
-draw_limits = true
 limit_left = 0
 limit_top = 0
 limit_bottom = 1080
@@ -95,6 +97,41 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 87
 text = "0"
 script = ExtResource("4_clsq8")
+
+[node name="Fps" type="Label" parent="Ui/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 87
+
+[node name="Pause" type="TouchScreenButton" parent="Ui"]
+position = Vector2(2221, 32)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("10_6v0ia")
+texture_pressed = ExtResource("10_6v0ia")
+action = "esc"
+
+[node name="Left" type="TouchScreenButton" parent="Ui"]
+modulate = Color(1, 1, 1, 0.341176)
+position = Vector2(120, 840)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("11_u8d7b")
+texture_pressed = ExtResource("11_u8d7b")
+action = "move_left"
+
+[node name="Right" type="TouchScreenButton" parent="Ui"]
+modulate = Color(1, 1, 1, 0.341176)
+position = Vector2(360, 840)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("12_xnwwy")
+texture_pressed = ExtResource("12_xnwwy")
+action = "move_right"
+
+[node name="Jump" type="TouchScreenButton" parent="Ui"]
+modulate = Color(1, 1, 1, 0.341176)
+position = Vector2(2120, 840)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("13_5d8qa")
+texture_pressed = ExtResource("13_5d8qa")
+action = "jump"
 
 [node name="finish" parent="." instance=ExtResource("6_gykwq")]
 

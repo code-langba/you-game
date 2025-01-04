@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0n5he88lfxle"]
+[gd_scene load_steps=9 format=3 uid="uid://cgqas3at0ayag"]
 
 [ext_resource type="Texture2D" uid="uid://b1nlwwi2fiqoh" path="res://asset/sprites/water.png" id="1_ia48e"]
 
@@ -75,3 +75,5 @@ sprite_frames = SubResource("SpriteFrames_f4j8v")
 autoplay = "default"
 frame = 8
 frame_progress = 0.86348
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

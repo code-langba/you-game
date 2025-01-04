@@ -98,3 +98,5 @@ frame_progress = 1.0
 stream = ExtResource("3_186bm")
 volume_db = -23.401
 bus = &"Sfx"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

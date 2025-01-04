@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dmwhkhcbfhwfi"]
+[gd_scene load_steps=27 format=4 uid="uid://dmwhkhcbfhwfi"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_edo13"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_27drq"]
@@ -12,15 +12,13 @@
 [ext_resource type="Script" path="res://scripts/world/ascend.gd" id="6_55bqg"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="7_cngk8"]
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="8_cyhvv"]
-[ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="8_knafx"]
-[ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="9_1ag0o"]
-[ext_resource type="PackedScene" uid="uid://bdqhay37x1j4" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
+[ext_resource type="PackedScene" path="res://scenes/world/skelly.tscn" id="15_3jhxm"]
 [ext_resource type="PackedScene" uid="uid://c5vxmsxnfocmd" path="res://scenes/world/church.tscn" id="15_gy7vk"]
 [ext_resource type="Texture2D" uid="uid://bkfpantgb4n0" path="res://asset/sprites/LittleBeekDesigns-Creepy-Branch.png" id="17_i54bu"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="17_mvqsq"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="18_fl0o4"]
 [ext_resource type="Texture2D" uid="uid://byyy3uyovm1w6" path="res://asset/sprites/e25a653f85619d4b842c8b79af965359.png" id="18_wum3w"]
-[ext_resource type="PackedScene" uid="uid://f7iws2hu56b7" path="res://scenes/world/bat.tscn" id="19_rhrj4"]
+[ext_resource type="PackedScene" path="res://scenes/world/bat.tscn" id="19_rhrj4"]
 
 [sub_resource type="Resource" id="Resource_fqquq"]
 script = ExtResource("5_fwwd7")
@@ -194,6 +192,10 @@ follow_camera = NodePath("../Camera/FollowCamera")
 position = Vector2(-109, 1355)
 limit_bottom = 924
 
+[node name="finish" parent="." index="5"]
+position = Vector2(3400, -4736)
+next_level = "res://scenes/ui/main_menu.tscn"
+
 [node name="invisible_box" parent="." index="6" instance=ExtResource("4_0m3ev")]
 position = Vector2(8372, -238)
 
@@ -364,23 +366,16 @@ text = "Our next project will be BIG.
 Teaser: We love vampires and zombies "
 autowrap_mode = 2
 
-[node name="finish2" parent="." index="17" instance=ExtResource("8_knafx")]
-position = Vector2(3400, -4736)
-next_level = ExtResource("9_1ag0o")
-
-[node name="AnimatedSprite2D" parent="finish2" index="1"]
-visible = false
-
-[node name="heart" parent="." index="18" instance=ExtResource("2_oijpp")]
+[node name="heart" parent="." index="17" instance=ExtResource("2_oijpp")]
 position = Vector2(8156, 30)
 
-[node name="chruch" parent="." index="19" instance=ExtResource("15_gy7vk")]
+[node name="chruch" parent="." index="18" instance=ExtResource("15_gy7vk")]
 position = Vector2(4578, 51)
 
-[node name="AnimatedSprite2D" parent="." index="20" instance=ExtResource("15_3jhxm")]
+[node name="AnimatedSprite2D" parent="." index="19" instance=ExtResource("15_3jhxm")]
 position = Vector2(4144, 246)
 
-[node name="Tilemap" parent="." index="21"]
+[node name="Tilemap" parent="." index="20"]
 position = Vector2(0, -616)
 
 [node name="blocks" type="TileMapLayer" parent="Tilemap" index="0"]
@@ -395,7 +390,7 @@ position = Vector2(236, 72)
 tile_map_data = PackedByteArray("AABJAAQAAAABAAYAAABHAAQAAAAEAAYAAAA4AAQAAAAEAAYAAAA/AAQAAAADAAYAAAA6AAAAAAACAAUAAAA=")
 tile_set = SubResource("TileSet_syavs")
 
-[node name="decorr" type="Node" parent="." index="22"]
+[node name="decorr" type="Node" parent="." index="21"]
 
 [node name="LittleBeekDesigns-creepy-branch" type="Sprite2D" parent="decorr" index="0"]
 modulate = Color(0, 0, 0, 1)
@@ -430,4 +425,3 @@ position = Vector2(7579.5, 190.5)
 scale = Vector2(0.851563, 0.851563)
 
 [editable path="Player"]
-[editable path="finish2"]

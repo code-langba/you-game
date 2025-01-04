@@ -169,3 +169,5 @@ scale = Vector2(5.25, 5.25)
 color = Color(0.83, 0.553057, 0.1909, 1)
 energy = 0.87
 texture = SubResource("GradientTexture2D_dfj7p")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

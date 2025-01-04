@@ -38,3 +38,7 @@ scale = Vector2(1.01563, 1)
 texture = ExtResource("2_u4nwu")
 region_enabled = true
 region_rect = Rect2(640, 896, 128, 128)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, -49)
+scale = Vector2(1, 11.4)

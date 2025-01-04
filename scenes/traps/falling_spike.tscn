@@ -48,3 +48,7 @@ debug_color = Color(0.992612, 0, 0.249584, 0.42)
 stream = ExtResource("4_2mgel")
 volume_db = -22.533
 pitch_scale = 1.37
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 424.5)
+scale = Vector2(5.5, 43.45)

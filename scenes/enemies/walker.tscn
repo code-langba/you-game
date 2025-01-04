@@ -141,3 +141,5 @@ position = Vector2(3.5, 1)
 shape = SubResource("RectangleShape2D_y2fsb")
 
 [node name="walking" parent="." instance=ExtResource("4_uefvm")]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

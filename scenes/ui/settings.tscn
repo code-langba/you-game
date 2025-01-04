@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcigv8k7xprr"]
+[gd_scene load_steps=10 format=3 uid="uid://dcigv8k7xprr"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_81j71"]
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="2_7w38j"]
+[ext_resource type="Theme" uid="uid://c3m8iu7htchpa" path="res://resources/ui/ui.tres" id="3_1wokx"]
 [ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="3_wtpqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7lil"]
@@ -143,11 +144,14 @@ text = "Music"
 
 [node name="HSliderMusic" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_1wokx")
 min_value = -6.0
 max_value = 6.0
 step = 2.0
+rounded = true
 tick_count = 7
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -163,6 +167,7 @@ text = "SFX
 
 [node name="HSliderSFX" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 min_value = -6.0

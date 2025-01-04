@@ -11,15 +11,21 @@ extends Control
 
 func _ready() -> void:
 	back_btn.grab_focus()
-	back_btn.pressed.connect(func(): 
-		EventBus.setting_close.emit()
-		queue_free())
+	back_btn.pressed.connect(func(): close_setting())
 	h_slider_music.value_changed.connect(on_value_changed.bind("music"))
 	h_slider_sfx.value_changed.connect(on_value_changed.bind("sfx"))
 	h_slider_main.value_changed.connect(on_value_changed.bind("master"))
 	h_slider_music.value =  -6.0 if AudioServer.is_bus_mute(music_bus_idx) else AudioServer.get_bus_volume_db(music_bus_idx)
 	h_slider_sfx.value = -6.0 if AudioServer.is_bus_mute(sfx_bus_idx) else AudioServer.get_bus_volume_db(sfx_bus_idx)
 	h_slider_main.value = -6.0 if AudioServer.is_bus_mute(master_bus_idx) else AudioServer.get_bus_volume_db(master_bus_idx)
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_GO_BACK_REQUEST or what == NOTIFICATION_WM_CLOSE_REQUEST:
+		close_setting()
+
+func close_setting() -> void:
+	EventBus.setting_close.emit()
+	queue_free()
 
 func on_value_changed(value: float, invoker: String) -> void:
 	match invoker:

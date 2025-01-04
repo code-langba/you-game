@@ -91,3 +91,5 @@ scale = Vector2(1.00781, 1.00781)
 sprite_frames = SubResource("SpriteFrames_y8mg8")
 autoplay = "default"
 frame_progress = 0.308482
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]

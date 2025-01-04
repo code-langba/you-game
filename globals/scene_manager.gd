@@ -6,7 +6,7 @@ var tween: Tween
 func _ready() -> void:
 	mat = $ColorRect.material
 
-func change_scene_to_file(scene: NodePath, transition_duration: float = 1) -> void:
+func change_scene_to_file(scene: String, transition_duration: float = 1) -> void:
 	await play_scene_transition_close(transition_duration)
 	get_tree().change_scene_to_file(scene)
 	await play_scene_transition_open(transition_duration)

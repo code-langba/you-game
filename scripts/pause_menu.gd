@@ -4,9 +4,9 @@ extends Control
 @export var buttons: Array[Button]
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 const SETTINGS = preload("res://scenes/ui/settings.tscn")
+var is_setting_open := false
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 	buttons[0].grab_focus()
 	for button in buttons:
@@ -16,11 +16,15 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	get_tree().paused = false
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("esc"):
-		queue_free()
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		if not is_setting_open:
+			queue_free()
+		else: 
+			var setting = get_child(-1)
+			setting.queue_free()
+			is_setting_open = false
 
 func on_button_pressed(button: Button) -> void:
 	match (button.get_meta("action")):
@@ -28,6 +32,7 @@ func on_button_pressed(button: Button) -> void:
 		"settings": 
 			var settings_scene = SETTINGS.instantiate()
 			add_child(settings_scene)
+			is_setting_open = true
 		"resume": queue_free()
 		
 func on_mouse_entered(button: Button) -> void:

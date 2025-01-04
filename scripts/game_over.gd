@@ -4,9 +4,7 @@ extends Control
 @export var buttons: Array[Button]
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
-
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 	buttons[1].grab_focus()
 	for button in buttons:

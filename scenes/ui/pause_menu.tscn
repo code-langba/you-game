@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv0djo2s60sxq"]
+[gd_scene load_steps=7 format=3 uid="uid://cv0djo2s60sxq"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_uf2ie"]
 [ext_resource type="PackedScene" uid="uid://b7o63ahu5ny3l" path="res://scenes/ui/main_menu.tscn" id="2_7wcvm"]
+[ext_resource type="Texture2D" uid="uid://bpvrhk7nqg8n0" path="res://asset/sprites/ui/Play.png" id="3_8vnmj"]
+[ext_resource type="Texture2D" uid="uid://d0k64kyn6rlgh" path="res://asset/sprites/ui/Home.png" id="3_a5mbo"]
 [ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="3_ggwwv"]
+[ext_resource type="Texture2D" uid="uid://dps0agurkfgrd" path="res://asset/sprites/ui/Settings.png" id="4_fgl4j"]
 
 [node name="pause_menu" type="Control" node_paths=PackedStringArray("buttons")]
 process_mode = 2
@@ -58,21 +61,28 @@ theme_override_constants/separation = 20
 [node name="Resume" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_font_sizes/font_size = 52
 text = "Resume"
+icon = ExtResource("3_8vnmj")
 metadata/action = "resume"
 metadata/quit = ""
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_font_sizes/font_size = 52
 text = "Settings"
+icon = ExtResource("4_fgl4j")
 metadata/action = "settings"
 metadata/settings = ""
 
 [node name="ToMainMenu" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_font_sizes/font_size = 52
 text = "Main Menu"
+icon = ExtResource("3_a5mbo")
 metadata/action = "main_menu"
 metadata/main_menu = ""
 

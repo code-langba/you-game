@@ -4,6 +4,7 @@ extends Control
 @export var buttons: Array[Button]
 @onready var settings_packed_scene = preload("res://scenes/ui/settings.tscn")
 @onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+var is_setting_open := false
 
 func _ready() -> void:
 	get_tree().paused = false
@@ -15,6 +16,10 @@ func _ready() -> void:
 	# buttons
 	buttons[0].grab_focus()
 	connect_buttons()
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_WM_GO_BACK_REQUEST and not is_setting_open:
+		quit_game()
 
 func start_game() -> void:
 	PlayerManager.reset()
@@ -38,6 +43,7 @@ func on_button_pressed(button: Button) -> void:
 			quit_game()
 		"settings":
 			open_settings()
+			is_setting_open = true
 
 func on_mouse_entered(button: Button) -> void:
 	button.grab_focus()
@@ -69,3 +75,4 @@ func on_setting_close() -> void:
 	buttons[0].grab_focus()
 	#connect_buttons()
 	show_btns()
+	is_setting_open = false

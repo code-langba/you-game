@@ -1,6 +1,7 @@
 extends Area2D
 
-@export var next_level: PackedScene
+#@export var next_level: PackedScene
+@export var next_level: String
 @onready var world = owner.get_parent()
 
 func _ready() -> void:
@@ -12,4 +13,4 @@ func on_level_complete(_body: Node2D) -> void:
 	call_deferred("load_next_level")
 
 func load_next_level():
-	SceneManager.change_scene_to_packed(next_level)
+	SceneManager.change_scene_to_file(next_level)
