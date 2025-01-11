@@ -1,38 +1,33 @@
-[gd_scene load_steps=102 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=96 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
 [ext_resource type="AudioStream" uid="uid://ddroaggjrpm45" path="res://asset/music/bgm/3.ogg" id="3_ai0cw"]
+[ext_resource type="Texture2D" uid="uid://dld1mbi0shwmc" path="res://asset/sprites/bg/lvl3/sky.png" id="3_w0glj"]
 [ext_resource type="PackedScene" uid="uid://dmwhkhcbfhwfi" path="res://scenes/levels/4.tscn" id="4_mk0ff"]
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
-[ext_resource type="Texture2D" uid="uid://b0jnb7aclfok1" path="res://asset/sprites/bg/lvl3/9.png" id="5_1n0na"]
+[ext_resource type="Texture2D" uid="uid://cl30gwr08bq34" path="res://asset/sprites/bg/lvl3/c4new.png" id="5_5q73j"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="5_itdtf"]
 [ext_resource type="PackedScene" uid="uid://d3w8opvylbqii" path="res://scenes/enemies/grim.tscn" id="5_jleem"]
-[ext_resource type="Texture2D" uid="uid://c1qb11hpmmilx" path="res://asset/sprites/bg/lvl3/8.png" id="6_3wcof"]
+[ext_resource type="Texture2D" uid="uid://cx7rbm7adwuub" path="res://asset/sprites/bg/lvl3/1new.png" id="5_tpguq"]
 [ext_resource type="PackedScene" uid="uid://7ethfy8v7636" path="res://scenes/traps/rolling_ball.tscn" id="6_dbdtd"]
-[ext_resource type="Texture2D" uid="uid://dreyhlhedcxc" path="res://asset/sprites/bg/lvl3/7.png" id="7_02efb"]
+[ext_resource type="Texture2D" uid="uid://ch5y7008cx5tq" path="res://asset/sprites/bg/lvl3/c3new.png" id="7_3hwia"]
 [ext_resource type="PackedScene" uid="uid://3fjs7dyoqykf" path="res://cloud.tscn" id="7_fn0er"]
+[ext_resource type="Texture2D" uid="uid://cgaldtj2mexkl" path="res://asset/sprites/bg/lvl3/2new.png" id="7_gs34n"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/world/checkpoint.tscn" id="7_vcymw"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="8_ifwkw"]
-[ext_resource type="Texture2D" uid="uid://camql8yih2sqe" path="res://asset/sprites/bg/lvl3/6.png" id="8_ytqv5"]
-[ext_resource type="Texture2D" uid="uid://ck1gxyupfxskk" path="res://asset/sprites/bg/lvl3/5.png" id="9_kxlq3"]
+[ext_resource type="Texture2D" uid="uid://da8pemrrjyj25" path="res://asset/sprites/bg/lvl3/3new.png" id="9_4xfi7"]
+[ext_resource type="Texture2D" uid="uid://dqpea11xxne38" path="res://asset/sprites/bg/lvl3/c2new.png" id="9_6ohmb"]
 [ext_resource type="PackedScene" uid="uid://cm826kvfjn2fc" path="res://scenes/world/mushroom.tscn" id="9_nrhoi"]
-[ext_resource type="Texture2D" uid="uid://duopk6ect70yk" path="res://asset/sprites/bg/lvl3/c4.png" id="9_xtwnw"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="10_11ghb"]
-[ext_resource type="Texture2D" uid="uid://rghnrqumbbf" path="res://asset/sprites/bg/lvl3/4.png" id="10_nimc3"]
-[ext_resource type="Texture2D" uid="uid://cwg1vfujwnvpy" path="res://asset/sprites/bg/lvl3/c3.png" id="11_ddn6h"]
-[ext_resource type="Texture2D" uid="uid://lvfpmnsk2bi3" path="res://asset/sprites/bg/lvl3/3.png" id="11_dg0q4"]
+[ext_resource type="Texture2D" uid="uid://eps68fi2xbiv" path="res://asset/sprites/bg/lvl3/c1new.png" id="10_sws1a"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="11_hu3rx"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="12_1a0ao"]
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="12_1kriy"]
-[ext_resource type="Texture2D" uid="uid://2l2ierp1qp8p" path="res://asset/sprites/bg/lvl3/2.png" id="12_i4wyc"]
 [ext_resource type="PackedScene" uid="uid://daih7dx7svxjc" path="res://scenes/world/bridge.tscn" id="12_ulims"]
 [ext_resource type="Script" path="res://scripts/traps/rolling_ball_area.gd" id="13_3cehg"]
-[ext_resource type="Texture2D" uid="uid://kv4o05yclac1" path="res://asset/sprites/bg/lvl3/c2.png" id="13_o7rd5"]
-[ext_resource type="Texture2D" uid="uid://bfnxnnmtlxh7o" path="res://asset/sprites/bg/lvl3/1.png" id="13_umjgj"]
 [ext_resource type="PackedScene" uid="uid://chhr3huoi4djx" path="res://scenes/world/hippo.tscn" id="16_hivsn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="17_h16t6"]
-[ext_resource type="Texture2D" uid="uid://0gyq81sekj42" path="res://asset/sprites/bg/lvl3/c1.png" id="17_k7fdo"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="17_rnm5u"]
 [ext_resource type="Script" path="res://components/scripts/camera.gd" id="17_vvgqv"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="18_668mf"]
@@ -47,7 +42,6 @@
 [ext_resource type="Texture2D" uid="uid://byyy3uyovm1w6" path="res://asset/sprites/e25a653f85619d4b842c8b79af965359.png" id="35_kxb2v"]
 [ext_resource type="Texture2D" uid="uid://btd53ulv5ha3j" path="res://asset/sprites/animated-chain-3d-model-max-obj-3ds.png" id="37_48wbg"]
 [ext_resource type="PackedScene" uid="uid://b0n5he88lfxle" path="res://scenes/world/water.tscn" id="38_wdwpf"]
-[ext_resource type="Texture2D" uid="uid://dh33kdxfltdfj" path="res://asset/sprites/vines-clipart-creepy-6.png" id="43_5pvdy"]
 [ext_resource type="Texture2D" uid="uid://cnwa7yaobchl2" path="res://asset/sprites/pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image_6116630.png" id="44_g2ivo"]
 [ext_resource type="Script" path="res://scripts/traps/area_2d_2.gd" id="44_qaee5"]
 [ext_resource type="Texture2D" uid="uid://dwi2j0wyswcua" path="res://asset/sprites/red-japanese-shrine-png.png" id="47_kwjum"]
@@ -498,45 +492,27 @@ metadata/_edit_lock_ = true
 [node name="Sky" type="Parallax2D" parent="bg" index="0"]
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
+repeat_size = Vector2(1920, 0)
 repeat_times = 9
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/Sky" index="0"]
 position = Vector2(1920, -500)
-scale = Vector2(1, 1.5)
-texture = ExtResource("5_1n0na")
+scale = Vector2(2, 3)
+texture = ExtResource("3_w0glj")
 
-[node name="Sun" type="Parallax2D" parent="bg" index="1"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(-121, -12)
-metadata/_edit_lock_ = true
-
-[node name="Bg1" type="Sprite2D" parent="bg/Sun" index="0"]
-position = Vector2(1700, 250)
-texture = ExtResource("6_3wcof")
-
-[node name="Hill" type="Parallax2D" parent="bg" index="2"]
-scroll_scale = Vector2(0.1, 0.1)
+[node name="Hill" type="Parallax2D" parent="bg" index="1"]
+scroll_scale = Vector2(0.05, 0.1)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/Hill" index="0"]
 position = Vector2(0, 300)
-texture = ExtResource("7_02efb")
+scale = Vector2(2, 2)
+texture = ExtResource("5_tpguq")
 
-[node name="Fog3" type="Parallax2D" parent="bg" index="3"]
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="Bg1" type="Sprite2D" parent="bg/Fog3" index="0"]
-position = Vector2(0, 37.515)
-texture = ExtResource("8_ytqv5")
-
-[node name="c4" type="Parallax2D" parent="bg" index="4"]
+[node name="c4" type="Parallax2D" parent="bg" index="2"]
 scroll_scale = Vector2(0.21, 0.21)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
@@ -544,41 +520,46 @@ autoscroll = Vector2(-10, 0)
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c4" index="0"]
-position = Vector2(0, 37.515)
-texture = ExtResource("9_xtwnw")
+position = Vector2(1097, 29)
+scale = Vector2(2, 2)
+texture = ExtResource("5_5q73j")
 
-[node name="Mt3" type="Parallax2D" parent="bg" index="5"]
+[node name="middle_mt" type="Parallax2D" parent="bg" index="3"]
 scroll_scale = Vector2(0.2, 0.2)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/Mt3" index="0"]
+[node name="Bg1" type="Sprite2D" parent="bg/middle_mt" index="0"]
 position = Vector2(0, 37.515)
-texture = ExtResource("9_kxlq3")
+scale = Vector2(2, 2)
+texture = ExtResource("7_gs34n")
 
-[node name="c3" type="Parallax2D" parent="bg" index="6"]
-scroll_scale = Vector2(0.23, 0.23)
+[node name="c3" type="Parallax2D" parent="bg" index="4"]
+scroll_scale = Vector2(0.3, 0.3)
 scroll_offset = Vector2(-121, -12)
 repeat_size = Vector2(3840, 0)
 autoscroll = Vector2(-30, 0)
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c3" index="0"]
-position = Vector2(0, 37.515)
-texture = ExtResource("11_ddn6h")
+position = Vector2(1803, 251)
+scale = Vector2(2, 2)
+texture = ExtResource("7_3hwia")
 
-[node name="mt2" type="Parallax2D" parent="bg" index="7"]
-scroll_scale = Vector2(0.35, 0.35)
-scroll_offset = Vector2(-121, -12)
+[node name="mt1" type="Parallax2D" parent="bg" index="5"]
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(794, -12)
 repeat_size = Vector2(3840, 0)
+repeat_times = 3
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="bg/mt2" index="0"]
-position = Vector2(0, 37.515)
-texture = ExtResource("10_nimc3")
+[node name="Bg1" type="Sprite2D" parent="bg/mt1" index="0"]
+position = Vector2(0, 200)
+scale = Vector2(2, 2)
+texture = ExtResource("9_4xfi7")
 
-[node name="c2" type="Parallax2D" parent="bg" index="8"]
+[node name="c2" type="Parallax2D" parent="bg" index="6"]
 scroll_scale = Vector2(0.4, 0.4)
 scroll_offset = Vector2(-328, -12)
 repeat_size = Vector2(3840, 0)
@@ -586,40 +567,11 @@ autoscroll = Vector2(-50, 0)
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c2" index="0"]
-position = Vector2(0, -50)
-texture = ExtResource("13_o7rd5")
+position = Vector2(643, 593)
+scale = Vector2(2, 2)
+texture = ExtResource("9_6ohmb")
 
-[node name="Fog2" type="Parallax2D" parent="bg" index="9"]
-scroll_scale = Vector2(0.35, 0.35)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="Bg1" type="Sprite2D" parent="bg/Fog2" index="0"]
-position = Vector2(0, 37.515)
-texture = ExtResource("11_dg0q4")
-
-[node name="mt1" type="Parallax2D" parent="bg" index="10"]
-scroll_scale = Vector2(0.4, 0.4)
-scroll_offset = Vector2(794, -12)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="Bg1" type="Sprite2D" parent="bg/mt1" index="0"]
-position = Vector2(0, 200)
-texture = ExtResource("12_i4wyc")
-
-[node name="Fog1" type="Parallax2D" parent="bg" index="11"]
-scroll_scale = Vector2(0.5, 0.5)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
-metadata/_edit_lock_ = true
-
-[node name="Bg1" type="Sprite2D" parent="bg/Fog1" index="0"]
-position = Vector2(0, 37.515)
-texture = ExtResource("13_umjgj")
-
-[node name="c1" type="Parallax2D" parent="bg" index="12"]
+[node name="c1" type="Parallax2D" parent="bg" index="7"]
 scroll_scale = Vector2(0.7, 0.7)
 scroll_offset = Vector2(-201, -12)
 repeat_size = Vector2(3840, 0)
@@ -627,8 +579,9 @@ autoscroll = Vector2(-30, 0)
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="bg/c1" index="0"]
-position = Vector2(0, 200)
-texture = ExtResource("17_k7fdo")
+position = Vector2(-961, 588)
+scale = Vector2(2, 2)
+texture = ExtResource("10_sws1a")
 
 [node name="Sign" type="Sprite2D" parent="." index="1"]
 position = Vector2(5957, -1200)
@@ -1051,49 +1004,43 @@ frame_progress = 0.223042
 
 [node name="decorr" type="Node" parent="." index="9"]
 
-[node name="Vines-clipart-creepy-6" type="Sprite2D" parent="decorr" index="0"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(7236, -1309)
-scale = Vector2(0.759194, 0.759194)
-texture = ExtResource("43_5pvdy")
-
-[node name="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" type="Sprite2D" parent="decorr" index="1"]
+[node name="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" type="Sprite2D" parent="decorr" index="0"]
 position = Vector2(8150, -1049)
 scale = Vector2(1.62778, 1.62778)
 texture = ExtResource("44_g2ivo")
 
-[node name="Red-japanese-shrine-png" type="Sprite2D" parent="decorr" index="2"]
+[node name="Red-japanese-shrine-png" type="Sprite2D" parent="decorr" index="1"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(6627, -1289)
 texture = ExtResource("47_kwjum")
 
-[node name="E25a653f85619d4b842c8b79Af965359" type="Sprite2D" parent="decorr" index="3"]
+[node name="E25a653f85619d4b842c8b79Af965359" type="Sprite2D" parent="decorr" index="2"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(2801, 459)
 texture = ExtResource("35_kxb2v")
 
-[node name="E25a653f85619d4b842c8b79Af965362" type="Sprite2D" parent="decorr" index="4"]
+[node name="E25a653f85619d4b842c8b79Af965362" type="Sprite2D" parent="decorr" index="3"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(5873, -908)
 texture = ExtResource("35_kxb2v")
 
-[node name="E25a653f85619d4b842c8b79Af965360" type="Sprite2D" parent="decorr" index="5"]
+[node name="E25a653f85619d4b842c8b79Af965360" type="Sprite2D" parent="decorr" index="4"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(13438, -661)
 texture = ExtResource("35_kxb2v")
 
-[node name="E25a653f85619d4b842c8b79Af965361" type="Sprite2D" parent="decorr" index="6"]
+[node name="E25a653f85619d4b842c8b79Af965361" type="Sprite2D" parent="decorr" index="5"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(17380, -311)
 texture = ExtResource("35_kxb2v")
 
-[node name="Animated-chain-3d-model-max-obj-3Ds" type="Sprite2D" parent="decorr" index="7"]
+[node name="Animated-chain-3d-model-max-obj-3Ds" type="Sprite2D" parent="decorr" index="6"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(5888, -848)
 scale = Vector2(0.4476, 0.526989)
 texture = ExtResource("37_48wbg")
 
-[node name="water" parent="decorr" index="8" instance=ExtResource("38_wdwpf")]
+[node name="water" parent="decorr" index="7" instance=ExtResource("38_wdwpf")]
 z_index = 4
 position = Vector2(15423.5, -621)
 scale = Vector2(1.425, 1)
