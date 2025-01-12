@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7o63ahu5ny3l"]
+[gd_scene load_steps=7 format=3 uid="uid://b7o63ahu5ny3l"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_khi5f"]
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="2_nkj30"]
-[ext_resource type="Texture2D" uid="uid://dd7s28m3pldkm" path="res://asset/sprites/bg/lvl1/hill1.png" id="3_48fq5"]
-[ext_resource type="Texture2D" uid="uid://45qrkhg6kdmn" path="res://asset/sprites/bg/lvl1/sky.png" id="3_ydvk3"]
-[ext_resource type="Texture2D" uid="uid://bf0qcdk6hceae" path="res://asset/sprites/bg/lvl1/hill3.png" id="4_c3b5y"]
+[ext_resource type="Texture2D" uid="uid://cekai03n4o4dd" path="res://asset/sprites/bg/lvl1/hill1.png" id="3_48fq5"]
+[ext_resource type="Texture2D" uid="uid://bpeh5l5cum72" path="res://asset/sprites/bg/lvl1/hill3.png" id="4_c3b5y"]
 [ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="9_7pfv6"]
 [ext_resource type="Theme" uid="uid://c3m8iu7htchpa" path="res://resources/ui/ui.tres" id="12_oyhh2"]
 
@@ -28,12 +27,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Sky" type="TextureRect" parent="CanvasGroup/Background"]
-layout_mode = 0
-offset_right = 2400.0
-offset_bottom = 1080.0
-texture = ExtResource("3_ydvk3")
 
 [node name="Hill2" type="TextureRect" parent="CanvasGroup/Background"]
 layout_mode = 0

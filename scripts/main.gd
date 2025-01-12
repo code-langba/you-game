@@ -7,6 +7,7 @@ extends Control
 var is_setting_open := false
 
 func _ready() -> void:
+	RenderingServer.set_default_clear_color("1d2633")
 	get_tree().paused = false
 	SceneManager.set_param(-0.1)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

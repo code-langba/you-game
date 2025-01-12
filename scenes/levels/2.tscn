@@ -1,24 +1,22 @@
-[gd_scene load_steps=40 format=4 uid="uid://4psc66kvofb8"]
+[gd_scene load_steps=38 format=4 uid="uid://4psc66kvofb8"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_vasr2"]
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="3_7lihg"]
 [ext_resource type="AudioStream" uid="uid://cp0rv4saf5bw5" path="res://asset/music/bgm/mystical.mp3" id="3_41qmk"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_h4p7e"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="3_i4blj"]
-[ext_resource type="Texture2D" uid="uid://c85nfyuxcpbr8" path="res://asset/sprites/bg/lvl2/sky.PNG" id="4_12a7c"]
+[ext_resource type="Texture2D" uid="uid://dhgc7yok7r0qg" path="res://asset/sprites/bg/lvl2/6.png" id="4_777y3"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="4_fuv7a"]
-[ext_resource type="Texture2D" uid="uid://d1u4ij07rugg6" path="res://asset/sprites/bg/lvl2/6.PNG" id="5_45axh"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
-[ext_resource type="Texture2D" uid="uid://cyrxcp7yhtmtw" path="res://asset/sprites/bg/lvl2/1.png" id="5_qlp1q"]
+[ext_resource type="Texture2D" uid="uid://07eqfteo81uy" path="res://asset/sprites/bg/lvl2/1.png" id="5_qlp1q"]
 [ext_resource type="PackedScene" uid="uid://uafq3xl0me7r" path="res://scenes/world/candle.tscn" id="7_5hebc"]
-[ext_resource type="Texture2D" uid="uid://dpwaymx6d27ih" path="res://asset/sprites/bg/lvl2/4.PNG" id="7_ed05v"]
-[ext_resource type="Texture2D" uid="uid://bsg17veji4u8o" path="res://asset/sprites/bg/lvl2/2.png" id="7_kv7ix"]
+[ext_resource type="Texture2D" uid="uid://b63wvd2ekn6yj" path="res://asset/sprites/bg/lvl2/4.PNG" id="7_ed05v"]
+[ext_resource type="Texture2D" uid="uid://y210fg7nwqkd" path="res://asset/sprites/bg/lvl2/2.png" id="7_kv7ix"]
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="8_3dgy0"]
-[ext_resource type="Texture2D" uid="uid://nrc7hdu14t1a" path="res://asset/sprites/bg/lvl2/5.PNG" id="8_acnjh"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/world/checkpoint.tscn" id="8_au5e5"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="9_e5750"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="9_eb1qh"]
-[ext_resource type="Texture2D" uid="uid://imrfuh3dodwf" path="res://asset/sprites/bg/lvl2/3.PNG" id="9_w6lm2"]
+[ext_resource type="Texture2D" uid="uid://b16y4dklxki4v" path="res://asset/sprites/bg/lvl2/3.PNG" id="9_w6lm2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_g2idk"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="11_p3ad4"]
 [ext_resource type="Texture2D" uid="uid://b0b4a2vfxwf42" path="res://asset/textures/soot.png" id="12_upp4y"]
@@ -89,76 +87,59 @@ turbulence_enabled = true
 
 [node name="2" instance=ExtResource("1_vasr2")]
 bgm = ExtResource("3_41qmk")
+bg_color = Color(0.298963, 0.30309, 0.315469, 1)
 metadata/_edit_vertical_guides_ = [6400.0]
 
 [node name="CanvasGroup" type="CanvasGroup" parent="." index="0"]
 
 [node name="bg" type="Node2D" parent="CanvasGroup" index="0"]
 
-[node name="Parallax2D4" type="Parallax2D" parent="CanvasGroup/bg" index="0"]
-visible = false
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1920, 0)
-
-[node name="sky" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D4" index="0"]
-position = Vector2(930, 525)
-scale = Vector2(1, 1.5)
-texture = ExtResource("4_12a7c")
-
-[node name="Parallax2D5" type="Parallax2D" parent="CanvasGroup/bg" index="1"]
-scroll_scale = Vector2(0.1, 0.1)
-repeat_size = Vector2(1920, 0)
-
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D5" index="0"]
-position = Vector2(960, 541)
-scale = Vector2(2, 2)
-texture = ExtResource("5_45axh")
-
-[node name="Parallax2D7" type="Parallax2D" parent="CanvasGroup/bg" index="2"]
+[node name="Parallax2D7" type="Parallax2D" parent="CanvasGroup/bg" index="0"]
 scroll_scale = Vector2(0.2, 0.2)
 repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D7" index="0"]
-position = Vector2(958, 538)
+position = Vector2(959, 538)
 scale = Vector2(2, 2)
-texture = ExtResource("8_acnjh")
+texture = ExtResource("4_777y3")
 
-[node name="Parallax2D11" type="Parallax2D" parent="CanvasGroup/bg" index="3"]
+[node name="Parallax2D11" type="Parallax2D" parent="CanvasGroup/bg" index="1"]
 scroll_scale = Vector2(0.2, 0.2)
-repeat_size = Vector2(1918, 0)
+repeat_size = Vector2(1920, 0)
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D11" index="0"]
 position = Vector2(958, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ed05v")
 
-[node name="Parallax2D12" type="Parallax2D" parent="CanvasGroup/bg" index="4"]
+[node name="Parallax2D12" type="Parallax2D" parent="CanvasGroup/bg" index="2"]
 scroll_scale = Vector2(0.3, 0.3)
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D12" index="0"]
 position = Vector2(958, 540)
+scale = Vector2(2, 2)
 texture = ExtResource("7_kv7ix")
 
-[node name="Parallax2D8" type="Parallax2D" parent="CanvasGroup/bg" index="5"]
+[node name="Parallax2D8" type="Parallax2D" parent="CanvasGroup/bg" index="3"]
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(1918, 0)
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D8" index="0"]
-position = Vector2(960, 541)
+position = Vector2(976, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("9_w6lm2")
 
-[node name="Parallax2D9" type="Parallax2D" parent="CanvasGroup/bg" index="6"]
+[node name="Parallax2D9" type="Parallax2D" parent="CanvasGroup/bg" index="4"]
 scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(1955.48, 0)
 repeat_times = 2
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Parallax2D9" index="0"]
-position = Vector2(1155, 657)
+position = Vector2(976, 657)
 scale = Vector2(1.52778, 1.52778)
 texture = ExtResource("5_qlp1q")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/bg" index="7"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/bg" index="5"]
 z_index = 2
 position = Vector2(710, 835)
 scale = Vector2(5.06641, 6.15234)
@@ -244,7 +225,6 @@ initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
-physics_interpolation_mode = 1
 position = Vector2(890, 0)
 limit_top = 0
 limit_right = 6400

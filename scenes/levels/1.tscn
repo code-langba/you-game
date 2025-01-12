@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_1e0av"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="4_76jwm"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_8yscw"]
-[ext_resource type="Texture2D" uid="uid://wdssro4517wv" path="res://asset/sprites/bg/lvl1/moon.png" id="5_e637k"]
-[ext_resource type="Texture2D" uid="uid://bf0qcdk6hceae" path="res://asset/sprites/bg/lvl1/hill3.png" id="5_qck3r"]
+[ext_resource type="Texture2D" uid="uid://8xt5vpe7ljbn" path="res://asset/sprites/bg/lvl1/moon.png" id="5_e637k"]
+[ext_resource type="Texture2D" uid="uid://bpeh5l5cum72" path="res://asset/sprites/bg/lvl1/hill3.png" id="5_qck3r"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/world/checkpoint.tscn" id="6_25abd"]
-[ext_resource type="Texture2D" uid="uid://dd7s28m3pldkm" path="res://asset/sprites/bg/lvl1/hill1.png" id="6_ljv3u"]
-[ext_resource type="Texture2D" uid="uid://cygck6g0h547i" path="res://asset/sprites/bg/lvl1/hill2.png" id="6_ofsii"]
+[ext_resource type="Texture2D" uid="uid://cekai03n4o4dd" path="res://asset/sprites/bg/lvl1/hill1.png" id="6_ljv3u"]
+[ext_resource type="Texture2D" uid="uid://wkpumwbjp0tb" path="res://asset/sprites/bg/lvl1/hill2.png" id="6_ofsii"]
 [ext_resource type="PackedScene" uid="uid://dtx63a6evsdh2" path="res://scenes/world/live_grass.tscn" id="7_gmib8"]
 [ext_resource type="TileSet" uid="uid://ctm1d3b3gc8pp" path="res://resources/tilemap/background.tres" id="9_7pnl8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_e5x4g"]
@@ -98,6 +98,7 @@ position = Vector2(687, 694.286)
 zoom = Vector2(1.4, 1.4)
 
 [node name="FollowCamera" parent="Camera" index="1"]
+position = Vector2(1200, 825)
 tween_resource = SubResource("Resource_kbiut")
 follow_damping_value = Vector2(0.2, 0.1)
 limit_right = 5100
