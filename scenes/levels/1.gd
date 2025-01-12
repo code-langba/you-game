@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST or what == NOTIFICATION_WM_CLOSE_REQUEST:
-		add_pause_menu_scene()
+		call_deferred("add_pause_menu_scene")
 
 func _process(_delta: float) -> void:
 	fps.text = str(Engine.get_frames_per_second())

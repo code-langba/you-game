@@ -38,7 +38,6 @@ func on_button_pressed(button: Button) -> void:
 	hide_btns()
 	match button.get_meta("action"):
 		"start":
-			print("start")
 			start_game()
 		"quit": 
 			quit_game()
@@ -67,7 +66,7 @@ func disconnect_buttons() -> void:
 func hide_btns() -> void:
 	for btn in buttons:
 		btn.visible = false 
-				
+
 func show_btns() -> void:
 	for btn in buttons:
 		btn.visible = true 

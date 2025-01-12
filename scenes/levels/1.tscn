@@ -38,7 +38,6 @@ fill_to = Vector2(0.858974, 0.149573)
 bgm = ExtResource("10_65fjq")
 bg_color = Color(0.129412, 0.164706, 0.223529, 1)
 metadata/_edit_vertical_guides_ = [5104.0]
-metadata/_edit_horizontal_guides_ = [-175.0]
 
 [node name="bg" type="Node2D" parent="." index="0"]
 
@@ -94,11 +93,11 @@ texture = ExtResource("19_rasjj")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" index="0"]
 
 [node name="InitialCamera" parent="Camera" index="0"]
-position = Vector2(687, 694.286)
+position = Vector2(857.143, 694.286)
 zoom = Vector2(1.4, 1.4)
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(1200, 825)
+position = Vector2(1200, 540)
 tween_resource = SubResource("Resource_kbiut")
 follow_damping_value = Vector2(0.2, 0.1)
 limit_right = 5100
@@ -109,10 +108,9 @@ initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
-position = Vector2(567, -130.714)
+position = Vector2(737.143, -130.714)
 zoom = Vector2(1.4, 1.4)
 limit_top = 0
-editor_draw_limits = true
 
 [node name="checkpoint" parent="." index="4" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)
@@ -141,6 +139,10 @@ scale = Vector2(2.04687, 1)
 texture = ExtResource("10_2ctgp")
 region_enabled = true
 region_rect = Rect2(384, 896, 128, 128)
+
+[node name="MarginContainer" parent="Ui" index="0"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="grass" type="Node2D" parent="." index="8"]
 position = Vector2(0, 5)
