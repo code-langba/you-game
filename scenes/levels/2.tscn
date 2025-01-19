@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cp0rv4saf5bw5" path="res://asset/music/bgm/mystical.mp3" id="3_41qmk"]
 [ext_resource type="PackedScene" uid="uid://b87qi6jruyy1i" path="res://scenes/traps/falling_platform.tscn" id="3_h4p7e"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="3_i4blj"]
-[ext_resource type="Texture2D" uid="uid://dhgc7yok7r0qg" path="res://asset/sprites/bg/lvl2/6.png" id="4_777y3"]
+[ext_resource type="Texture2D" uid="uid://dhgc7yok7r0qg" path="res://asset/sprites/bg/lvl2/6.PNG" id="4_777y3"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="4_fuv7a"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="5_ljch5"]
 [ext_resource type="Texture2D" uid="uid://07eqfteo81uy" path="res://asset/sprites/bg/lvl2/1.png" id="5_qlp1q"]
@@ -214,7 +214,7 @@ position = Vector2(1200, 540)
 tween_resource = SubResource("Resource_4xy0a")
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(1200, 275)
+position = Vector2(1200, 540)
 priority = 1
 tween_on_load = false
 limit_right = 6400
@@ -225,7 +225,7 @@ initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
-position = Vector2(890, 0)
+position = Vector2(890, 265)
 limit_top = 0
 limit_right = 6400
 

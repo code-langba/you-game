@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqistfe0jm583"]
+[gd_scene load_steps=4 format=3 uid="uid://ck6353pqiq62x"]
 
 [ext_resource type="PackedScene" uid="uid://daih7dx7svxjc" path="res://scenes/world/bridge.tscn" id="1_qcr33"]
 
@@ -147,5 +147,3 @@ position = Vector2(1917, 42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="End"]
 shape = SubResource("RectangleShape2D_5qqd8")
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
