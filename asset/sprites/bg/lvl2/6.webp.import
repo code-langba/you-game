@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://07eqfteo81uy"
-path="res://.godot/imported/1.png-5025ec37de77b6a86eb7d60ae65324a6.ctex"
+uid="uid://dm20jbp6hbnk3"
+path="res://.godot/imported/6.webp-f16e092a4f9081d12bc5ecf70f44ed31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/bg/lvl2/1.png"
-dest_files=["res://.godot/imported/1.png-5025ec37de77b6a86eb7d60ae65324a6.ctex"]
+source_file="res://asset/sprites/bg/lvl2/6.webp"
+dest_files=["res://.godot/imported/6.webp-f16e092a4f9081d12bc5ecf70f44ed31.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

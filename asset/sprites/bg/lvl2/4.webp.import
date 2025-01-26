@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b61a0ixuakxmk"
-path="res://.godot/imported/castle.PNG-ef50bf53fa259bc6ff02fb07d04048f2.ctex"
+uid="uid://bfskwqv546tlv"
+path="res://.godot/imported/4.webp-b3ee4d09aed7a690968dee5f8c2a4372.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/bg/lvl2/castle.PNG"
-dest_files=["res://.godot/imported/castle.PNG-ef50bf53fa259bc6ff02fb07d04048f2.ctex"]
+source_file="res://asset/sprites/bg/lvl2/4.webp"
+dest_files=["res://.godot/imported/4.webp-b3ee4d09aed7a690968dee5f8c2a4372.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

@@ -452,137 +452,113 @@ metadata/_edit_vertical_guides_ = [6529.0]
 
 [node name="CanvasGroup" type="CanvasGroup" parent="." index="0"]
 
-[node name="bg" type="Node2D" parent="CanvasGroup" index="0"]
-z_index = -1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup" index="0"]
+scroll_ignore_camera_zoom = true
+
+[node name="Sky" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="0"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Sky" type="Parallax2D" parent="CanvasGroup/bg" index="0"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(1920, 0)
-repeat_times = 19
-metadata/_edit_lock_ = true
-
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Sky" index="0"]
-position = Vector2(1081, 61.4998)
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Sky" index="0"]
+position = Vector2(960, 0)
 scale = Vector2(1, 3.825)
 texture = ExtResource("3_fmsyx")
 
-[node name="Sun" type="Parallax2D" parent="CanvasGroup/bg" index="1"]
-visible = false
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(-121, -12)
+[node name="Sun" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="1"]
+motion_scale = Vector2(0.1, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Sun" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Sun" index="0"]
 position = Vector2(1700, 250)
 texture = ExtResource("4_gy0at")
 
-[node name="Hill" type="Parallax2D" parent="CanvasGroup/bg" index="2"]
-scroll_scale = Vector2(0.1, 0.1)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(1920, 0)
+[node name="Hill" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="2"]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Hill" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Hill" index="0"]
 position = Vector2(1081, 552)
 texture = ExtResource("4_yqn80")
 
-[node name="Fog3" type="Parallax2D" parent="CanvasGroup/bg" index="3"]
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(1920, 0)
+[node name="Fog3" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="3"]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Fog3" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Fog3" index="0"]
 position = Vector2(1081, 552)
 texture = ExtResource("5_wf47k")
 
-[node name="c4" type="Parallax2D" parent="CanvasGroup/bg" index="4"]
-visible = false
-scroll_scale = Vector2(0.21, 0.21)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
-autoscroll = Vector2(-10, 0)
+[node name="c4" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="4"]
+motion_scale = Vector2(0.21, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/c4" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c4" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("7_5e8yh")
 
-[node name="Mt3" type="Parallax2D" parent="CanvasGroup/bg" index="5"]
-scroll_scale = Vector2(0.2, 0.2)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(1920, 0)
+[node name="Mt3" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="5"]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Mt3" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Mt3" index="0"]
 position = Vector2(1081, 552)
 texture = ExtResource("6_v38q0")
 
-[node name="c3" type="Parallax2D" parent="CanvasGroup/bg" index="6"]
-visible = false
-scroll_scale = Vector2(0.23, 0.23)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(3840, 0)
-autoscroll = Vector2(-30, 0)
+[node name="c3" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="6"]
+motion_scale = Vector2(0.24, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/c3" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c3" index="0"]
 position = Vector2(0, 37.515)
 texture = ExtResource("9_4vc4s")
 
-[node name="mt2" type="Parallax2D" parent="CanvasGroup/bg" index="7"]
-scroll_scale = Vector2(0.35, 0.35)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(1920, 0)
+[node name="mt2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="7"]
+motion_scale = Vector2(0.35, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/mt2" index="0"]
-position = Vector2(1081, 552)
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/mt2" index="0"]
+position = Vector2(1075, 552)
 texture = ExtResource("7_ynk6l")
 
-[node name="c2" type="Parallax2D" parent="CanvasGroup/bg" index="8"]
-visible = false
-scroll_scale = Vector2(0.4, 0.4)
-scroll_offset = Vector2(-328, -12)
-repeat_size = Vector2(3840, 0)
-autoscroll = Vector2(-50, 0)
+[node name="c2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="8"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/c2" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c2" index="0"]
 position = Vector2(0, -50)
 texture = ExtResource("11_ej677")
 
-[node name="Fog2" type="Parallax2D" parent="CanvasGroup/bg" index="9"]
-scroll_scale = Vector2(0.35, 0.35)
-scroll_offset = Vector2(-121, -12)
-repeat_size = Vector2(1920, 0)
-metadata/_edit_lock_ = true
+[node name="Fog2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="9"]
+motion_scale = Vector2(0.35, 0)
+motion_mirroring = Vector2(1920, 0)
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/Fog2" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Fog2" index="0"]
 position = Vector2(1081, 552)
 texture = ExtResource("8_ynuk4")
 
-[node name="mt1" type="Parallax2D" parent="CanvasGroup/bg" index="10"]
-scroll_scale = Vector2(0.4, 0.2)
-repeat_size = Vector2(3840, 0)
-repeat_times = 3
+[node name="mt1" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="10"]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(1920, 0)
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/mt1" index="0"]
-position = Vector2(1920, 0)
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/mt1" index="0"]
+position = Vector2(1786, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("9_xlrkh")
 
-[node name="c1" type="Parallax2D" parent="CanvasGroup/bg" index="11"]
-visible = false
-scroll_scale = Vector2(0.7, 0.7)
-scroll_offset = Vector2(-201, -12)
-repeat_size = Vector2(3840, 0)
-autoscroll = Vector2(-30, 0)
+[node name="c1" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="11"]
+motion_scale = Vector2(0.7, 0)
+motion_mirroring = Vector2(1920, 0)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg/c1" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c1" index="0"]
 position = Vector2(0, 200)
 texture = ExtResource("14_fswn2")
 
@@ -666,7 +642,7 @@ _preview_noise = false
 metadata/_edit_lock_ = true
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(11144, -1229)
+position = Vector2(1200, 540)
 priority = 2
 follow_mode = 2
 snap_to_pixel = true
@@ -703,7 +679,7 @@ follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
 
 [node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
-position = Vector2(11144, -1229)
+position = Vector2(98, 714)
 fall_gravity = 5000
 initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")

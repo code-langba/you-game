@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://36108yxqj3mc"
-path="res://.godot/imported/sky.PNG-01dd3fda0b6a52ce44b512e365843cae.ctex"
+uid="uid://tril6m2nv631"
+path="res://.godot/imported/2.webp-eb1a2b63e4626ab8bb3d357d7c4891ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/sprites/bg/lvl2/sky.PNG"
-dest_files=["res://.godot/imported/sky.PNG-01dd3fda0b6a52ce44b512e365843cae.ctex"]
+source_file="res://asset/sprites/bg/lvl2/2.webp"
+dest_files=["res://.godot/imported/2.webp-eb1a2b63e4626ab8bb3d357d7c4891ee.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

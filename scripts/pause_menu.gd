@@ -28,7 +28,7 @@ func _notification(what):
 
 func on_button_pressed(button: Button) -> void:
 	match (button.get_meta("action")):
-		"main_menu": get_tree().change_scene_to_packed(main_menu_scene)
+		"quit": get_tree().quit()
 		"settings": 
 			var settings_scene = SETTINGS.instantiate()
 			add_child(settings_scene)

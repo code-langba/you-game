@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uf2ie")
 main_menu_scene = ExtResource("2_7wcvm")
-buttons = [NodePath("CenterContainer/VBoxContainer/VBoxContainer/Resume"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/Settings"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/ToMainMenu")]
+buttons = [NodePath("CenterContainer/VBoxContainer/VBoxContainer/Resume"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/Settings"), NodePath("CenterContainer/VBoxContainer/VBoxContainer/Quit")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -61,29 +61,34 @@ theme_override_constants/separation = 20
 [node name="Resume" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 52
 text = "Resume"
 icon = ExtResource("3_8vnmj")
+alignment = 0
 metadata/action = "resume"
 metadata/quit = ""
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 52
 text = "Settings"
 icon = ExtResource("4_fgl4j")
+alignment = 0
 metadata/action = "settings"
 metadata/settings = ""
 
-[node name="ToMainMenu" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_font_sizes/font_size = 52
-text = "Main Menu"
+text = "Quit"
 icon = ExtResource("3_a5mbo")
-metadata/action = "main_menu"
+alignment = 0
+metadata/action = "quit"
 metadata/main_menu = ""
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
