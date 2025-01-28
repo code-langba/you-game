@@ -92,50 +92,48 @@ metadata/_edit_vertical_guides_ = [6400.0]
 
 [node name="CanvasGroup" type="CanvasGroup" parent="." index="0"]
 
-[node name="bg2" type="Node2D" parent="CanvasGroup" index="0"]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup/bg2" index="0"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup" index="0"]
 scroll_offset = Vector2(1, 0.2)
 scroll_ignore_camera_zoom = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg2/ParallaxBackground" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground" index="0"]
 position = Vector2(958, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("5_yli61")
 
-[node name="Parallax2D7" type="ParallaxLayer" parent="CanvasGroup/bg2/ParallaxBackground" index="1"]
+[node name="Parallax2D7" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="1"]
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(1920, 0)
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg2/ParallaxBackground/Parallax2D7" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Parallax2D7" index="0"]
 position = Vector2(959, 538)
 scale = Vector2(2, 2)
 texture = ExtResource("3_mkq8b")
 
-[node name="Bg2" type="Sprite2D" parent="CanvasGroup/bg2/ParallaxBackground/Parallax2D7" index="1"]
+[node name="Bg2" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Parallax2D7" index="1"]
 position = Vector2(959, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("4_d5pgg")
 
-[node name="Parallax2D12" type="ParallaxLayer" parent="CanvasGroup/bg2/ParallaxBackground" index="2"]
+[node name="Parallax2D12" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="2"]
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(1920, 0)
 
-[node name="Bg2" type="Sprite2D" parent="CanvasGroup/bg2/ParallaxBackground/Parallax2D12" index="0"]
+[node name="Bg2" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Parallax2D12" index="0"]
 position = Vector2(976, 540)
 scale = Vector2(2, 2)
 texture = ExtResource("6_5yatn")
 
-[node name="Parallax2D9" type="ParallaxLayer" parent="CanvasGroup/bg2/ParallaxBackground" index="3"]
+[node name="Parallax2D9" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="3"]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1955.84, 0)
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/bg2/ParallaxBackground/Parallax2D9" index="0"]
+[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Parallax2D9" index="0"]
 position = Vector2(975.61, 657)
 scale = Vector2(1.52873, 1.52778)
 texture = ExtResource("7_wv614")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/bg2" index="1"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup" index="1"]
 z_index = 2
 position = Vector2(710, 835)
 scale = Vector2(5.06641, 6.15234)
@@ -143,7 +141,7 @@ texture = ExtResource("18_ldpk0")
 region_enabled = true
 region_rect = Rect2(896, 896, 128, 128)
 
-[node name="decorr" type="Node" parent="CanvasGroup" index="1"]
+[node name="decorr" type="Node" parent="CanvasGroup" index="2"]
 
 [node name="Ea610618Db6a4c1Ea8Cbe3b15d5Bb123" type="Sprite2D" parent="CanvasGroup/decorr" index="0"]
 modulate = Color(0, 0, 0, 1)
@@ -210,7 +208,6 @@ position = Vector2(1200, 540)
 tween_resource = SubResource("Resource_4xy0a")
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(1200, 540)
 priority = 1
 tween_on_load = false
 limit_right = 6400
@@ -221,6 +218,7 @@ initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
 
 [node name="Camera2D" parent="Player" index="2"]
+physics_interpolation_mode = 1
 position = Vector2(890, 265)
 limit_top = 0
 limit_right = 6400

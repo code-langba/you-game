@@ -150,24 +150,22 @@ bg_color = Color(0.129412, 0.180392, 0.227451, 1)
 metadata/_edit_vertical_guides_ = [4745.0]
 metadata/_edit_horizontal_guides_ = [1090.0, 924.0]
 
-[node name="bg" type="Node2D" parent="." index="0"]
-z_index = -1
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 
-[node name="Parallax2D5" type="Parallax2D" parent="bg" index="0"]
-scroll_scale = Vector2(0.3, 0.3)
-scroll_offset = Vector2(-138, -12)
-repeat_size = Vector2(1920, 1080)
-repeat_times = 9
+[node name="Parallax2D5" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+position = Vector2(6, 435)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1920, 1080)
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D5" index="0"]
+[node name="Bg1" type="Sprite2D" parent="ParallaxBackground/Parallax2D5" index="0"]
 position = Vector2(1083, 0)
 texture = ExtResource("4_hlibq")
 
-[node name="Parallax2D4" type="Parallax2D" parent="bg" index="1"]
-scroll_scale = Vector2(0.3, 0.3)
-scroll_offset = Vector2(-121, -12)
+[node name="Parallax2D4" type="ParallaxLayer" parent="ParallaxBackground" index="1"]
+position = Vector2(6, 435)
+motion_scale = Vector2(0.3, 0.3)
 
-[node name="Bg1" type="Sprite2D" parent="bg/Parallax2D4" index="0"]
+[node name="Bg1" type="Sprite2D" parent="ParallaxBackground/Parallax2D4" index="0"]
 position = Vector2(2634, -36)
 scale = Vector2(1, 1.5)
 texture = ExtResource("3_22cpu")

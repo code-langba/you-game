@@ -39,69 +39,68 @@ bgm = ExtResource("10_65fjq")
 bg_color = Color(0.129412, 0.164706, 0.223529, 1)
 metadata/_edit_vertical_guides_ = [5104.0]
 
-[node name="bg2" type="Node2D" parent="." index="0"]
+[node name="CanvasGroup" type="CanvasGroup" parent="." index="0"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="bg2" index="0"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup" index="0"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="bg2/ParallaxBackground" index="0"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="0"]
 motion_scale = Vector2(0.2, 0.2)
 
-[node name="Moon" type="Sprite2D" parent="bg2/ParallaxBackground/ParallaxLayer" index="0"]
+[node name="Moon" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer" index="0"]
 position = Vector2(1336, 407)
 scale = Vector2(3, 3)
 texture = ExtResource("5_e637k")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="bg2/ParallaxBackground" index="1"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="1"]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(2016, 0)
 
-[node name="Hill3" type="Sprite2D" parent="bg2/ParallaxBackground/ParallaxLayer2" index="0"]
+[node name="Hill3" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer2" index="0"]
 position = Vector2(1008, 567)
 scale = Vector2(2.1, 2.1)
 texture = ExtResource("5_qck3r")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="bg2/ParallaxBackground" index="2"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="2"]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(2016, 0)
 
-[node name="Hill2" type="Sprite2D" parent="bg2/ParallaxBackground/ParallaxLayer3" index="0"]
+[node name="Hill2" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer3" index="0"]
 position = Vector2(1008, 530)
 scale = Vector2(2.1, 2.1)
 texture = ExtResource("6_ofsii")
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="bg2/ParallaxBackground" index="3"]
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="3"]
 motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(1920, 0)
 
-[node name="Hill1" type="Sprite2D" parent="bg2/ParallaxBackground/ParallaxLayer4" index="0"]
+[node name="Hill1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/ParallaxLayer4" index="0"]
 position = Vector2(960, 772)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_ljv3u")
 
-[node name="Gravestone" type="Sprite2D" parent="." index="1"]
+[node name="Gravestone" type="Sprite2D" parent="CanvasGroup" index="1"]
 position = Vector2(48, 858)
 texture = ExtResource("9_vyah7")
 region_enabled = true
 region_rect = Rect2(128, 384, 128, 128)
 
-[node name="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" type="Sprite2D" parent="." index="2"]
+[node name="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" type="Sprite2D" parent="CanvasGroup" index="2"]
 position = Vector2(354, 619)
 scale = Vector2(1.67222, 1.67222)
 texture = ExtResource("19_rasjj")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" index="0"]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="CanvasGroup/Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" index="0"]
 
 [node name="InitialCamera" parent="Camera" index="0"]
 position = Vector2(857.143, 694.286)
 zoom = Vector2(1.4, 1.4)
 
 [node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(1200, 540)
 tween_resource = SubResource("Resource_kbiut")
 follow_damping_value = Vector2(0.2, 0.1)
 limit_right = 5100
 
-[node name="Player" parent="." index="4" node_paths=PackedStringArray("initial_camera", "follow_camera")]
+[node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
 position = Vector2(120, 825)
 initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
@@ -111,10 +110,10 @@ position = Vector2(737.143, -130.714)
 zoom = Vector2(1.4, 1.4)
 limit_top = 0
 
-[node name="checkpoint" parent="." index="5" instance=ExtResource("6_25abd")]
+[node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)
 
-[node name="traps" type="Node2D" parent="." index="6"]
+[node name="traps" type="Node2D" parent="." index="4"]
 
 [node name="falling_platforms" type="Node2D" parent="traps" index="0"]
 position = Vector2(432, -56)
@@ -143,7 +142,7 @@ region_rect = Rect2(384, 896, 128, 128)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="grass" type="Node2D" parent="." index="9"]
+[node name="grass" type="Node2D" parent="." index="7"]
 position = Vector2(0, 5)
 
 [node name="live_grass2" parent="grass" index="0" instance=ExtResource("7_gmib8")]
@@ -164,10 +163,10 @@ position = Vector2(3512, 840)
 [node name="live_grass7" parent="grass" index="5" instance=ExtResource("7_gmib8")]
 position = Vector2(3792, 840)
 
-[node name="splike" parent="." index="10" instance=ExtResource("5_8yscw")]
+[node name="splike" parent="." index="8" instance=ExtResource("5_8yscw")]
 position = Vector2(4160, 688)
 
-[node name="candles" type="Node2D" parent="." index="11"]
+[node name="candles" type="Node2D" parent="." index="9"]
 position = Vector2(0, 5)
 
 [node name="candle" parent="candles" index="0" instance=ExtResource("9_ftwoo")]
@@ -179,11 +178,11 @@ position = Vector2(1224, 840)
 [node name="candle2" parent="candles" index="2" instance=ExtResource("9_ftwoo")]
 position = Vector2(4584, 472)
 
-[node name="finish" parent="." index="12"]
+[node name="finish" parent="." index="10"]
 position = Vector2(4528, 402)
 next_level = "res://scenes/levels/2.tscn"
 
-[node name="Tutorial" type="Control" parent="." index="13"]
+[node name="Tutorial" type="Control" parent="." index="11"]
 visible = false
 z_index = 2
 layout_mode = 3
@@ -313,7 +312,7 @@ position = Vector2(0, 10)
 tile_map_data = PackedByteArray("AAAGAAYAAAAFAAYAAAA=")
 tile_set = ExtResource("9_7pnl8")
 
-[node name="Lights" type="Node2D" parent="." index="15"]
+[node name="Lights" type="Node2D" parent="." index="13"]
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights" index="0"]
 position = Vector2(417, 678)
