@@ -8,3 +8,5 @@ collision_mask = 0
 script = ExtResource("1_5fjpu")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 6.5)
+scale = Vector2(2.3, 9.25)

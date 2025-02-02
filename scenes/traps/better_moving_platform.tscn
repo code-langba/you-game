@@ -6,6 +6,3 @@
 editor_description = "Add child Position node/s to this and assign it to BetterMVBase > Positions"
 
 [node name="BetterMVBase" parent="." instance=ExtResource("1_dv4wa")]
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-scale = Vector2(44.8, 1)

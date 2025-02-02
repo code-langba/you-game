@@ -8,7 +8,7 @@ var is_setting_open := false
 
 func _ready() -> void:
 	get_tree().paused = true
-	buttons[0].grab_focus()
+	#buttons[0].grab_focus()
 	for button in buttons:
 		button.pressed.connect(on_button_pressed.bind(button))
 		button.mouse_entered.connect(on_mouse_entered.bind(button))

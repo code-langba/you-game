@@ -1,8 +1,7 @@
-[gd_scene load_steps=70 format=3 uid="uid://dcsgncsfn3jqn"]
+[gd_scene load_steps=69 format=3 uid="uid://dcsgncsfn3jqn"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1443h"]
 [ext_resource type="Texture2D" uid="uid://sp62jyw8sxe" path="res://asset/sprites/ascend_player.png" id="3_6d1e6"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_5hlr7"]
 [ext_resource type="Texture2D" uid="uid://cygjq7ywybue0" path="res://asset/sprites/player.png" id="4_vh66k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmg30"]
@@ -497,16 +496,6 @@ position = Vector2(-9, -4)
 sprite_frames = SubResource("SpriteFrames_rbfq1")
 animation = &"run"
 autoplay = "idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_bottom = 1080
-limit_smoothed = true
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-process_priority = 300
-process_physics_priority = 300
-script = ExtResource("4_5hlr7")
 
 [node name="SceneResetTimer" type="Timer" parent="."]
 wait_time = 0.5

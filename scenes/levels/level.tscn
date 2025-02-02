@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8twc8hxar5ua"]
+[gd_scene load_steps=19 format=3 uid="uid://8twc8hxar5ua"]
 
 [ext_resource type="Script" path="res://scenes/levels/1.gd" id="1_dohl8"]
 [ext_resource type="PackedScene" uid="uid://dcsgncsfn3jqn" path="res://scenes/player/player.tscn" id="1_tqbsa"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/lives.gd" id="4_clsq8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_s3amj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_v515h"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_03uvx"]
 [ext_resource type="PackedScene" uid="uid://bkq3rmhosw5j1" path="res://scenes/world/finish.tscn" id="6_gykwq"]
 [ext_resource type="Texture2D" uid="uid://c64thxqmmb54f" path="res://asset/sprites/ui/Pause.png" id="10_6v0ia"]
 [ext_resource type="Texture2D" uid="uid://c4jegw3k674y4" path="res://asset/sprites/ui/Left_Arrow.png" id="11_u8d7b"]
@@ -37,8 +38,20 @@ pause_menu_scene = ExtResource("3_bfmu6")
 
 [node name="Camera" type="Node" parent="."]
 
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+position = Vector2(1200, 540)
+limit_left = 0
+limit_top = 0
+limit_bottom = 1080
+limit_smoothed = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera/Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("6_03uvx")
+
 [node name="InitialCamera" type="Node2D" parent="Camera"]
-position = Vector2(600, 784)
+position = Vector2(1200, 540)
 script = ExtResource("4_s3amj")
 tween_resource = SubResource("Resource_5iw5l")
 tween_on_load = false
@@ -97,10 +110,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 87
 text = "0"
 script = ExtResource("4_clsq8")
-
-[node name="Fps" type="Label" parent="Ui/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 87
 
 [node name="ControlBtn" type="Node" parent="Ui/MarginContainer"]
 

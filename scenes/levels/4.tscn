@@ -170,13 +170,18 @@ position = Vector2(2634, -36)
 scale = Vector2(1, 1.5)
 texture = ExtResource("3_22cpu")
 
-[node name="InitialCamera" parent="Camera" index="0"]
+[node name="Camera2D" parent="Camera" index="0"]
+position = Vector2(9450, 892)
+limit_top = -10000000
+limit_bottom = 924
+
+[node name="InitialCamera" parent="Camera" index="1"]
 position = Vector2(9450, 892)
 tween_resource = SubResource("Resource_fqquq")
 limit_top = -10000000
 limit_bottom = 924
 
-[node name="FollowCamera" parent="Camera" index="1"]
+[node name="FollowCamera" parent="Camera" index="2"]
 position = Vector2(9559, -463)
 limit_top = -10000000
 limit_bottom = 924
@@ -185,10 +190,6 @@ limit_bottom = 924
 position = Vector2(9553, -898)
 initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
-
-[node name="Camera2D" parent="Player" index="2"]
-position = Vector2(-109, 1355)
-limit_bottom = 924
 
 [node name="finish" parent="." index="5"]
 position = Vector2(3400, -4736)
@@ -392,8 +393,8 @@ tile_set = SubResource("TileSet_syavs")
 
 [node name="LittleBeekDesigns-creepy-branch" type="Sprite2D" parent="decorr" index="0"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(5278, 418)
-scale = Vector2(0.134562, 0.134562)
+position = Vector2(5285.35, 424.384)
+scale = Vector2(0.396431, 0.396431)
 texture = ExtResource("17_i54bu")
 flip_h = true
 

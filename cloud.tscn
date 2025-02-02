@@ -91,3 +91,4 @@ stream = ExtResource("3_qrgfp")
 volume_db = 6.0
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(22.3, 13.2)

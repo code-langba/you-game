@@ -91,11 +91,15 @@ texture = ExtResource("19_rasjj")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="CanvasGroup/Pngtree-spooky-tree-silhouette-with-owl-and-graves-png-image6116630" index="0"]
 
-[node name="InitialCamera" parent="Camera" index="0"]
+[node name="Camera2D" parent="Camera" index="0"]
 position = Vector2(857.143, 694.286)
 zoom = Vector2(1.4, 1.4)
 
-[node name="FollowCamera" parent="Camera" index="1"]
+[node name="InitialCamera" parent="Camera" index="1"]
+position = Vector2(857.143, 694.286)
+zoom = Vector2(1.4, 1.4)
+
+[node name="FollowCamera" parent="Camera" index="2"]
 tween_resource = SubResource("Resource_kbiut")
 follow_damping_value = Vector2(0.2, 0.1)
 limit_right = 5100
@@ -104,11 +108,6 @@ limit_right = 5100
 position = Vector2(120, 825)
 initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
-
-[node name="Camera2D" parent="Player" index="2"]
-position = Vector2(737.143, -130.714)
-zoom = Vector2(1.4, 1.4)
-limit_top = 0
 
 [node name="checkpoint" parent="." index="3" instance=ExtResource("6_25abd")]
 position = Vector2(2230, 781)

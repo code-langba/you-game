@@ -15,7 +15,7 @@ func _ready() -> void:
 	manager.play(bgm)
 	EventBus.setting_close.connect(on_setting_close)
 	# buttons
-	buttons[0].grab_focus()
+	#buttons[0].grab_focus()
 	connect_buttons()
 
 func _notification(what):

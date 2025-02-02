@@ -1,33 +1,34 @@
-[gd_scene load_steps=96 format=4 uid="uid://bmk8onibxyk57"]
+[gd_scene load_steps=97 format=4 uid="uid://bmk8onibxyk57"]
 
 [ext_resource type="PackedScene" uid="uid://8twc8hxar5ua" path="res://scenes/levels/level.tscn" id="1_rq4wt"]
 [ext_resource type="Texture2D" uid="uid://le1ymqok78be" path="res://asset/sprites/resources.png" id="2_bchic"]
 [ext_resource type="AudioStream" uid="uid://ddroaggjrpm45" path="res://asset/music/bgm/3.ogg" id="3_ai0cw"]
-[ext_resource type="Texture2D" uid="uid://da1barbq4iwcj" path="res://asset/sprites/bg/lvl3/9.png.PNG" id="3_fmsyx"]
-[ext_resource type="Texture2D" uid="uid://dtvq4d8ennks6" path="res://asset/sprites/bg/lvl3/8.png.PNG" id="4_gy0at"]
+[ext_resource type="Texture2D" uid="uid://da1barbq4iwcj" path="res://asset/sprites/bg/lvl3/9.PNG" id="3_fmsyx"]
+[ext_resource type="Texture2D" uid="uid://dgneobkeofmgi" path="res://asset/sprites/bg/lvl3/8.PNG" id="4_fsnc4"]
 [ext_resource type="PackedScene" uid="uid://bkep8526t3g44" path="res://scenes/traps/better_moving_platform.tscn" id="4_mts20"]
-[ext_resource type="Texture2D" uid="uid://cyncvy2yddef6" path="res://asset/sprites/bg/lvl3/7.png.PNG" id="4_yqn80"]
+[ext_resource type="Texture2D" uid="uid://cyncvy2yddef6" path="res://asset/sprites/bg/lvl3/7.PNG" id="4_yqn80"]
 [ext_resource type="Script" path="res://scenes/util/position.gd" id="5_itdtf"]
 [ext_resource type="PackedScene" uid="uid://d3w8opvylbqii" path="res://scenes/enemies/grim.tscn" id="5_jleem"]
-[ext_resource type="Texture2D" uid="uid://da6ph6p3as5kx" path="res://asset/sprites/bg/lvl3/6.png.PNG" id="5_wf47k"]
+[ext_resource type="Texture2D" uid="uid://da6ph6p3as5kx" path="res://asset/sprites/bg/lvl3/6.PNG" id="5_wf47k"]
 [ext_resource type="PackedScene" uid="uid://7ethfy8v7636" path="res://scenes/traps/rolling_ball.tscn" id="6_dbdtd"]
-[ext_resource type="Texture2D" uid="uid://d1pf0u4fit8h8" path="res://asset/sprites/bg/lvl3/5.png.PNG" id="6_v38q0"]
-[ext_resource type="Texture2D" uid="uid://b7oaoafy56uad" path="res://asset/sprites/bg/lvl3/c4.png.PNG" id="7_5e8yh"]
+[ext_resource type="Texture2D" uid="uid://d1pf0u4fit8h8" path="res://asset/sprites/bg/lvl3/5.PNG" id="6_v38q0"]
+[ext_resource type="Texture2D" uid="uid://b7oaoafy56uad" path="res://asset/sprites/bg/lvl3/c4.PNG" id="7_5e8yh"]
 [ext_resource type="PackedScene" uid="uid://3fjs7dyoqykf" path="res://cloud.tscn" id="7_fn0er"]
 [ext_resource type="PackedScene" uid="uid://cg1e3l3u7egyk" path="res://scenes/world/checkpoint.tscn" id="7_vcymw"]
-[ext_resource type="Texture2D" uid="uid://c27ippkb8sqki" path="res://asset/sprites/bg/lvl3/4.png.PNG" id="7_ynk6l"]
+[ext_resource type="Texture2D" uid="uid://c27ippkb8sqki" path="res://asset/sprites/bg/lvl3/4.PNG" id="7_ynk6l"]
 [ext_resource type="PackedScene" uid="uid://d4hnmq3wab6ci" path="res://scenes/traps/falling_spike.tscn" id="8_ifwkw"]
-[ext_resource type="Texture2D" uid="uid://cv1002xv4mboy" path="res://asset/sprites/bg/lvl3/3.png.PNG" id="8_ynuk4"]
-[ext_resource type="Texture2D" uid="uid://x7v3iucumvpv" path="res://asset/sprites/bg/lvl3/c3.png.PNG" id="9_4vc4s"]
+[ext_resource type="Texture2D" uid="uid://cv1002xv4mboy" path="res://asset/sprites/bg/lvl3/3.PNG" id="8_ynuk4"]
+[ext_resource type="Texture2D" uid="uid://x7v3iucumvpv" path="res://asset/sprites/bg/lvl3/c3.PNG" id="9_4vc4s"]
 [ext_resource type="PackedScene" uid="uid://cm826kvfjn2fc" path="res://scenes/world/mushroom.tscn" id="9_nrhoi"]
-[ext_resource type="Texture2D" uid="uid://cpjyophvge81r" path="res://asset/sprites/bg/lvl3/2.png.PNG" id="9_xlrkh"]
+[ext_resource type="Texture2D" uid="uid://cpjyophvge81r" path="res://asset/sprites/bg/lvl3/2.PNG" id="9_xlrkh"]
 [ext_resource type="PackedScene" uid="uid://dh7cb3a37dl7i" path="res://scenes/traps/spike.tscn" id="10_11ghb"]
-[ext_resource type="Texture2D" uid="uid://c8000txfshx6q" path="res://asset/sprites/bg/lvl3/c2.png.PNG" id="11_ej677"]
+[ext_resource type="Texture2D" uid="uid://c8000txfshx6q" path="res://asset/sprites/bg/lvl3/c2.PNG" id="11_ej677"]
 [ext_resource type="PackedScene" uid="uid://bpqvji5moc7y3" path="res://scenes/traps/invisible_box.tscn" id="11_hu3rx"]
 [ext_resource type="PackedScene" uid="uid://bdkcva20j8ym" path="res://scenes/enemies/walker.tscn" id="12_1a0ao"]
 [ext_resource type="Texture2D" uid="uid://b47u0vy8ter34" path="res://asset/sprites/clouds.png" id="12_1kriy"]
 [ext_resource type="Script" path="res://scripts/traps/rolling_ball_area.gd" id="13_3cehg"]
-[ext_resource type="Texture2D" uid="uid://c8p8qwyyo8a5b" path="res://asset/sprites/bg/lvl3/c1.png.PNG" id="14_fswn2"]
+[ext_resource type="Script" path="res://scripts/world/bg_cloud.gd" id="14_dnw0s"]
+[ext_resource type="Texture2D" uid="uid://c8p8qwyyo8a5b" path="res://asset/sprites/bg/lvl3/c1.PNG" id="14_fswn2"]
 [ext_resource type="PackedScene" uid="uid://chhr3huoi4djx" path="res://scenes/world/hippo.tscn" id="16_hivsn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="17_h16t6"]
 [ext_resource type="PackedScene" uid="uid://c5grcpnd72dq8" path="res://components/scenes/killzone.tscn" id="17_rnm5u"]
@@ -57,16 +58,16 @@ duration = 0.0
 transition = 0
 ease = 2
 
-[sub_resource type="Resource" id="Resource_qhcf4"]
-script = ExtResource("17_h16t6")
-duration = 0.0
-transition = 0
-ease = 2
-
 [sub_resource type="Resource" id="Resource_qtt2j"]
 script = ExtResource("17_h16t6")
 duration = 1.5
 transition = 1
+ease = 2
+
+[sub_resource type="Resource" id="Resource_qhcf4"]
+script = ExtResource("17_h16t6")
+duration = 0.0
+transition = 0
 ease = 2
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oo4c3"]
@@ -453,6 +454,7 @@ metadata/_edit_vertical_guides_ = [6529.0]
 [node name="CanvasGroup" type="CanvasGroup" parent="." index="0"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasGroup" index="0"]
+scroll_base_scale = Vector2(1, 0.8)
 scroll_ignore_camera_zoom = true
 
 [node name="Sky" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="0"]
@@ -466,12 +468,12 @@ scale = Vector2(1, 3.825)
 texture = ExtResource("3_fmsyx")
 
 [node name="Sun" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="1"]
-motion_scale = Vector2(0.1, 0)
+motion_scale = Vector2(0.1, 0.1)
 metadata/_edit_lock_ = true
 
-[node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Sun" index="0"]
-position = Vector2(1700, 250)
-texture = ExtResource("4_gy0at")
+[node name="8" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/Sun" index="0"]
+position = Vector2(1397, 91)
+texture = ExtResource("4_fsnc4")
 
 [node name="Hill" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="2"]
 motion_scale = Vector2(0.1, 0)
@@ -492,12 +494,14 @@ position = Vector2(1081, 552)
 texture = ExtResource("5_wf47k")
 
 [node name="c4" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="4"]
-motion_scale = Vector2(0.21, 0)
-motion_mirroring = Vector2(1920, 0)
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(6000, 0)
+script = ExtResource("14_dnw0s")
+cloud_speed = 0.3
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c4" index="0"]
-position = Vector2(0, 37.515)
+position = Vector2(3024, -361)
 texture = ExtResource("7_5e8yh")
 
 [node name="Mt3" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="5"]
@@ -510,12 +514,14 @@ position = Vector2(1081, 552)
 texture = ExtResource("6_v38q0")
 
 [node name="c3" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="6"]
-motion_scale = Vector2(0.24, 0)
-motion_mirroring = Vector2(1920, 0)
+motion_scale = Vector2(0.3, 0)
+motion_mirroring = Vector2(2400, 0)
+script = ExtResource("14_dnw0s")
+cloud_speed = 0.6
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c3" index="0"]
-position = Vector2(0, 37.515)
+position = Vector2(960, 114)
 texture = ExtResource("9_4vc4s")
 
 [node name="mt2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="7"]
@@ -528,12 +534,14 @@ position = Vector2(1075, 552)
 texture = ExtResource("7_ynk6l")
 
 [node name="c2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="8"]
-motion_scale = Vector2(0.4, 0)
-motion_mirroring = Vector2(1920, 0)
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(4000, 0)
+script = ExtResource("14_dnw0s")
+cloud_speed = 2.6
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c2" index="0"]
-position = Vector2(0, -50)
+position = Vector2(1814, -631)
 texture = ExtResource("11_ej677")
 
 [node name="Fog2" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="9"]
@@ -546,20 +554,20 @@ texture = ExtResource("8_ynuk4")
 
 [node name="mt1" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="10"]
 motion_scale = Vector2(0.4, 0)
-motion_mirroring = Vector2(1920, 0)
+motion_mirroring = Vector2(3840, 0)
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/mt1" index="0"]
-position = Vector2(1786, 0)
+position = Vector2(1808, 23)
 scale = Vector2(2, 2)
 texture = ExtResource("9_xlrkh")
 
 [node name="c1" type="ParallaxLayer" parent="CanvasGroup/ParallaxBackground" index="11"]
-motion_scale = Vector2(0.7, 0)
-motion_mirroring = Vector2(1920, 0)
+motion_mirroring = Vector2(3400, 0)
+script = ExtResource("14_dnw0s")
 metadata/_edit_lock_ = true
 
 [node name="Bg1" type="Sprite2D" parent="CanvasGroup/ParallaxBackground/c1" index="0"]
-position = Vector2(0, 200)
+position = Vector2(1846, 540)
 texture = ExtResource("14_fswn2")
 
 [node name="Sign" type="Sprite2D" parent="CanvasGroup" index="1"]
@@ -633,23 +641,16 @@ z_index = 4
 position = Vector2(15423.5, -621)
 scale = Vector2(1.425, 1)
 
-[node name="InitialCamera" parent="Camera" index="0"]
+[node name="Camera2D" parent="Camera" index="0"]
+physics_interpolation_mode = 1
+limit_top = -2000
+
+[node name="InitialCamera" parent="Camera" index="1"]
 position = Vector2(960, 540)
 tween_resource = SubResource("Resource_7wlrl")
 inactive_update_mode = 1
 limit_top = -2000
 _preview_noise = false
-metadata/_edit_lock_ = true
-
-[node name="FollowCamera" parent="Camera" index="1"]
-position = Vector2(1200, 540)
-priority = 2
-follow_mode = 2
-snap_to_pixel = true
-tween_resource = SubResource("Resource_qhcf4")
-tween_on_load = false
-follow_damping_value = Vector2(0.2, 0.3)
-limit_top = -2000
 metadata/_edit_lock_ = true
 
 [node name="CloudCamera" type="Node2D" parent="Camera" index="2" node_paths=PackedStringArray("follow_target")]
@@ -678,6 +679,20 @@ follow_offset = Vector2(0.2, 3)
 follow_damping = true
 follow_damping_value = Vector2(0.2, 0.2)
 
+[node name="FollowCamera" parent="Camera" index="4"]
+priority = 2
+snap_to_pixel = true
+tween_resource = SubResource("Resource_qhcf4")
+tween_on_load = false
+inactive_update_mode = 1
+follow_offset = Vector2(0, -100)
+follow_damping_value = Vector2(0.2, 0.1)
+dead_zone_width = 0.094
+dead_zone_height = 0.399
+show_viewfinder_in_play = true
+limit_top = -2000
+metadata/_edit_lock_ = true
+
 [node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
 position = Vector2(98, 714)
 fall_gravity = 5000
@@ -688,7 +703,6 @@ push_force = 0.001
 [node name="killzone" parent="." index="3"]
 collision_layer = 0
 collision_mask = 6
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" parent="killzone" index="0"]
 position = Vector2(0, 1280)
@@ -708,8 +722,9 @@ shape = SubResource("RectangleShape2D_ljyos")
 [node name="AnimatedSprite2D" parent="finish" index="1"]
 visible = false
 
-[node name="Tilemap" parent="." index="6"]
-metadata/_edit_lock_ = true
+[node name="VisibleOnScreenEnabler2D" parent="finish" index="2"]
+position = Vector2(-19.9995, -645)
+scale = Vector2(27.6, 65.5)
 
 [node name="decor" type="TileMapLayer" parent="Tilemap" index="0"]
 use_parent_material = true
@@ -759,7 +774,6 @@ position = Vector2(8694, -1321)
 emitting = true
 particle_amount = 2000
 sound_distance = 3000.0
-metadata/_edit_lock_ = true
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="VFX/RainParticles" index="1"]
 position = Vector2(-75, -69.5)
@@ -767,7 +781,7 @@ scale = Vector2(131.4, 62.35)
 
 [node name="ZoneDetectors" type="Node" parent="." index="8"]
 
-[node name="ZoneDetector" parent="ZoneDetectors" index="0" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera") instance=ExtResource("19_4qgne")]
+[node name="ZoneDetector" parent="ZoneDetectors" index="0" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera", "player") instance=ExtResource("19_4qgne")]
 position = Vector2(3767, 44)
 collision_mask = 2
 script = ExtResource("18_ydh2n")
@@ -775,12 +789,13 @@ disabled = false
 camera_container = NodePath("../../Camera")
 prev_camera = NodePath("../../Camera/FollowCamera")
 next_camera = NodePath("../../Camera/CloudCamera")
+player = NodePath("../../Player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDetectors/ZoneDetector" index="0"]
 position = Vector2(0, -367.75)
 shape = SubResource("RectangleShape2D_rsht2")
 
-[node name="ZoneDetector2" parent="ZoneDetectors" index="1" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera") instance=ExtResource("19_4qgne")]
+[node name="ZoneDetector2" parent="ZoneDetectors" index="1" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera", "player") instance=ExtResource("19_4qgne")]
 position = Vector2(5833, -1361)
 collision_mask = 2
 script = ExtResource("18_ydh2n")
@@ -788,11 +803,12 @@ disabled = false
 camera_container = NodePath("../../Camera")
 prev_camera = NodePath("../../Camera/CloudCamera")
 next_camera = NodePath("../../Camera/FollowCamera")
+player = NodePath("../../Player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDetectors/ZoneDetector2" index="0"]
 shape = SubResource("RectangleShape2D_rsht2")
 
-[node name="ZoneDetector3" parent="ZoneDetectors" index="2" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera") instance=ExtResource("19_4qgne")]
+[node name="ZoneDetector3" parent="ZoneDetectors" index="2" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera", "player") instance=ExtResource("19_4qgne")]
 position = Vector2(14598, -1116)
 collision_mask = 2
 script = ExtResource("18_ydh2n")
@@ -800,11 +816,12 @@ disabled = false
 camera_container = NodePath("../../Camera")
 prev_camera = NodePath("../../Camera/FollowCamera")
 next_camera = NodePath("../../Camera/HippoCamera")
+player = NodePath("../../Player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDetectors/ZoneDetector3" index="0"]
 shape = SubResource("RectangleShape2D_pau4v")
 
-[node name="ZoneDetector4" parent="ZoneDetectors" index="3" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera") instance=ExtResource("19_4qgne")]
+[node name="ZoneDetector4" parent="ZoneDetectors" index="3" node_paths=PackedStringArray("camera_container", "prev_camera", "next_camera", "player") instance=ExtResource("19_4qgne")]
 position = Vector2(16213, -977)
 collision_mask = 2
 script = ExtResource("18_ydh2n")
@@ -812,6 +829,7 @@ disabled = false
 camera_container = NodePath("../../Camera")
 prev_camera = NodePath("../../Camera/HippoCamera")
 next_camera = NodePath("../../Camera/FollowCamera")
+player = NodePath("../../Player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDetectors/ZoneDetector4" index="0"]
 shape = SubResource("RectangleShape2D_pau4v")
@@ -820,14 +838,12 @@ shape = SubResource("RectangleShape2D_pau4v")
 
 [node name="checkpoint" parent="World" index="0" instance=ExtResource("7_vcymw")]
 position = Vector2(6065, -1272)
-metadata/_edit_lock_ = true
 
 [node name="PointLight2D3" parent="World/checkpoint" index="5"]
 energy = 0.5
 
 [node name="bouncy" type="Node2D" parent="World" index="1"]
 z_index = 1
-metadata/_edit_lock_ = true
 
 [node name="cloud" parent="World/bouncy" index="0" instance=ExtResource("7_fn0er")]
 position = Vector2(4514, 28)
@@ -851,7 +867,6 @@ z_index = -2
 position = Vector2(9540, -789)
 
 [node name="platforms" type="Node2D" parent="World" index="2"]
-metadata/_edit_lock_ = true
 
 [node name="BetterMovingPlatform" parent="World/platforms" index="0" instance=ExtResource("4_mts20")]
 position = Vector2(1531, 831)
@@ -917,7 +932,6 @@ script = ExtResource("5_itdtf")
 
 [node name="Hippo" type="Node2D" parent="World" index="3"]
 z_index = 1
-metadata/_edit_lock_ = true
 
 [node name="hippo" parent="World/Hippo" index="0" instance=ExtResource("16_hivsn")]
 position = Vector2(15107, -608)
@@ -980,33 +994,27 @@ energy = 0.15
 
 [node name="Grim" parent="Enemy" index="0" instance=ExtResource("5_jleem")]
 position = Vector2(7790, -777)
-metadata/_edit_lock_ = true
 
 [node name="walker" parent="Enemy" index="1" instance=ExtResource("12_1a0ao")]
 position = Vector2(12919, -1247)
-metadata/_edit_lock_ = true
 
 [node name="walker4" parent="Enemy" index="2" instance=ExtResource("12_1a0ao")]
 position = Vector2(9448, -828)
-metadata/_edit_lock_ = true
 
 [node name="walker2" parent="Enemy" index="3" instance=ExtResource("12_1a0ao")]
 position = Vector2(1220, 697)
-metadata/_edit_lock_ = true
 
 [node name="walker3" parent="Enemy" index="4" instance=ExtResource("12_1a0ao")]
 position = Vector2(3635, 178)
-metadata/_edit_lock_ = true
+is_friendly = true
 
 [node name="Witch" parent="Enemy" index="5" instance=ExtResource("20_jxm45")]
 z_index = -1
 position = Vector2(10965, -1229)
-metadata/_edit_lock_ = true
 
 [node name="Extra" type="Node" parent="." index="11"]
 
 [node name="EnemyCollideables" type="Node2D" parent="Extra" index="0"]
-metadata/_edit_lock_ = true
 
 [node name="EnemyCollideable" parent="Extra/EnemyCollideables" index="0" instance=ExtResource("22_jmuhr")]
 position = Vector2(1387, 286)
@@ -1098,7 +1106,6 @@ position = Vector2(16878, -884)
 collision_mask = 2
 script = ExtResource("13_3cehg")
 ball = NodePath("../rolling_ball2")
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Traps/Area2D" index="0"]
 position = Vector2(-111, -49)
@@ -1106,12 +1113,10 @@ shape = SubResource("RectangleShape2D_8uasd")
 
 [node name="invisible_box" parent="Traps" index="1" instance=ExtResource("11_hu3rx")]
 position = Vector2(14264, -832)
-metadata/_edit_lock_ = true
 
 [node name="rolling_ball" parent="Traps" index="2" instance=ExtResource("6_dbdtd")]
 position = Vector2(-1141, 404)
 constant_force = Vector2(1000, 0)
-metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer2D" parent="Traps/rolling_ball" index="3"]
 autoplay = true
@@ -1120,19 +1125,15 @@ max_distance = 3000.0
 [node name="rolling_ball2" parent="Traps" index="3" instance=ExtResource("6_dbdtd")]
 unique_name_in_owner = true
 position = Vector2(18096, -1135)
-metadata/_edit_lock_ = true
 
 [node name="splike" parent="Traps" index="4" instance=ExtResource("10_11ghb")]
 position = Vector2(7340, -1109)
-metadata/_edit_lock_ = true
 
 [node name="splike2" parent="Traps" index="5" instance=ExtResource("10_11ghb")]
 position = Vector2(9416, -730)
-metadata/_edit_lock_ = true
 
 [node name="falling_spike" parent="Traps" index="6" instance=ExtResource("8_ifwkw")]
 position = Vector2(2404, -811)
-metadata/_edit_lock_ = true
 
 [node name="Area2D2" type="Area2D" parent="Traps" index="7"]
 position = Vector2(1242, 586)
@@ -1147,13 +1148,17 @@ environment = SubResource("Environment_3jw8r")
 
 [node name="StartPos" type="Marker2D" parent="." index="15"]
 position = Vector2(98, 714)
+gizmo_extents = 74.1
 
 [editable path="finish"]
 [editable path="VFX/RainParticles"]
 [editable path="World/checkpoint"]
+[editable path="World/bouncy/cloud"]
+[editable path="World/bouncy/cloud2"]
 [editable path="World/platforms/BetterMovingPlatform"]
 [editable path="World/platforms/BetterMovingPlatform2"]
 [editable path="World/candle"]
 [editable path="World/candle2"]
 [editable path="World/candle3"]
 [editable path="Traps/rolling_ball"]
+[editable path="Traps/falling_spike"]

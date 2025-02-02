@@ -44,11 +44,12 @@ position = Vector2(152, 512)
 shape = SubResource("RectangleShape2D_dc0vi")
 debug_color = Color(0.992612, 0, 0.249584, 0.42)
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="sensor"]
+position = Vector2(152, 424.5)
+scale = Vector2(5.5, 43.45)
+enable_node_path = NodePath("../..")
+
 [node name="fall_sfx" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_2mgel")
 volume_db = -22.533
 pitch_scale = 1.37
-
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(0, 424.5)
-scale = Vector2(5.5, 43.45)

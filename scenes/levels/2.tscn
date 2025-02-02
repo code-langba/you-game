@@ -203,11 +203,13 @@ position = Vector2(5829, 240)
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="CanvasGroup/decorr/bat2" index="0"]
 
-[node name="InitialCamera" parent="Camera" index="0"]
-position = Vector2(1200, 540)
+[node name="Camera2D" parent="Camera" index="0"]
+limit_right = 6400
+
+[node name="InitialCamera" parent="Camera" index="1"]
 tween_resource = SubResource("Resource_4xy0a")
 
-[node name="FollowCamera" parent="Camera" index="1"]
+[node name="FollowCamera" parent="Camera" index="2"]
 priority = 1
 tween_on_load = false
 limit_right = 6400
@@ -216,12 +218,6 @@ limit_right = 6400
 position = Vector2(310, 275)
 initial_camera = NodePath("../Camera/InitialCamera")
 follow_camera = NodePath("../Camera/FollowCamera")
-
-[node name="Camera2D" parent="Player" index="2"]
-physics_interpolation_mode = 1
-position = Vector2(890, 265)
-limit_top = 0
-limit_right = 6400
 
 [node name="finish" parent="." index="5"]
 position = Vector2(6185, 667)
