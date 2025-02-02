@@ -4,8 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://dawtrf2xtubgp" path="res://asset/music/bgm/ascend.mp3" id="2_nkj30"]
 [ext_resource type="Texture2D" uid="uid://cekai03n4o4dd" path="res://asset/sprites/bg/lvl1/hill1.png" id="3_48fq5"]
 [ext_resource type="Texture2D" uid="uid://bpeh5l5cum72" path="res://asset/sprites/bg/lvl1/hill3.png" id="4_c3b5y"]
+[ext_resource type="Theme" uid="uid://cpt4ywgw7o6hs" path="res://resources/ui/mobile_main_menu_ui.tres" id="5_f5j6m"]
 [ext_resource type="AudioStream" uid="uid://bkllmva6c8lev" path="res://asset/sounds/ui_click.wav" id="9_7pfv6"]
-[ext_resource type="Theme" uid="uid://c3m8iu7htchpa" path="res://resources/ui/ui.tres" id="12_oyhh2"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("buttons")]
 layout_mode = 3
@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_khi5f")
 bgm = ExtResource("2_nkj30")
-buttons = [NodePath("MarginContainer/ButtonContainer/Start"), NodePath("MarginContainer/ButtonContainer/MarginContainer/Settings"), NodePath("MarginContainer/ButtonContainer/MarginContainer2/Quit")]
+buttons = [NodePath("MarginContainer/CenterContainer/ButtonContainer/Start"), NodePath("MarginContainer/CenterContainer/ButtonContainer/MarginContainer/Settings"), NodePath("MarginContainer/CenterContainer/ButtonContainer/MarginContainer2/Quit")]
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -49,14 +49,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 90
-theme_override_constants/margin_right = 90
-theme_override_constants/margin_bottom = 160
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/CenterContainer"]
+[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 42
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/CenterContainer/ButtonContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 50
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/CenterContainer/ButtonContainer/MarginContainer3"]
 texture_filter = 1
 layout_mode = 2
 theme_override_font_sizes/bold_italics_font_size = 84
@@ -64,48 +71,39 @@ theme_override_font_sizes/italics_font_size = 84
 theme_override_font_sizes/mono_font_size = 84
 theme_override_font_sizes/normal_font_size = 84
 theme_override_font_sizes/bold_font_size = 84
-text = "ASCEND 💀"
+text = "   ASCEND 💀"
 fit_content = true
 autowrap_mode = 0
 
-[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_constants/separation = 42
-
-[node name="Start" type="Button" parent="MarginContainer/ButtonContainer"]
+[node name="Start" type="Button" parent="MarginContainer/CenterContainer/ButtonContainer"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("12_oyhh2")
+theme = ExtResource("5_f5j6m")
 theme_override_font_sizes/font_size = 54
 text = "Start"
-alignment = 0
 metadata/action = "start"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ButtonContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/ButtonContainer"]
 layout_mode = 2
 
-[node name="Settings" type="Button" parent="MarginContainer/ButtonContainer/MarginContainer"]
+[node name="Settings" type="Button" parent="MarginContainer/CenterContainer/ButtonContainer/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("12_oyhh2")
+theme = ExtResource("5_f5j6m")
 theme_override_font_sizes/font_size = 54
 text = "Settings"
-alignment = 0
 metadata/action = "settings"
 
-[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ButtonContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/CenterContainer/ButtonContainer"]
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="MarginContainer/ButtonContainer/MarginContainer2"]
+[node name="Quit" type="Button" parent="MarginContainer/CenterContainer/ButtonContainer/MarginContainer2"]
 texture_filter = 1
 layout_mode = 2
-theme = ExtResource("12_oyhh2")
+theme = ExtResource("5_f5j6m")
 theme_override_font_sizes/font_size = 54
 text = "Quit
 "
-alignment = 0
 metadata/action = "quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -121,24 +121,24 @@ texture_pressed = ExtResource("10_6v0ia")
 action = "esc"
 
 [node name="Left" type="TouchScreenButton" parent="Ui/MarginContainer/ControlBtn"]
-modulate = Color(1, 1, 1, 0.341176)
-position = Vector2(120, 840)
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(160, 830)
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("11_u8d7b")
 texture_pressed = ExtResource("11_u8d7b")
 action = "move_left"
 
 [node name="Right" type="TouchScreenButton" parent="Ui/MarginContainer/ControlBtn"]
-modulate = Color(1, 1, 1, 0.341176)
-position = Vector2(360, 840)
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(400, 830)
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("12_xnwwy")
 texture_pressed = ExtResource("12_xnwwy")
 action = "move_right"
 
 [node name="Jump" type="TouchScreenButton" parent="Ui/MarginContainer/ControlBtn"]
-modulate = Color(1, 1, 1, 0.341176)
-position = Vector2(2120, 840)
+modulate = Color(1, 1, 1, 0.196078)
+position = Vector2(2080, 830)
 scale = Vector2(0.8, 0.8)
 texture_normal = ExtResource("13_5d8qa")
 texture_pressed = ExtResource("13_5d8qa")

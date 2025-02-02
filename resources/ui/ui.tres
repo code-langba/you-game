@@ -2,16 +2,22 @@
 
 [ext_resource type="FontFile" uid="uid://bjnjpjqu0xki1" path="res://asset/fonts/PixelOperator8-Bold.ttf" id="1_pwl3f"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2euq"]
-bg_color = Color(0.3477, 0.4218, 0.57, 0.654902)
-skew = Vector2(0.83, 0.03)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7vko"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hgpt7"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u8n6"]
+bg_color = Color(0.402, 0.491333, 0.67, 0.654902)
+skew = Vector2(0.83, 0.03)
+shadow_color = Color(0.06, 0.06, 0.06, 0.741176)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01fjd"]
+bg_color = Color(0.342, 0.418, 0.57, 0.654902)
+skew = Vector2(0.83, 0.03)
+shadow_color = Color(0.06, 0.06, 0.06, 0.741176)
+shadow_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h73sg"]
-bg_color = Color(0.3477, 0.4218, 0.57, 0.654902)
+bg_color = Color(0.402, 0.491333, 0.67, 0.654902)
 skew = Vector2(0.83, 0.03)
 shadow_color = Color(0.06, 0.06, 0.06, 0.741176)
 shadow_size = 6
@@ -43,9 +49,9 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_pwl3f")
-Button/styles/focus = SubResource("StyleBoxFlat_b2euq")
-Button/styles/hover = SubResource("StyleBoxEmpty_v7vko")
-Button/styles/normal = SubResource("StyleBoxEmpty_hgpt7")
+Button/styles/focus = SubResource("StyleBoxEmpty_v7vko")
+Button/styles/hover = SubResource("StyleBoxFlat_8u8n6")
+Button/styles/normal = SubResource("StyleBoxFlat_01fjd")
 Button/styles/pressed = SubResource("StyleBoxFlat_h73sg")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_l62id")
 HSlider/styles/slider = SubResource("StyleBoxLine_l614y")
