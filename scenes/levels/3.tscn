@@ -642,7 +642,9 @@ position = Vector2(15423.5, -621)
 scale = Vector2(1.425, 1)
 
 [node name="Camera2D" parent="Camera" index="0"]
+physics_interpolation_mode = 1
 limit_top = -2000
+limit_right = 19000
 
 [node name="InitialCamera" parent="Camera" index="1"]
 position = Vector2(960, 540)
@@ -690,6 +692,7 @@ dead_zone_width = 0.094
 dead_zone_height = 0.399
 show_viewfinder_in_play = true
 limit_top = -2000
+limit_right = 19000
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." index="2" node_paths=PackedStringArray("initial_camera", "follow_camera")]
